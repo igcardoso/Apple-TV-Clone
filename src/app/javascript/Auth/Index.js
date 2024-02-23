@@ -60,11 +60,7 @@ document
 // Função para cadastrar um novo usuário
 async function signUp(email, password, firstName, lastName, userName) {
     try {
-        let userCredential = await createUserWithEmailAndPassword(
-            auth,
-            email,
-            password
-        );
+        let userCredential = await createUserWithEmailAndPassword(auth, email, password);
         collectData(email, password, firstName, lastName, userName);
     } catch (error) {
         console.error("Erro ao cadastrar novo usuário:", error.code);

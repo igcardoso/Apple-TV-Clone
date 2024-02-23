@@ -101,7 +101,7 @@ onAuthStateChanged(auth, user => {
                 lastName: lastName,
                 yourPassword: password
             }).then(()=> {
-              pageAlerts('alert', 'Aguarde', '');
+              
               window.location.href = "../../../../index.html";
             })
         };

@@ -37,6 +37,7 @@ document.getElementById("loginForm").addEventListener("submit", async event => {
         await signInWithEmailAndPassword(auth, email, password);
         document.getElementById("email").value = "";
         document.getElementById("password").value = "";
+        window.location.href = "../../../../index.html";
         alert("Login bem-sucedido!");
     } catch (error) {
         console.error("Erro ao fazer login:", error);

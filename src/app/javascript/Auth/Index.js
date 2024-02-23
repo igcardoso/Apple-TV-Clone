@@ -44,9 +44,7 @@ document.getElementById("loginForm").addEventListener("submit", async event => {
     }
 });
 
-document
-    .getElementById("createAccountForm")
-    .addEventListener("submit", async event => {
+document.getElementById("createAccountForm").addEventListener("submit", async event => {
         event.preventDefault();
         let firstName = document.getElementById("FirstName").value;
         let lastName = document.getElementById("LastName").value;

@@ -6,6 +6,19 @@
         <link rel="stylesheet" href="../css/Auth/index.css" title="css" type="text/css" />
         <link rel="stylesheet" href="../css/global/index.css" title="css" type="text/css" />
         <link rel="manifest" href="../../../manifest.json" />
+        <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+        <script>
+          window.OneSignalDeferred = window.OneSignalDeferred || [];
+          OneSignalDeferred.push(function(OneSignal) {
+            OneSignal.init({
+              appId: "e29914b6-2fac-4262-8fcd-b01b2deb7d65",
+              safari_web_id: "web.onesignal.auto.3f702284-340c-42a7-8810-51cb92b23548",
+              notifyButton: {
+                enable: true,
+              },
+            });
+          });
+        </script>
         <title>Login</title>
     </head>
     <body>

@@ -2,13 +2,13 @@ importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox
 
 const staticOnuSite = "onu-site-v1";
 const assets =  [
-  "/",
-  "/index.html",
-  "/src/app/css/App.css",
-  "/src/app/css/refresh.css",
-  "/src/app/javascript/App.js",
-  "/src/app/javascript/refresh.js",
-  "/accets/default_profile_photo/fp_13.jpg"
+  //"/",
+  //"/index.html",
+  //"/src/app/css/App.css",
+  //"/src/app/css/refresh.css",
+  //"/src/app/javascript/App.js",
+  //"/src/app/javascript/refresh.js",
+  //"/accets/default_profile_photo/fp_13.jpg"
 ];
 
 self.addEventListener("install", installEvent => {
@@ -33,7 +33,7 @@ self.addEventListener("fetch", fetchEvent => {
           });
         });
       }).catch(error => {
-        return caches.match('/offline.html');
+        return caches.match('/src/app/html/offline.html');
       })
     );
   } else {

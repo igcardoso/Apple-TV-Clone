@@ -4,6 +4,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../css/global/Index.css" type="text/css" media="all" />
     <title>Você está offline</title>
     <style type="text/css" media="all">
       * {
@@ -16,6 +17,7 @@
        flex-direction: column;
        align-items: center;
        justify-content: center;
+       gap: .5em;
        height: 100vh;
        overflow: hidden;
       } 
@@ -46,6 +48,11 @@
   <body>
     <h2>Ops! Parece que você está offline.</h2>
     <p>Verifique sua conexão com a internet</p>
-    <button type="button">Tentar novamente</button>
+    <button class="try-again" type="button">Tentar novamente</button>
+    <script type="text/javascript" charset="utf-8">
+      document.querySelector('.try-again').addEventListener("click", ()=> {
+        history.back();
+      });
+    </script>
   </body>
 </html>

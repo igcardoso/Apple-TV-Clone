@@ -33,6 +33,7 @@ self.addEventListener("fetch", fetchEvent => {
           });
         });
       }).catch(error => {
+        window.location.href = '/src/app/html/offline.html';
         return caches.match('/src/app/html/offline.html');
       })
     );

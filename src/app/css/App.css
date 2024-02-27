@@ -472,6 +472,7 @@ nav  .icon {
 
 #search .search-box-containment .icon.back {
   margin-left: .5em;
+  fill: var(--blue-color);
 }
 
 #search .search-box-containment div {
@@ -1669,7 +1670,7 @@ header .content-profile:after {
 }
 
 header .option-bar .icon {
-	fill: var(--blue-color) /* #f6f6f6 */;
+	fill: #f6f6f6 ;
 }
 
 header .content-profile .icon.hidden {

@@ -1668,11 +1668,8 @@ header .content-profile:after {
   left: 0;
 }
 
-header .content-profile .icon {
-	z-index: 1010;
+header .option-bar .icon {
 	fill: var(--blue-color) /* #f6f6f6 */;
-	opacity: 0;
-	/* transform: translateX(-100%); */
 }
 
 header .content-profile .icon.hidden {

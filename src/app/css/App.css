@@ -1670,7 +1670,7 @@ header .content-profile:after {
 
 header .content-profile .icon {
 	z-index: 1010;
-	fill: #f6f6f6;
+	fill: var(--blue-color) /* #f6f6f6 */;
 	opacity: 0;
 	/* transform: translateX(-100%); */
 }

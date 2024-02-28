@@ -141,6 +141,7 @@ header .options .store {
     background: #f6f6f6;
     color: #0c84ff;
     font-weight: 800;
+    border-radius: 8em;
 }
 
 header .align {
@@ -324,7 +325,7 @@ header .title {
     padding: 1em;
     background: #f6f6f6;
     border: none;
-    border-radius: 0.5em;
+    border-radius: 8em;
     font-weight: 600;
     position: absolute;
     bottom: 3em;

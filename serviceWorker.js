@@ -10,7 +10,7 @@ const assets =  [
   //"/src/app/javascript/refresh.js",
   //"/accets/default_profile_photo/fp_13.jpg"
 ];
-
+/*
 self.addEventListener("install", installEvent => {
   installEvent.waitUntil(
     caches.open(staticOnuSite).then(cache => {
@@ -48,3 +48,4 @@ self.addEventListener("fetch", fetchEvent => {
     );
   }
 });
+*/

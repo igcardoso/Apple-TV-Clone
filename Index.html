@@ -1191,7 +1191,7 @@
     </button>
   </nav>
 <script type="text/javascript" charset="utf-8">
-    if ("serviceWorker" in navigator) {
+    /*if ("serviceWorker" in navigator) {
       window.addEventListener("DOMContentLoaded", function() {
         navigator.serviceWorker
         .register("serviceWorker.js")
@@ -1199,6 +1199,19 @@
         .catch(err => console.log("service worker not registered", err));
       });
     }
+    */
+    
+    // Verifica se o service worker é suportado pelo navegador
+if ('serviceWorker' in navigator) {
+  // Obtém todos os registros de service workers
+  navigator.serviceWorker.getRegistrations().then(function(registrations) {
+    // Itera sobre todos os registros
+    registrations.forEach(function(registration) {
+      // Remove o service worker
+      registration.unregister();
+    });
+  });
+}
 
   </script>
   

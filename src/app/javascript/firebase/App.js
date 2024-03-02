@@ -123,7 +123,51 @@ onAuthStateChanged(auth, user => {
                 console.error("Usuário não autenticado.");
             }
         };
-        
+        window.profilePhotoOptions = async function profilePhotoOptions() {
+            const user = auth.currentUser;
+            if (user) {
+                try {
+                    const movieSaveCollectionRef = collection(
+                        db,
+                        "public_collection",
+                        "profilePhotos",
+                        "all"
+                    );
+
+                    onSnapshot(movieSaveCollectionRef, snapshot => {
+                        // Limpar a exibição atual
+                        clearDisplayPublicData();
+                        snapshot.forEach(doc => {
+                        display_profilePhotoOptions(doc.data().url);
+                        });
+                    
+                    });
+                } catch (error) {
+                    console.error("Erro ao exibir as fotos de perfil:", error);
+                }
+            } else {
+                console.error("Usuário não autenticado.");
+            }
+        };
+        window.updateProfilePhoto = function updateProfilePhoto(value_update) {
+          const user = auth.currentUser;
+            if (user) {
+             const documentRef = doc(db, "users", user.uid);
+         
+              const dataToUpdate = {
+                  profile_picture: value_update
+              };
+      
+              updateDoc(documentRef, dataToUpdate).then(() => {
+                  profilePhotoOptions();
+              })
+              .catch((error) => {
+                  console.error("Erro ao atualizar documento:", error);
+              });
+            } else {
+              console.log('Usuario não está logado')
+            }
+        }
       //==== DELETE MOVIE FROM LIST ====
         window.deleteMovieDocument = async function deleteMovieDocument(documentId) {
           try {
@@ -138,6 +182,11 @@ onAuthStateChanged(auth, user => {
         function clearDisplay() {
           document.querySelector("#library .library-slides").innerHTML = "";
         }
+        function clearDisplayPublicData() {
+            let all = document.querySelectorAll('.dataPublic_dynamic');
+            all.forEach(all=> all.innerHTML = "");
+        }
+
         
         function no_movies(argument) {
           if (argument == false) {
@@ -147,20 +196,8 @@ onAuthStateChanged(auth, user => {
           }
         }
         displayMovieIds();
+        profilePhotoOptions();
     } else {
         window.location.href = "/src/app/html/auth.html";
     }
 });
-
-function dataFirebase(userFirebaseData) {
-    userFirebaseData.forEach((data, index) => {
-        functionsRenderPages(
-            data.profile,
-            data.email,
-            data.firstName,
-            data.lastName,
-            data.userName
-        );
-    });
-}
-

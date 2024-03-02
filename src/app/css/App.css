@@ -1541,6 +1541,77 @@ nav  .icon {
   display: flex;
 }
 
+/* EDIT PROFILE PAGE */
+
+#edit-profile .profile-picture {
+  width: 100%;
+  padding-top: 5em;
+  display: flex;
+  flex-flow: column;
+  align-items: left;
+  overflow: hidden;
+}
+
+#edit-profile .profile-picture h2 {
+  padding-left: 1em;
+  opacity: .7;
+}
+
+#edit-profile .profile-picture .options .dynamic {
+  width: calc(100% - 3em);
+  display: flex;
+  gap: .3em;
+	padding: .5em;
+	position: relative;
+	overflow: hidden;
+	overflow-x: scroll;
+	background: #ffffff16;
+	border-radius: 1em;
+	margin: 1em;
+}
+
+#edit-profile .profile-picture .options .dynamic div {
+  min-width: 6em;
+  height: 6em;
+  border-radius: 8em;
+  /*background: linear-gradient(25deg, var(--blue-color), #0400f2a8, #8900f2a8);*/
+  padding: 2.5px;
+  position: relative;
+  transition: .5s;
+}
+
+#edit-profile .profile-picture .options .dynamic div.current {
+  border: 2px solid var(--blue-color);
+}
+
+#edit-profile .profile-picture .options .dynamic div img {
+  width: 6em;
+  height: 6em;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#edit-profile .profile-picture .options .dynamic div .check-current {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  z-index: 2;
+  display: none;
+  transition: .5s;
+}
+
+#edit-profile .profile-picture .options .dynamic div.current .check-current {
+  display: block;
+}
+
+#edit-profile .profile-picture .options .dynamic div.current .check-current .icon {
+   fill: var(--blue-color);
+}
+
+
 nav {
   position: fixed;
   bottom: 0;

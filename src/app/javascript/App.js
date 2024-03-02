@@ -119,7 +119,7 @@ window.functionsRenderPages = function functionsRenderPages(
 };
 
 function profileSelectorHeader(img) {
-    let current = `accets/default_profile_photo/${img}`;
+    let current = `../../../accets/default_profile_photo/${img}`;
     let picturesOfUsers = document.querySelectorAll(
         ".header-more-options .options .users img"
     );
@@ -145,6 +145,53 @@ function profileName(userName) {
     });
 }
 
+window.dataFirebase = function dataFirebase(userFirebaseData) {
+    userFirebaseData.forEach((data, index) => {
+        functionsRenderPages(
+            data.profile,
+            data.email,
+            data.firstName,
+            data.lastName,
+            data.userName
+        );
+    
+
+    window.display_profilePhotoOptions = function display_profilePhotoOptions(url) {
+        let option = document.createElement("div");
+        
+
+        let img = document.createElement("img");
+        let urlLocal = `../../../accets/default_profile_photo/${url}`
+        img.setAttribute("src", urlLocal);
+        
+        let check = document.createElement('div');
+        check.classList.add('check-current');
+        check.innerHTML = `
+        <svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+      		<use xlink:href="src/icons/ios-checkmark-circle.svg#path-1"></use>
+				</svg>
+					`;
+        
+        if (data.profile == url) {
+          option.classList.add('option', 'current');
+        } else {
+          option.classList.add('option');
+        }
+        
+        option.addEventListener('click', ()=> {
+          updateProfilePhoto(url);
+        });
+        
+        let contaiment = document.querySelector("#edit-profile .profile-picture .dynamic");
+        
+        option.appendChild(img);
+        option.appendChild(check);
+        contaiment.appendChild(option);
+    };
+  });
+};
+
+underMaintenance();
 function underMaintenance() {
     let type = "alert";
     let titleAlert = "Problemas?";

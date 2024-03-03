@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
+    if (window.innerWidth > 576) {
+      window.location.href = "src/app/html/smart-index.html";
+    }
     const navButtons = document.querySelectorAll(".option-bar");
 
     // Adiciona eventos de clique aos botões de navegação

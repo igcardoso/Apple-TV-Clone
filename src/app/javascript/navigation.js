@@ -40,7 +40,7 @@ function updateHeaderVisibility() {
     } else if (episodeDetails.classList.contains("active")) {
         // header.classList.remove('hidden');
         header.classList.add("hidden-display");
-        navBar.style.display = "flex";
+        navBar.style.display = "none";
         document.querySelector("#play .media").innerHTML = "";
         document.querySelector("#trailer .media").innerHTML = "";
     } else if (playElement.classList.contains("active")) {

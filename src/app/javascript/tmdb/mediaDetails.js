@@ -497,15 +497,23 @@ async function mediaIsSeries(serieId, save) {
 							
         			let SmartCast = document.querySelectorAll('#episode-details .firebase.cast');
         			SmartCast.forEach(cast=> {
+        			  let optionsCast = document.querySelector('#episode-details .options-player-smartTv');
+        			  optionsCast.style.display = 'none';
         			  cast.addEventListener('click', ()=> {
-        			    let optionsCast = document.querySelector('#episode-details .options-player-smartTv');
+        			    
         			    let backOptionsCast = document.querySelector('#episode-details .back-smart-cast-options');
         			    
-        			    optionsCast.classList.add('active');
         			    backOptionsCast.classList.add('active');
+        			    optionsCast.style.display = 'flex';
+        			    setTimeout(function() {
+        			      optionsCast.classList.add('active');
+        			    }, 100);
         			    backOptionsCast.addEventListener('click', ()=> {
         			      optionsCast.classList.remove('active');
         			      backOptionsCast.classList.remove('active');
+        			      setTimeout(function() {
+        			        optionsCast.style.display = 'none';
+        			      }, 1000);
         			    });
         			    
         			    document.querySelectorAll('#episode-details .option-cast').forEach(cast=> {
@@ -873,15 +881,23 @@ async function mediaIsMovie(movieId, save) {
 			
 			let SmartCast = document.querySelectorAll('#film-page .firebase.cast');
 			SmartCast.forEach(cast=> {
+			  let optionsCast = document.querySelector('#film-page .options-player-smartTv');
+			  optionsCast.style.display = 'none';
 			  cast.addEventListener('click', ()=> {
-			    let optionsCast = document.querySelector('#film-page .options-player-smartTv');
 			    let backOptionsCast = document.querySelector('#film-page .back-smart-cast-options');
 			    
-			    optionsCast.classList.add('active');
+  
 			    backOptionsCast.classList.add('active');
+			    optionsCast.style.display = 'flex';
+			    setTimeout(function() {
+			      optionsCast.classList.add('active');
+			    }, 100);
 			    backOptionsCast.addEventListener('click', ()=> {
 			      optionsCast.classList.remove('active');
 			      backOptionsCast.classList.remove('active');
+			      setTimeout(function() {
+			        optionsCast.style.display = 'none';
+			      }, 1000);
 			    });
 			    
 			    document.querySelectorAll('#film-page .option-cast').forEach(cast=> {

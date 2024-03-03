@@ -13,8 +13,8 @@ async function getAllMoviesDetails(filmeId, title, background, save) {
 
 		const response = await fetch(detalhesUrl);
 		const data = await response.json();
-		const Elements_series = document.querySelector(`${FilmPageDisplay} .series`);
-		const Elements_movies = document.querySelector(`${FilmPageDisplay} .movies`);
+		const Elements_series = document.querySelectorAll(`${FilmPageDisplay} .The-series`);
+		const Elements_movies = document.querySelectorAll(`${FilmPageDisplay} .The-movies`);
 
 		const dynamic = document.querySelectorAll(`${FilmPageDisplay} .dynamic`);
 
@@ -25,18 +25,29 @@ async function getAllMoviesDetails(filmeId, title, background, save) {
 		if (data) {
 			if (title != data.title) {
 				await mediaIsSeries(correctId, save);
-				Elements_series.style.display = 'block';
-				Elements_movies.style.display = 'none';
-
+				Elements_movies.forEach(movies=> {
+				  movies.style.display = 'none';
+				});
+				Elements_series.forEach(series=> {
+				  series.style.display = 'block';
+				});
 			} else {
 				await mediaIsMovie(correctId, save);
-				Elements_series.style.display = 'none';
-				Elements_movies.style.display = 'block';
+				Elements_movies.forEach(movies=> {
+				  movies.style.display = 'block';
+				});
+				Elements_series.forEach(series=> {
+				  series.style.display = 'none';
+				});
 			}
 		} else {
 			await mediaIsSeries(correctId, save);
-			Elements_series.style.display = 'block';
-			Elements_movies.style.display = 'none';
+			Elements_movies.forEach(movies=> {
+				  movies.style.display = 'none';
+				});
+				Elements_series.forEach(series=> {
+				  series.style.display = 'block';
+				});
 		}
 	} catch (error) {
 		console.error('Ocorreu um erro:',
@@ -482,8 +493,45 @@ async function mediaIsSeries(serieId, save) {
 							let play_2 = document.querySelector(`${episodeDetails} .option-2`);
 							let play_3 = document.querySelector(`${episodeDetails} .option-3`);
 							let play_4 = document.querySelector(`${episodeDetails} .option-4`);
-
-
+							
+							
+        			let SmartCast = document.querySelectorAll('#episode-details .firebase.cast');
+        			SmartCast.forEach(cast=> {
+        			  cast.addEventListener('click', ()=> {
+        			    let optionsCast = document.querySelector('#episode-details .options-player-smartTv');
+        			    let backOptionsCast = document.querySelector('#episode-details .back-smart-cast-options');
+        			    
+        			    optionsCast.classList.add('active');
+        			    backOptionsCast.classList.add('active');
+        			    backOptionsCast.addEventListener('click', ()=> {
+        			      optionsCast.classList.remove('active');
+        			      backOptionsCast.classList.remove('active');
+        			    });
+        			    
+        			    document.querySelectorAll('#episode-details .option-cast').forEach(cast=> {
+        			      cast.addEventListener('click', (event)=> {
+        			        switch (event.currentTarget.classList[1]) {
+        			          case 'cast1':
+        			            smartCast(`https://embedder.net/e/${data.id}/${season.season_number}/${episodeNumber}`, 'serie')
+        			            break;
+        			          case 'cast2':
+        			            smartCast(`https://v2.vidsrc.me/embed/${data.id}/${season.season_number}/${episodeNumber}`, 'serie')
+        			            break;
+        			          case 'cast3':
+        			            smartCast(`https://superembeds.com/embed2/${data.id}-${season.season_number}-${episodeNumber}`, 'serie')
+        			            break;
+        			          case 'cast4':
+        			            // smartCast(`https://multiembed.mov/?video_id=${data.imdb_id}`)
+        			            pageAlerts('alert', 'Este player não está funcionado.', 'Este player está apresentando falhas para reproduzir series.');
+        			            break;
+        			          
+        			          default:
+        			            pageAlerts('alert', 'Erro', 'Está opção não corresponde a uma opção valida.');
+        			        }
+        			      });
+        			    });
+        			  });
+        			});
 							play_1.addEventListener("click", ()=> {
 								contentIframe.innerHTML = '';
 								const iframe = document.createElement('iframe');
@@ -494,7 +542,7 @@ async function mediaIsSeries(serieId, save) {
 							play_2.addEventListener("click", ()=> {
 								contentIframe.innerHTML = '';
 								const iframe = document.createElement('iframe');
-								iframe.src = `https://v2.vidsrc.me/embed/${data.id}/${season.season_number}/${episodeNumber}-#1da1f2`;
+								iframe.src = `https://v2.vidsrc.me/embed/${data.id}/${season.season_number}/${episodeNumber}`;
 								iframe.setAttribute('allowfullscreen', '');
 								contentIframe.appendChild(iframe);
 							});
@@ -822,8 +870,43 @@ async function mediaIsMovie(movieId, save) {
 			}
 
 			synopsi.innerText = OverviewFiltered;
-
-
+			
+			let SmartCast = document.querySelectorAll('#film-page .firebase.cast');
+			SmartCast.forEach(cast=> {
+			  cast.addEventListener('click', ()=> {
+			    let optionsCast = document.querySelector('#film-page .options-player-smartTv');
+			    let backOptionsCast = document.querySelector('#film-page .back-smart-cast-options');
+			    
+			    optionsCast.classList.add('active');
+			    backOptionsCast.classList.add('active');
+			    backOptionsCast.addEventListener('click', ()=> {
+			      optionsCast.classList.remove('active');
+			      backOptionsCast.classList.remove('active');
+			    });
+			    
+			    document.querySelectorAll('#film-page .option-cast').forEach(cast=> {
+			      cast.addEventListener('click', (event)=> {
+			        switch (event.currentTarget.classList[1]) {
+			          case 'cast1':
+			            smartCast(`https://embedder.net/e/${data.imdb_id}`, 'movie')
+			            break;
+			          case 'cast2':
+			            smartCast(`https://v2.vidsrc.me/embed/${data.imdb_id}`, 'movie')
+			            break;
+			          case 'cast3':
+			            smartCast(`https://superembeds.com/embed2/${data.imdb_id}`, 'movie')
+			            break;
+			          case 'cast4':
+			            smartCast(`https://multiembed.mov/?video_id=${data.imdb_id}`, 'movie')
+			            break;
+			          
+			          default:
+			            pageAlerts('alert', 'Erro', 'Está opção não corresponde a uma opção valida.');
+			        }
+			      });
+			    });
+			  });
+			});
 			Play_1.addEventListener("click", ()=> {
 				contentIframe.innerHTML = '';
 				let iframe = document.createElement('iframe');
@@ -845,8 +928,7 @@ async function mediaIsMovie(movieId, save) {
 				iframe.setAttribute('allowfullscreen', '');
 				contentIframe.appendChild(iframe);
 			});
-			Play_4.addEventListener("click",
-				()=> {
+			Play_4.addEventListener("click", ()=> {
 					contentIframe.innerHTML = '';
 					const iframe = document.createElement('iframe');
 					iframe.src = `https://multiembed.mov/?video_id=${data.imdb_id}`;

@@ -150,16 +150,37 @@ onAuthStateChanged(auth, user => {
             }
         };
         window.updateProfilePhoto = function updateProfilePhoto(value_update) {
-          const user = auth.currentUser;
+            let user = auth.currentUser;
             if (user) {
-             const documentRef = doc(db, "users", user.uid);
+             let documentRef = doc(db, "users", user.uid);
          
-              const dataToUpdate = {
+              let dataToUpdate = {
                   profile_picture: value_update
               };
       
               updateDoc(documentRef, dataToUpdate).then(() => {
                   profilePhotoOptions();
+              })
+              .catch((error) => {
+                  console.error("Erro ao atualizar documento:", error);
+              });
+            } else {
+              console.log('Usuario não está logado')
+            }
+        }
+        
+       window.smartCast = function smartCast(value_update, type) {
+            let user = auth.currentUser;
+            if (user) {
+             let documentRef = doc(db, "users", user.uid);
+         
+              let dataToUpdate = {
+                  urlCast: value_update,
+                  typeCast: type
+              };
+      
+              updateDoc(documentRef, dataToUpdate).then(() => {
+                  console.log('cast no ar')
               })
               .catch((error) => {
                   console.error("Erro ao atualizar documento:", error);

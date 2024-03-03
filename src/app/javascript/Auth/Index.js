@@ -101,8 +101,11 @@ onAuthStateChanged(auth, user => {
                 lastName: lastName,
                 yourPassword: password
             }).then(()=> {
-              
-              window.location.href = "../../../../index.html";
+              if (window.innerWidth < 576) {
+                window.location.href = "../../../../index.html";
+              } else {          
+                window.location.href = "../../html/smart-index.html";
+              }
             })
         };
         

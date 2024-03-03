@@ -80,13 +80,7 @@ onAuthStateChanged(auth, user => {
                 id: movieId,
                 title: movieTitle,
                 background: movieBackground
-            }) .then(() => {
-                   let alert_type = "alert";
-          			   let alert_title = "Adicionado com sucesso!";
-          		 	   let alert_text = "";
-          			   pageAlerts(alert_type, alert_title, alert_text)
-                })
-                .catch(error => {
+            })  .catch(error => {
                     console.error(
                         "Erro ao adicionar novo documento à coleção 'movieSave':",
                         error

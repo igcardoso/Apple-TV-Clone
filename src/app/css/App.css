@@ -1198,7 +1198,8 @@ nav  .icon {
   border-radius: 8em;
 }
 
-#film-page .buttons {
+#film-page .buttons,
+#episode-details .buttons {
 	border-top: 1px solid #f6f6f616;
 	margin: 1em 2em 0 2em;
   width: calc(100% - 4em);
@@ -1210,7 +1211,8 @@ nav  .icon {
   gap: 1em;
 }
 
-#film-page .buttons .save div {
+#film-page .buttons .element div,
+#episode-details .buttons .element div {
 	background: #f6f6f612;
 	border-radius: 1.2em;
   display: flex;
@@ -1221,8 +1223,9 @@ nav  .icon {
   overflow: hidden;
 }
 
-#film-page .buttons .trailer div {
-	background: #f6f6f612;
+#film-page .buttons .element.cast div,
+#episode-details .buttons .element.cast div {
+	background: #ffffff;
 	border-radius: 1.2em;
   display: flex;
   align-items: center;
@@ -1230,6 +1233,65 @@ nav  .icon {
   padding: 1em;
   gap: 1em;
   overflow: hidden;
+}
+
+#film-page .buttons .element.cast div label,
+#episode-details .buttons .element.cast div label {
+	color: #000000;
+}
+
+#film-page .back-smart-cast-options,
+#episode-details .back-smart-cast-options {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  top: auto;
+  left: 0;
+  background: #00000072;
+  display: none;
+  z-index: 140;
+}
+
+#film-page .back-smart-cast-options.active,
+#episode-details .back-smart-cast-options.active {
+  display: block;
+}
+
+#film-page .options-player-smartTv,
+#episode-details .options-player-smartTv {
+  width: 100%;
+  padding-bottom: 2em;
+  padding-top: .2em;
+  position: absolute;
+  bottom: 0;
+  top: auto;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #000000;
+  border-top: 2px solid #ffffff16;/* 
+  border-top-right-radius: 1.2em;
+  border-top-left-radius: 1.2em; */
+  transform: translateY(100%);
+  transition: .5s;
+  z-index: 150;
+}
+
+#film-page .options-player-smartTv .marker,
+#episode-details .options-player-smartTv .marker {
+  width: 3em;
+  height: 4px;
+  border-radius: 8em;
+  background: #ffffff16;
+  margin-bottom: 1em;
+}
+
+#film-page .options-player-smartTv.active,
+#episode-details .options-player-smartTv.active {
+  transform: translateY(0);
 }
 
 .options-play {
@@ -1240,7 +1302,8 @@ nav  .icon {
   margin: 1em auto;
 }
 
-.options-play .option {
+.options-play .option,
+.options-player-smartTv .option-cast {
 	background: #f6f6f612;
   display: flex;
   align-items: center;
@@ -1257,14 +1320,20 @@ nav  .icon {
 	border-top-left-radius: 2em;
 	border-top-right-radius: 2em;
 }
+.options-player-smartTv .option-cast:nth-child(2) {
+	border-top-left-radius: 2em;
+	border-top-right-radius: 2em;
+}
 
-.options-play .option:last-child {
+.options-play .option:last-child,
+.options-player-smartTv .option-cast:last-child {
 	border-bottom-left-radius: 2em;
 	border-bottom-right-radius: 2em;
 	border-bottom: none;
 }
 
-.options-play .option .content {
+.options-play .option .content,
+.options-player-smartTv .option-cast .content {
 	width: 100%;
 	display: flex;
   flex-direction: column;
@@ -1272,25 +1341,29 @@ nav  .icon {
   gap: .3em;
 }
 
-.options-play .option .button-play .icon {
+.options-play .option .button-play .icon,
+.options-player-smartTv .option-cast .button-play .icon {
 	fill: var(--blue-color);
 	width: 3em;
 	height: 3em;
 }
 
-.options-play .option .language {
+.options-play .option .language,
+.options-player-smartTv .option-cast .language {
 	font-size: .6em;
 	font-weight: 500;
 	color: #f6f6f6e8;
 }
 
-.options-play .option .title {
+.options-play .option .title,
+.options-player-smartTv .option-cast .title {
 	font-weight: 800;
 	font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,"Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 	color: #f6f6f6;
 }
 
-.options-play div .provided-by {
+.options-play div .provided-by,
+.options-player-smartTv .option-cast .provided-by {
 	display: flex;
   align-items: center;
   justify-content: left;
@@ -1298,17 +1371,20 @@ nav  .icon {
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,"Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-.options-play div .provided-by p:nth-child(2) {
+.options-play div .provided-by p:nth-child(2),
+.options-player-smartTv .option-cast .provided-by p:nth-child(2) {
 	font-weight: 500;
 	color: #f6f6f677;
 }
 
-.options-play div .provided-by p:nth-child(1) {
+.options-play div .provided-by p:nth-child(1),
+.options-player-smartTv .option-cast .provided-by p:nth-child(1) {
 	font-weight: 700;
 	color: #f6f6f6e8;
 }
 
-.options-play div .progress-bar {
+.options-play div .progress-bar,
+.options-player-smartTv .option-cast .progress-bar {
 	width: 95%;
 	border-radius: 8em;
 	height: .4em;

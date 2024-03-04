@@ -104,7 +104,7 @@ onAuthStateChanged(auth, user => {
               if (window.innerWidth < 576) {
                 window.location.href = "../../../../index.html";
               } else {          
-                window.location.href = "../../html/smart-index.html";
+                window.location.href = "src/app/html/smart-index.html";
               }
             })
         };

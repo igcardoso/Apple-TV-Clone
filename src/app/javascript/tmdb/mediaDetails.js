@@ -26,10 +26,6 @@ async function getAllMoviesDetails(filmeId, title, background, save) {
 		  Elements_movies.forEach(movies=> {
 				  movies.style.display = 'none';
 			});
-		} else {
-		  no_movies_embed.forEach(movies=> {
-				  movies.style.display = 'none';
-			});
 		}
 
 		if (data) {

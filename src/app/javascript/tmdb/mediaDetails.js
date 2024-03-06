@@ -22,7 +22,7 @@ async function getAllMoviesDetails(filmeId, title, background, save) {
 			element.innerHTML = "";
 		});
 		
-		if (filmeId == "getAllMoviesDetails") {
+		if (filmeId == "id") {
 		  Elements_movies.forEach(movies=> {
 				  movies.style.display = 'none';
 			});

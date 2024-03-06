@@ -55,7 +55,7 @@ async function getAllMoviesDetails(filmeId, title, background, save) {
     				  movies.style.display = 'none';
     			});
     			floatPlay.addEventListener('click', ()=> {
-            window.location.href = '../../html/movie-on-drive.html';
+            window.location.href = 'src/app/html/movie-on-drive.html';
           });
     		} else {
   				noDrive.forEach(movies=> {

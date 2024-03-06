@@ -22,7 +22,7 @@ async function getAllMoviesDetails(filmeId, title, background, save) {
 			element.innerHTML = "";
 		});
 		
-		if (filmeId == "id") {
+		if (filmeId == 73169) {
 		  Elements_movies.forEach(movies=> {
 				  movies.style.display = 'none';
 			});
@@ -890,7 +890,7 @@ async function mediaIsMovie(movieId, save) {
 			  let optionsCast = document.querySelector('#film-page .options-player-smartTv');
 			  optionsCast.style.display = 'none';
 			  cast.addEventListener('click', ()=> {
-			    if (data.id != "id") {
+			    if (data.id != 73169) {
 			      let backOptionsCast = document.querySelector('#film-page .back-smart-cast-options');
   			    
     

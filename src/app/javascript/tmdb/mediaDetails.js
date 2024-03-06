@@ -890,43 +890,45 @@ async function mediaIsMovie(movieId, save) {
 			  let optionsCast = document.querySelector('#film-page .options-player-smartTv');
 			  optionsCast.style.display = 'none';
 			  cast.addEventListener('click', ()=> {
-			    let backOptionsCast = document.querySelector('#film-page .back-smart-cast-options');
-			    
-  
-			    backOptionsCast.classList.add('active');
-			    optionsCast.style.display = 'flex';
-			    setTimeout(function() {
-			      optionsCast.classList.add('active');
-			    }, 100);
-			    backOptionsCast.addEventListener('click', ()=> {
-			      optionsCast.classList.remove('active');
-			      backOptionsCast.classList.remove('active');
-			      setTimeout(function() {
-			        optionsCast.style.display = 'none';
-			      }, 1000);
-			    });
-			    
-			    document.querySelectorAll('#film-page .option-cast').forEach(cast=> {
-			      cast.addEventListener('click', (event)=> {
-			        switch (event.currentTarget.classList[1]) {
-			          case 'cast1':
-			            smartCast(`https://embedder.net/e/${data.imdb_id}`, 'movie')
-			            break;
-			          case 'cast2':
-			            smartCast(`https://v2.vidsrc.me/embed/${data.imdb_id}`, 'movie')
-			            break;
-			          case 'cast3':
-			            smartCast(`https://superembeds.com/embed2/${data.imdb_id}`, 'movie')
-			            break;
-			          case 'cast4':
-			            smartCast(`https://multiembed.mov/?video_id=${data.imdb_id}`, 'movie')
-			            break;
-			          
-			          default:
-			            pageAlerts('alert', 'Erro', 'Está opção não corresponde a uma opção valida.');
-			        }
-			      });
-			    });
+			    if (data.id != "id") {
+			      let backOptionsCast = document.querySelector('#film-page .back-smart-cast-options');
+  			    
+    
+  			    backOptionsCast.classList.add('active');
+  			    optionsCast.style.display = 'flex';
+  			    setTimeout(function() {
+  			      optionsCast.classList.add('active');
+  			    }, 100);
+  			    backOptionsCast.addEventListener('click', ()=> {
+  			      optionsCast.classList.remove('active');
+  			      backOptionsCast.classList.remove('active');
+  			      setTimeout(function() {
+  			        optionsCast.style.display = 'none';
+  			      }, 1000);
+  			    });
+  			    
+  			    document.querySelectorAll('#film-page .option-cast').forEach(cast=> {
+  			      cast.addEventListener('click', (event)=> {
+  			        switch (event.currentTarget.classList[1]) {
+  			          case 'cast1':
+  			            smartCast(`https://embedder.net/e/${data.imdb_id}`, 'movie')
+  			            break;
+  			          case 'cast2':
+  			            smartCast(`https://v2.vidsrc.me/embed/${data.imdb_id}`, 'movie')
+  			            break;
+  			          case 'cast3':
+  			            smartCast(`https://superembeds.com/embed2/${data.imdb_id}`, 'movie')
+  			            break;
+  			          case 'cast4':
+  			            smartCast(`https://multiembed.mov/?video_id=${data.imdb_id}`, 'movie')
+  			            break;
+  			          
+  			          default:
+  			            pageAlerts('alert', 'Erro', 'Está opção não corresponde a uma opção valida.');
+  			        }
+  			      });
+  			    });
+			    }
 			  });
 			});
 			Play_1.addEventListener("click", ()=> {

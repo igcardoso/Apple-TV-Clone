@@ -1008,7 +1008,7 @@ async function mediaIsMovie(movieId, save) {
 }
 
 function toShare(id) {
-	const urlToShare = 'https://playflix-os.netlify.app/index.html?share=' + id;
+	const urlToShare = 'https://prime-tv.netlify.app/index.html?share=' + id;
 	const url = urlToShare
 	// window.postMessage(url);
 

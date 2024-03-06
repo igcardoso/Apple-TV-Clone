@@ -15,7 +15,6 @@ async function getAllMoviesDetails(filmeId, title, background, save) {
 		const data = await response.json();
 		const Elements_series = document.querySelectorAll(`${FilmPageDisplay} .The-series`);
 		const Elements_movies = document.querySelectorAll(`${FilmPageDisplay} .The-movies`);
-		const no_movies_embed = document.querySelectorAll(`${FilmPageDisplay} .not-movies-embed`);
 
 		const dynamic = document.querySelectorAll(`${FilmPageDisplay} .dynamic`);
 

@@ -928,6 +928,8 @@ async function mediaIsMovie(movieId, save) {
   			        }
   			      });
   			    });
+			    } else {
+			      optionsCast.classList.add('movie-in-drive');
 			    }
 			  });
 			});

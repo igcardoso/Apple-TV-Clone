@@ -15,6 +15,7 @@ async function getAllMoviesDetails(filmeId, title, background, save) {
 		const data = await response.json();
 		const Elements_series = document.querySelectorAll(`${FilmPageDisplay} .The-series`);
 		const Elements_movies = document.querySelectorAll(`${FilmPageDisplay} .The-movies`);
+		const noDrive = document.querySelectorAll(`${FilmPageDisplay} .not-is-drive`);
 
 		const dynamic = document.querySelectorAll(`${FilmPageDisplay} .dynamic`);
 
@@ -22,26 +23,50 @@ async function getAllMoviesDetails(filmeId, title, background, save) {
 			element.innerHTML = "";
 		});
 		
-		if (filmeId == 73169) {
-		  Elements_movies.forEach(movies=> {
-				  movies.style.display = 'none';
-			});
-		}
-
+    
+    let floatPlay = document.querySelector(`${FilmPageDisplay} .float-btn-play`);
+    let options_play = document.querySelector(`${FilmPageDisplay} .options-play`);
+    
 		if (data) {
 			if (title != data.title) {
 				await mediaIsSeries(correctId, save);
-				Elements_movies.forEach(movies=> {
-				  movies.style.display = 'none';
-				});
+				if (filmeId == 73169) {
+    		  noDrive.forEach(movies=> {
+    				  movies.style.display = 'none';
+    			});
+    			floatPlay.addEventListener('click', ()=> {
+            window.location.href = '../../html/movie-on-drive.html';
+          });
+    		} else {
+    			noDrive.forEach(movies=> {
+    			  movies.style.display = 'none';
+    			});
+          floatPlay.addEventListener('click', ()=> {
+            options_play.scrollIntoView({ behavior: 'smooth' });
+          });
+    		}
 				Elements_series.forEach(series=> {
 				  series.style.display = 'block';
 				});
 			} else {
 				await mediaIsMovie(correctId, save);
-				Elements_movies.forEach(movies=> {
-				  movies.style.display = 'block';
-				});
+				if (filmeId == 73169) {
+    		  noDrive.forEach(movies=> {
+    				  movies.style.display = 'none';
+    			});
+    			floatPlay.addEventListener('click', ()=> {
+            window.location.href = '../../html/movie-on-drive.html';
+          });
+    		} else {
+  				noDrive.forEach(movies=> {
+  				  if (!movies.classList.contains('options-player-smartTv')) {
+  				    movies.style.display = 'block';
+  				  }
+  				});
+  				floatPlay.addEventListener('click', ()=> {
+            options_play.scrollIntoView({ behavior: 'smooth' });
+          });
+    		}
 				Elements_series.forEach(series=> {
 				  series.style.display = 'none';
 				});
@@ -151,7 +176,7 @@ async function mediaLibraryIsMovie(movieId) {
 		const data = await response.json();
 		// const plataformas = data.production_companies.map(company => company.name);
 
-		if (data.title != "" && data.backdrop_path != null && data.vote_count >= 100) {
+		if (data.title != "" && data.backdrop_path != null /* && data.vote_count >= 100*/) {
 	  	let cardSave = document.createElement('div');
       cardSave.classList.add('card');
       
@@ -218,7 +243,7 @@ async function mediaIsSeries(serieId, save) {
 		const data = await response.json();
 		// const plataformas = data.production_companies.map(company => company.name);
 
-		if (data.name != "" && data.backdrop_path != null) {
+		if (data.name != "" && data.backdrop_path != null /*&& data.vote_count >= 100*/) {
 		 
 		  let header_add_library = document.querySelector(`${FilmPageDisplay} .header .save`);
 		  let the_buttons_add_library = document.querySelector(`${FilmPageDisplay} .buttons .save .icon`);
@@ -739,7 +764,7 @@ async function mediaIsMovie(movieId, save) {
 		const data = await response.json();
 		// const plataformas = data.production_companies.map(company => company.name);
 
-		if (data.title != "" && data.backdrop_path != null) {
+		if (data.title != "" && data.backdrop_path != null /*&& data.vote_count >= 100*/) {
 		  
 		  let header_add_library = document.querySelector(`${FilmPageDisplay} .header .save`);
 		  let the_buttons_add_library = document.querySelector(`${FilmPageDisplay} .buttons .save .icon`);
@@ -890,9 +915,9 @@ async function mediaIsMovie(movieId, save) {
 			  let optionsCast = document.querySelector('#film-page .options-player-smartTv');
 			  optionsCast.style.display = 'none';
 			  cast.addEventListener('click', ()=> {
+			 
 			    if (data.id != 73169) {
 			      let backOptionsCast = document.querySelector('#film-page .back-smart-cast-options');
-  			    
     
   			    backOptionsCast.classList.add('active');
   			    optionsCast.style.display = 'flex';
@@ -929,7 +954,8 @@ async function mediaIsMovie(movieId, save) {
   			      });
   			    });
 			    } else {
-			      optionsCast.classList.add('movie-in-drive');
+			      optionsCast.style.display = "none";
+			      smartCast(`https://drive.google.com/file/d/10Fv0Z6IlU_5IXiwJmvHRcacTl9zs4RpU/preview`, 'movie')
 			    }
 			  });
 			});
@@ -1096,10 +1122,3 @@ async function getMovieTrailerLink(filmeId) {
 		console.error('Ocorreu um erro:', error);
 	}
 }
-
-let floatPlay = document.querySelector(`${FilmPageDisplay} .float-btn-play`);
-let options_play = document.querySelector(`${FilmPageDisplay} .options-play`);
-
-floatPlay.addEventListener('click', ()=> {
-  options_play.scrollIntoView({ behavior: 'smooth' });
-});

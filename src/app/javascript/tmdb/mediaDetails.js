@@ -733,7 +733,7 @@ async function mediaIsMovie(movieId, save) {
 		const data = await response.json();
 		// const plataformas = data.production_companies.map(company => company.name);
 
-		if (data.title != "" && data.backdrop_path != null && data.vote_count >= 100) {
+		if (data.title != "" && data.backdrop_path != null) {
 		  
 		  let header_add_library = document.querySelector(`${FilmPageDisplay} .header .save`);
 		  let the_buttons_add_library = document.querySelector(`${FilmPageDisplay} .buttons .save .icon`);

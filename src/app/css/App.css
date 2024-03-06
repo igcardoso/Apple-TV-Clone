@@ -1280,11 +1280,6 @@ nav  .icon {
   z-index: 150;
 }
 
-#film-page .options-player-smartTv.movie-in-drive,
-#episode-details .options-player-smartTv.movie-in-drive {
-  display: none;
-}
-
 #film-page .options-player-smartTv .marker,
 #episode-details .options-player-smartTv .marker {
   width: 3em;

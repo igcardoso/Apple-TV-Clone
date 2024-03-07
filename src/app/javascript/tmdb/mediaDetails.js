@@ -955,7 +955,8 @@ async function mediaIsMovie(movieId, save) {
   			    });
 			    } else {
 			      optionsCast.style.display = "none";
-			      smartCast(`https://drive.google.com/file/d/10Fv0Z6IlU_5IXiwJmvHRcacTl9zs4RpU/preview`, 'movie')
+			      smartCast(`https://drive.google.com/file/d/10Fv0Z6IlU_5IXiwJmvHRcacTl9zs4RpU/preview`, 'movie');
+			      pageAlerts('alert', 'Dados do filme enviados', 'Certifique-se de logar na TV ou dispositivo de transmissão em tela grande corretamente.')
 			    }
 			  });
 			});

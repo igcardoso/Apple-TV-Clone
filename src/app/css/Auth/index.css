@@ -24,7 +24,7 @@ p {
 }
 
 a {
-    color: #0c84ff;
+    color: #0697FE;
 }
 
 .icon {
@@ -139,7 +139,7 @@ header .options .sub-option {
 header .options .store {
     justify-content: center;
     background: #f6f6f6;
-    color: #0c84ff;
+    color: #0697FE;
     font-weight: 800;
     border-radius: 8em;
 }
@@ -162,7 +162,7 @@ header .title {
     padding: 0.5em;
     border-radius: 0.5em;
     background: none;
-    color: #0c84ff;
+    color: #0697FE;
     border: none;
     font-weight: 600;
 }
@@ -175,7 +175,7 @@ header .title {
 .menu div {
     width: 1.5em;
     height: 3px;
-    background: #0c84ff;
+    background: #0697FE;
     border-radius: 8em;
 }
 
@@ -371,7 +371,7 @@ header .title {
 
 #login form input:focus,
 #create-account form input:focus {
-    outline: 1px solid #0c84ff;
+    outline: 1px solid #0697FE;
 }
 
 #login .login,
@@ -387,7 +387,7 @@ header .title {
 
 #login .login button,
 #create-account .login button {
-    background: #0c84ff;
+    background: #0697FE;
     padding: 1em;
     border: none;
     border-radius: 8em;

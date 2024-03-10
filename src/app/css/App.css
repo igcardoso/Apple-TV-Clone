@@ -903,6 +903,7 @@ nav  .icon {
 	font-size: .8em;
 	font-weight: 700;
 	opacity: 1;
+	color: var(--blue-color);
 }
 
 /* DISCOVER PAGE */

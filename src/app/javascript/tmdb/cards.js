@@ -1,6 +1,7 @@
 var API_KEY = 'api_key=1cf50e6248dc270629e802686245c2c8';
 var BASE_URL = 'https://api.themoviedb.org/3';
 var API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&' + API_KEY + '&language=pt-BR';
+var API_URL_TvShows = BASE_URL + '/discover/tv?sort_by=popularity.desc&' + API_KEY + '&language=pt-BR';
 var API_URL_generes = BASE_URL + '/discover/movie?sort_by=popularity.desc&' + API_KEY + '&language=pt-BR&';
 var VOTE_AVERAGE = BASE_URL + '/discover/movie?sort_by=vote_average.desc&' + API_KEY + '&language=pt-BR&page=1';
 var ANIMATIONS = BASE_URL + '/discover/movie?sort_by=popularity.desc&' + API_KEY + '&language=pt-BR&with_genres=16&page=1';
@@ -277,8 +278,62 @@ async function getMovieDetails(filmeId, container) {
 		const response = await fetch(detalhesUrl);
 		const data = await response.json();
 		const plataformas = data.production_companies.map(company => company.name);
+	  const  the_button_home_library_btn = document.querySelector(`#home .home-save-library`);
+	  const home_add_library = document.querySelector(`#home .home-save-library  .icon`);
+	  
+	  function saveIsTrue() {
+	    home_add_library.innerHTML = `
+	       <use xlink:href="src/icons/check-23.svg#path-1"></use>
+	    `;
+	    home_add_library.classList.add('check');
+	    
+	  }
+   
+  	let found = false;
+		window.checkSavendLibrary = function checkSavendLibrary(id) {
+    // console.log(value.ids)
+    
+    const media = [
+    	{
+    		medias: id
+    	}
+    	]
+   
+    media.forEach(values=> {
+    	 for (let i = 0; i < values.length; i++) {
+        if (values[i].ids === data.imdb_id) {
+            found = true;
+            saveIsTrue();
+            break;
+        } else {
+        		document.querySelector(`#home .home-save-library .icon`).innerHTML = `<use xlink:href="src/icons/ios-plus.svg#path-1"></use>`;
+			      document.querySelector(`#home .home-save-library .icon`).classList.remove('check');
+        }
+    }
+    
+    });
+   }
+   window.check_if_still_saved = function check_if_still_saved() {
+   	if (home_add_library.classList.contains('check')) {
+   		document.querySelector(`#home .home-save-library .icon`).innerHTML = `<use xlink:href="src/icons/ios-plus.svg#path-1"></use>`;
+	    document.querySelector(`#home .home-save-library .icon`).classList.remove('check');
+   	}
+   }
+  //console.log('olha! ', found)
+  the_button_home_library_btn.addEventListener('click', ()=> {
+	    if (!home_add_library.classList.contains('check')) {
+	    	saveIsTrue();
+	      movieSaveInDataBase(data.imdb_id, data.title, data.backdrop_path);
+	    } else {
+	    	deleteMovieDocument(data.imdb_id);
+	    	document.querySelector(`#home .home-save-library .icon`).innerHTML = `<use xlink:href="src/icons/ios-plus.svg#path-1"></use>`;
+	    	document.querySelector(`#home .home-save-library .icon`).classList.remove('check');
+	    }
+  });
+    
 
 		if (data.title != "" && data.backdrop_path != null && data.vote_count >= 100) {
+		  
 
 			// Elements
 			let title = document.querySelector(`${container} .title`);
@@ -393,8 +448,8 @@ async function getMoviesHighlights(url, page, whichContainer) {
 
 		let firstMovie = data.results[generateRandomNumber()];
 		console.log(firstMovie)
-
-		await getMovieDetails(firstMovie.id,
+   
+		await getMovieDetails(572802/*firstMovie.id*/,
 			whichContainer);
 		initLazyLoad();
 	} catch (error) {

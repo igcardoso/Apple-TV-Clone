@@ -80,7 +80,7 @@ onAuthStateChanged(auth, user => {
                 id: movieId,
                 title: movieTitle,
                 background: movieBackground
-            })  .catch(error => {
+            }) .catch(error => {
                     console.error(
                         "Erro ao adicionar novo documento à coleção 'movieSave':",
                         error
@@ -188,6 +188,7 @@ onAuthStateChanged(auth, user => {
           try {
               const docRef = doc(db, "users", auth.currentUser.uid, "movieSave", `${documentId}`);
               await deleteDoc(docRef);
+              check_if_still_saved();
           } catch (error) {
               console.error("Erro ao excluir o documento do filme:", error);
           }
@@ -210,7 +211,8 @@ onAuthStateChanged(auth, user => {
             document.querySelector("#library .no-movies").classList.remove('active');
           }
         }
-        displayMovieIds();
+        
+       	displayMovieIds();
         profilePhotoOptions();
     } else {
         window.location.href = "/src/app/html/auth.html";

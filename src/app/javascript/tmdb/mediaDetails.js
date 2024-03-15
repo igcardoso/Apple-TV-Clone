@@ -175,6 +175,12 @@ async function mediaLibraryIsMovie(movieId) {
 		const response = await fetch(detalhesUrl);
 		const data = await response.json();
 		// const plataformas = data.production_companies.map(company => company.name);
+		
+		const movieLibrarys = [
+		  {
+		    ids: movieId
+		  }
+		 ];
 
 		if (data.title != "" && data.backdrop_path != null /* && data.vote_count >= 100*/) {
 	  	let cardSave = document.createElement('div');
@@ -189,7 +195,7 @@ async function mediaLibraryIsMovie(movieId) {
       movie_delete.classList.add('delete');
       movie_delete.innerHTML = "remover";
       movie_delete.addEventListener('click',()=> {
-      deleteMovieDocument(data.imdb_id)
+      deleteMovieDocument(data.imdb_id);
       });
       
       cardSave.appendChild(movie_delete);
@@ -219,7 +225,7 @@ async function mediaLibraryIsMovie(movieId) {
         handleNavClick(event);
         getAllMoviesDetails(data.id, data.title, data.backgrop_path, 'save');
       });
-      
+      checkSavendLibrary(movieLibrarys);
          
 		} else {
 			contentHome();
@@ -255,6 +261,7 @@ async function mediaIsSeries(serieId, save) {
 		  the_buttons_add_library_btn.addEventListener('click', ()=> {
 		    saveIsTrue();
 		  });
+		 
 		  
 		  function saveIsTrue() {
 		    the_buttons_add_library.innerHTML = `
@@ -274,6 +281,7 @@ async function mediaIsSeries(serieId, save) {
 		    <use xlink:href="src/icons/ios-plus.svg#path-1"></use>
 		    `;
 		    header_add_library.classList.remove('check');
+		    
 		    the_buttons_add_library.innerHTML = `
 		    <use xlink:href="src/icons/ios-plus.svg#path-1"></use>
 		    `;
@@ -769,13 +777,14 @@ async function mediaIsMovie(movieId, save) {
 		  let header_add_library = document.querySelector(`${FilmPageDisplay} .header .save`);
 		  let the_buttons_add_library = document.querySelector(`${FilmPageDisplay} .buttons .save .icon`);
 		  let the_buttons_add_library_btn = document.querySelector(`${FilmPageDisplay} .buttons .save`);
-		  
+
 		  header_add_library.addEventListener('click', ()=> {
 		    saveIsTrue();
 		  });
 		  the_buttons_add_library_btn.addEventListener('click', ()=> {
 		    saveIsTrue();
 		  });
+		  
 		  
 		  function saveIsTrue() {
 		    the_buttons_add_library.innerHTML = `
@@ -785,7 +794,7 @@ async function mediaIsMovie(movieId, save) {
 		       <use xlink:href="src/icons/check-23.svg#path-1"></use>
 		    `;
 		    header_add_library.classList.add('check');
-		    
+		   
 		  }
 		  
 		  if (save == 'save') {
@@ -795,10 +804,13 @@ async function mediaIsMovie(movieId, save) {
 		    <use xlink:href="src/icons/ios-plus.svg#path-1"></use>
 		    `;
 		    header_add_library.classList.remove('check');
+		    
 		    the_buttons_add_library.innerHTML = `
 		    <use xlink:href="src/icons/ios-plus.svg#path-1"></use>
 		    `;
 		  }
+		  
+		  
 		  
 			// Elements
 			let title = document.querySelector(`${whereDisplay} .title`);

@@ -449,7 +449,7 @@ async function getMoviesHighlights(url, page, whichContainer) {
 		let firstMovie = data.results[generateRandomNumber()];
 		console.log(firstMovie)
    
-		await getMovieDetails(572802/*firstMovie.id*/,
+		await getMovieDetails(/*572802*/firstMovie.id,
 			whichContainer);
 		initLazyLoad();
 	} catch (error) {

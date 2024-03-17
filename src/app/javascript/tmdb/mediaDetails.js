@@ -121,7 +121,7 @@ async function mediaLibraryIsSeries(serieId) {
       
       let backgroundSave = document.createElement('img');
       backgroundSave.classList.add('img');
-      backgroundSave.src = IMG_URL + data.poster_path;
+      backgroundSave.setAttribute('data-src', IMG_URL + data.poster_path);
       backgroundSave.setAttribute('data-page', 'film-page');
       
       let movie_delete = document.createElement('div');
@@ -162,7 +162,7 @@ async function mediaLibraryIsSeries(serieId) {
 		} else {
 			contentHome();
 		}
-
+   initLazyLoad();
 	} catch (error) {
 		console.error('Ocorreu um erro:',
 			error);

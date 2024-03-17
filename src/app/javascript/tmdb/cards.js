@@ -460,7 +460,7 @@ async function getMoviesHighlights(url, page, whichContainer) {
 
 
 // Iniciar o lazy loading
-function initLazyLoad() {
+window.initLazyLoad = function initLazyLoad() {
 	const lazyImages = document.querySelectorAll('.img');
 
 	lazyImages.forEach(imagens => imagens.classList.remove('loaded'));

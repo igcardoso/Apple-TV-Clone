@@ -2003,7 +2003,8 @@ header .content-profile .header-more-options .options div img.active {
 
 header .content-profile .header-more-options.active {
 	width: 8.5em;
-	background: #f6f6f621;
+	/* background: #f6f6f621; */
+	background: #000000;
 	overflow: visible;
 	opacity: 1;
 }

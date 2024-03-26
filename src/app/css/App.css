@@ -2002,7 +2002,7 @@ header .content-profile .header-more-options .options div img.active {
 }
 
 header .content-profile .header-more-options.active {
-	width: 8.5em;
+	width: 9em;
 	/* background: #f6f6f621; */
 	background: #000000;
 	overflow: visible;

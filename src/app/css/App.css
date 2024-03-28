@@ -1363,8 +1363,8 @@ nav  .icon {
 }
 
 .options-play .audio-language {
+	display: block;
 	text-align: left;
-	justify-content: left;
 }
 
 .options-play .option {

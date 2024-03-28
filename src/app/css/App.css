@@ -1363,6 +1363,8 @@ nav  .icon {
 }
 
 .options-play .audio-language {
+	color: #ffffff;
+	opacity: 1;
 	display: block;
 	text-align: left;
 }

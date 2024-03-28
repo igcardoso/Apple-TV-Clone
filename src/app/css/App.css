@@ -1362,6 +1362,10 @@ nav  .icon {
   border-bottom: 1px solid #000;
 }
 
+.options-play .audio-language {
+	text-align: left;
+}
+
 .options-play .option {
 	border-radius: 8em;
 }

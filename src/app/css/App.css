@@ -1703,6 +1703,9 @@ nav  .icon {
   position: relative;
   transition: .5s;
   scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #edit-profile .profile-picture .options .dynamic div.current {

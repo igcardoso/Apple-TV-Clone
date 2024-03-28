@@ -1370,8 +1370,8 @@ nav  .icon {
 	border-top-left-radius: 2em;
 	border-top-right-radius: 2em;
 }
-
-.options-play .option:last-child,
+/*
+.options-play .option:last-child,*/
 .options-player-smartTv .option-cast:last-child {
 	border-bottom-left-radius: 2em;
 	border-bottom-right-radius: 2em;

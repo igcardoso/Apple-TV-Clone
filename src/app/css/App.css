@@ -1717,6 +1717,7 @@ nav  .icon {
   top: 0;
   left: 0;
   z-index: 1;
+  border-radius: 8em;
 }
 
 #edit-profile .profile-picture .options .dynamic div .check-current {

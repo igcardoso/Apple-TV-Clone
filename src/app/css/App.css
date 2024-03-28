@@ -1992,7 +1992,7 @@ header .content-profile .header-more-options .options div img {
 	top: 0;
 	left: 0;
 	border-radius: 8em;
-	border: 1px solid #ffffff;
+	border: 0 solid #ffffff;
 }
 
 header .content-profile .header-more-options .options div img.active {

@@ -1699,7 +1699,6 @@ nav  .icon {
   height: 6em;
   border-radius: 8em;
   /*background: linear-gradient(25deg, var(--blue-color), #0400f2a8, #8900f2a8);*/
-  padding: 2.5px;
   position: relative;
   transition: .5s;
   scroll-snap-align: start;

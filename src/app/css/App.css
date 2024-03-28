@@ -1362,10 +1362,10 @@ nav  .icon {
   border-bottom: 1px solid #000;
 }
 
-.options-play .option:first-child {
-	border-top-left-radius: 2em;
-	border-top-right-radius: 2em;
+.options-play .option {
+	border-radius: 8em;
 }
+
 .options-player-smartTv .option-cast:nth-child(3) {
 	border-top-left-radius: 2em;
 	border-top-right-radius: 2em;

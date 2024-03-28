@@ -1364,6 +1364,7 @@ nav  .icon {
 
 .options-play .audio-language {
 	text-align: left;
+	justify-content: left;
 }
 
 .options-play .option {

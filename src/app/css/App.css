@@ -1192,6 +1192,7 @@ nav  .icon {
 	overflow: hidden;
 	overflow-x: scroll;
 	scroll-behavior: smooth;
+	scroll-snap-type: x mandatory;
 	width: calc(100% - 2em);
 	position: relative;
 	display: flex;
@@ -1207,6 +1208,7 @@ nav  .icon {
 	overflow: hidden;
 	position: relative;
 	text-align: center;
+	scroll-snap-align: start;
 }
 
 #film-page .actors-actresses .actors:hover {

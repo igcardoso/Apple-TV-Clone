@@ -1193,12 +1193,13 @@ nav  .icon {
 	overflow-x: scroll;
 	scroll-behavior: smooth;
 	scroll-snap-type: x mandatory;
-	width: calc(100% - 2em);
+	width: calc(100% - 3em);
 	position: relative;
 	display: flex;
 	align-items: center;
 	gap: 1em;
 	padding: 0 1em 0 1em;
+	margin-left: 1em;
 	height: 12em;
 }
 

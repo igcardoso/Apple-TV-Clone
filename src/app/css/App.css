@@ -1275,6 +1275,12 @@ nav  .icon {
 #film-page .buttons .element.cast div label,
 #episode-details .buttons .element.cast div label {
 	color: #000000;
+	font-weight: 600;
+}
+
+#film-page .buttons .element.cast div .icon,
+#episode-details .buttons .element.cast div .icon {
+	fill: #000000;
 }
 
 #film-page .back-smart-cast-options,
@@ -1364,14 +1370,19 @@ nav  .icon {
 
 .options-play .audio-language {
 	color: #ffffff;
-	opacity: 1;
-	display: block;
 	text-align: left;
-	width: 100%;
+	display: block;
+	margin-bottom: 1em;
+	margin-top: 1em;
+	width: calc(100% - 1em);
+	padding-left: 1em;
+	font-weight: 600;
+	opacity: .6;
 }
 
 .options-play .option {
-	border-radius: 8em;
+	border-radius: 1em;
+	margin-bottom: .4em;
 }
 
 .options-player-smartTv .option-cast:nth-child(3) {
@@ -1397,7 +1408,8 @@ nav  .icon {
 
 .options-play .option .button-play .icon,
 .options-player-smartTv .option-cast .button-play .icon {
-	fill: var(--blue-color);
+	fill: #ffffff;
+	opacity: .7;
 	width: 3em;
 	height: 3em;
 }
@@ -1414,6 +1426,7 @@ nav  .icon {
 	font-weight: 800;
 	font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,"Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 	color: #f6f6f6;
+	opacity: 1;
 }
 
 .options-play div .provided-by,
@@ -1423,6 +1436,7 @@ nav  .icon {
   justify-content: left;
   font-size: .7em;
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,"Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  opacity: .7;
 }
 
 .options-play div .provided-by p:nth-child(2),

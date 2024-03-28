@@ -1690,6 +1690,8 @@ nav  .icon {
 	background: #ffffff16;
 	border-radius: 1em;
 	margin: 1em;
+	scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
 }
 
 #edit-profile .profile-picture .options .dynamic div {
@@ -1700,6 +1702,7 @@ nav  .icon {
   padding: 2.5px;
   position: relative;
   transition: .5s;
+  scroll-snap-align: start;
 }
 
 #edit-profile .profile-picture .options .dynamic div.current {

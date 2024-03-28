@@ -1367,6 +1367,7 @@ nav  .icon {
 	opacity: 1;
 	display: block;
 	text-align: left;
+	width: 100%;
 }
 
 .options-play .option {

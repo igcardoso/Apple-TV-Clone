@@ -194,7 +194,7 @@ window.dataFirebase = function dataFirebase(userFirebaseData) {
   });
 };
 
-underMaintenance();
+//underMaintenance();
 function underMaintenance() {
     let type = "alert";
     let titleAlert = "Problemas?";

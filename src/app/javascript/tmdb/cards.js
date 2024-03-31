@@ -206,8 +206,16 @@ async function getMoviesSlide(url, page, whichContainer) {
 			// Adicionar card ao contêiner
 			clickEffect.appendChild(posterImg);
 			card.appendChild(clickEffect);
-			if (movie.poster_path !== null && movie.vote_count > 900) {
-				moviesContainer.appendChild(card);
+			if (movie.poster_path !== null) {
+				if (movie.title) {
+					if (movie.vote_count > 900) {
+						moviesContainer.appendChild(card);
+					}
+				} else {
+					if (movie.vote_count > 100) {
+						moviesContainer.appendChild(card);
+					}
+				}
 			}
 		});
 

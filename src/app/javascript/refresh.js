@@ -2,6 +2,7 @@ const content = document.getElementById('content');
 const pagesAndHeader = document.getElementById('pages-and-header');
 const refreshIndicator = document.getElementById('refreshIndicator');
 const iconRefreshIndicator = document.getElementById('iconRefreshIndicator');
+var API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&' + API_KEY + '&language=pt-BR';
 
 let currentContent;
 var isRefreshing;
@@ -66,13 +67,13 @@ function Refresh() {
 		const page = window.history.state ? window.history.state.page: 'home';
 		switch (page) {
 			case 'home':
-				contentHome();
+				contentHome(API_URL);
 				break;
 			case 'search':
-				contentSearch();
+				contentSearch(API_URL);
 				break;
 			case 'film-page':
-				contentFilmPage();
+				contentFilmPage(API_URL);
 				break;
 
 			// default:

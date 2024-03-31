@@ -242,6 +242,7 @@ nav  .icon {
 .FlexAlign {
 	display: flex;
 	align-items: center;
+	justify-content: center;
 }
 
 .f6 {
@@ -439,15 +440,26 @@ nav  .icon {
 }
 
 #search .header {
+	position: relative;
 	position: fixed;
 	top: 0;
 	width: 100%;
-	background: #0d0d0dae /* #0d0d0d85 */;
-	backdrop-filter: blur(40px);
-	webkit-backdrop-filter: blur(40px);
   border-bottom: 1px solid #f6f6f612;
+  background: #000000;
   z-index: 200;
 }
+/*
+#search .header:after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+  background: #0d0d0dae;
+	backdrop-filter: blur(40px);
+	webkit-backdrop-filter: blur(40px);
+}
+*/
 
 #search .header.active {
 	transform: translateY(-50%);
@@ -511,7 +523,7 @@ nav  .icon {
   display: flex;
   gap: 1em;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
   margin: 1em auto 0;
 }
 
@@ -707,13 +719,71 @@ nav  .icon {
 
 /* HOME PAGE */
 
-#home .popular {
+#home .scroll .image-background {
+	position: fixed;
+	top: 0;
+	left: 0;
 	width: 100%;
 	height: 23em;
+	filter: blur(30px) brightness(0.5);
+	object-fit: cover;
+	z-index: -1;
+}
+
+#home .scroll .image-background:after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(to top, #000000, #00000000);
+	z-index: 0;
+}
+
+#home .category-selector {
+	margin: 4em 0 0 1em;
+	display: flex;
+	align-items: center;
+	justify-content: left;
+	gap: .5em;
+}
+
+#home .category-selector .option {
+	padding: .3em;
+	border-radius: 8em;
+	border: .6px solid #ffffff85;
+	color: #ffffff;
+	z-index: 50;
+}
+
+#home .category-selector .movie.active, 
+#home .category-selector .tvShow.active{
+	background: #ffffff;
+	color: #000000;
+	border-color: #ffffff;
+}
+
+#home .category-selector .library.active {
+	background: none;
+	color: #ffffff;
+	border-color: #ffffff85;
+}
+
+#home .popular {
+	width: 80%;
+	height: 23em;
 	overflow: hidden;
-	margin: 0 auto 2em;
+	margin: 1.5em auto 2em;
 	position: relative;
 	display: flex;
+	border-radius: 1em;
+	transition: linear .3s;
+	opacity: 1;
+}
+
+#home .popular.hidden {
+	height: 0;
+	opacity: 0;
 }
 
 #home .popular:after {
@@ -739,6 +809,7 @@ nav  .icon {
 	width: 100%;
 	height: 100%;
 	z-index: 60;
+	opacity: 0;
 }
 
 #home .popular img {
@@ -749,17 +820,15 @@ nav  .icon {
 	height: 100%;
 	object-fit: cover;
 	z-index: 50;
+	filter: brightness(0.7);
 }
 
 #home .popular .info {
-	position: absolute;
-	top: 0;
-	left: 0;
 	width: 100%;
 	height: 100%;
 	z-index: 100;
 	display: flex;
-	justify-items: center;
+	text-align: center;
 }
 
 #home .popular .float {
@@ -788,27 +857,32 @@ nav  .icon {
 #home .popular .bottom {
 	position: absolute;
 	bottom: 6em;
-	left: 1em;
+	left: 0;
 	display: flex;
 	flex-direction: column;
 	gap: 1em;
+	width: 100%;
 }
 
 #home .popular .text p span:nth-child(2) {
 	font-weight: 800;
 }
 
+#home .popular .text p {
+	opacity: .7;
+}
+
 #home .popular .text .title {
-	max-width: 98%;
+	max-width: 100%;
 	font-weight: 600;
 }
 
 #home .popular .imdb {
 	position: relative;
-	padding: 0 1em 0 0;
+	padding: 0 0 0 0;
 	display: flex;
 	align-items: center;
-	justify-content: left;
+	justify-content: center;
 	gap: .5em;
 }
 
@@ -832,6 +906,8 @@ nav  .icon {
 }
 	
 #home .popular .imdb .category div {
+	position: relative;
+	overflow: hidden;
 	padding: .5em;
 	border-radius: 8em;
 	font-size: .7em;
@@ -845,6 +921,10 @@ nav  .icon {
 	font-size: .7em;
 }
 
+#home .popular .content-buttons {
+	margin: 1em 0 0 0;
+}
+
 #home .popular .btn-play {
 	border-radius: .8em;
   background: none;
@@ -853,7 +933,6 @@ nav  .icon {
   align-items: center;
   justify-content: center;
   margin: 0 1em 0 0;
-  background: #f;
   background: #f6f6f6;
   gap: .5em;
   border: none;
@@ -1255,7 +1334,7 @@ nav  .icon {
 
 #film-page .buttons .element div,
 #episode-details .buttons .element div {
-	background: #f6f6f612;
+	background: none;
 	border-radius: 1.2em;
   display: flex;
   align-items: center;
@@ -1263,6 +1342,7 @@ nav  .icon {
   padding: 1em;
   gap: 1em;
   overflow: hidden;
+  font-weight: 600;
 }
 
 #film-page .buttons .element.cast div,
@@ -1829,6 +1909,7 @@ nav .option-bar .click-effect label {
   color: #e3e3e3;
   opacity: .6;
   font-weight: 600;
+  font-size: .8em;
   transition: .3s;
 }
 nav .option-bar.active .click-effect label {

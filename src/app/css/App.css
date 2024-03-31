@@ -184,8 +184,8 @@ nav  .icon {
 	width: 100%;
 	height: 100%;
 	visibility: hidden;
-	transition: .3s ease-out;
-	transition-delay: .2s;
+	transition: .2s ease-out;
+	transition-delay: .1s;
 }
 
 .all-slides .img.loaded {
@@ -577,8 +577,8 @@ nav  .icon {
 	width: 100%;
 	height: 100%;
 	visibility: hidden;
-	transition: .3s ease-out;
-	transition-delay: .2s;
+	transition: .2s ease-out;
+	transition-delay: .1s;
 }
 
 .results .img.loaded {
@@ -741,7 +741,7 @@ nav  .icon {
 }
 
 #home .category-selector {
-	margin: 4em 0 0 1em;
+	margin: 4.5em 0 0 1em;
 	display: flex;
 	align-items: center;
 	justify-content: left;
@@ -751,7 +751,7 @@ nav  .icon {
 #home .category-selector .option {
 	padding: .3em;
 	border-radius: 8em;
-	border: .6px solid #ffffff85;
+	border: 1.3px solid #ffffff85;
 	color: #ffffff;
 	z-index: 50;
 }
@@ -1884,7 +1884,7 @@ nav.keyboard-visible {
 
 nav .option-bar {
   width: 100%;
-  padding: .5em 0 2em 0;
+  padding: .8em 0 2em 0;
   background-color: transparent;
   border: none;
 }

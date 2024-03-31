@@ -103,7 +103,7 @@ async function getMoviesBigSlide(url, page, whichContainer) {
 		// Iterar sobre os resultados e criar cards
 		data.results.forEach((movie, index) => {
 			let card = document.createElement('div');
-			card.classList.add('card');
+			card.classList.add('card', 'option-bar');
 			card.setAttribute('data-page', 'film-page');
 			card.addEventListener('click', (event)=> {
 				handleNavClick(event);
@@ -121,7 +121,7 @@ async function getMoviesBigSlide(url, page, whichContainer) {
 			let posterImg = document.createElement('img');
 			posterImg.setAttribute('data-src', IMG_URL + movie.backdrop_path);
 			posterImg.classList.add('img');
-			posterImg.alt = movie.title + ' Poster';
+			posterImg.alt = movie.title || movie.name + ' Poster';
 
 			clickEffect.appendChild(posterImg);
 			content.appendChild(clickEffect);
@@ -139,7 +139,7 @@ async function getMoviesBigSlide(url, page, whichContainer) {
 
 			let title = document.createElement('p');
 			title.classList.add('title');
-			title.textContent = movie.title;
+			title.textContent = movie.title || movie.name;
 
 			let genre = document.createElement('p');
 			genre.classList.add('f5');
@@ -159,7 +159,7 @@ async function getMoviesBigSlide(url, page, whichContainer) {
 
 			// Adicionar card ao contêiner
 
-			if (movie.backdrop_path =! null && movie.title != "" && movie.vote_count > 130) {
+			if (movie.backdrop_path !== null && (movie.title !== "" || movie.name !== "") && movie.vote_count > 130) {
 				indexMovie++
 				moviesContainer.appendChild(card);
 			}
@@ -201,13 +201,12 @@ async function getMoviesSlide(url, page, whichContainer) {
 			let posterImg = document.createElement('img');
 			posterImg.setAttribute('data-src', IMG_URL + movie.poster_path);
 			posterImg.classList.add('img');
-			posterImg.alt = movie.title + ' Poster';
+			
 
 			// Adicionar card ao contêiner
 			clickEffect.appendChild(posterImg);
 			card.appendChild(clickEffect);
-			if (movie.poster_path =! null || movie.title != "" || movie.vote_count > 900) {
-
+			if (movie.poster_path !== null && movie.vote_count > 900) {
 				moviesContainer.appendChild(card);
 			}
 		});
@@ -248,18 +247,18 @@ async function getMoviesSlimSlide(url, page, whichContainer) {
 			posterImg.setAttribute('data-src',
 				IMG_URL + movie.backdrop_path);
 			posterImg.classList.add('img');
-			posterImg.alt = movie.title + ' Poster';
+			
 
 			let title = document.createElement('p');
 			title.classList.add('title');
-			title.textContent = movie.title;
+			title.textContent = movie.title || movie.name;
 
 
 			// Adicionar card ao contêiner
 			clickEffect.appendChild(posterImg);
 			clickEffect.appendChild(title);
 			card.appendChild(clickEffect);
-			if (movie.poster_path =! null && movie.title != "" && movie.vote_count > 100) {
+			if (movie.poster_path !== null && (movie.title !== "" || movie.name !== "") && movie.vote_count > 100) {
 				moviesContainer.appendChild(card);
 			}
 		});
@@ -270,6 +269,8 @@ async function getMoviesSlimSlide(url, page, whichContainer) {
 			error);
 	}
 }
+
+var currentMovieHigligths;
 
 async function getMovieDetails(filmeId, container) {
 	const detalhesUrl = `${BASE_URL}/movie/${filmeId}?${API_KEY}&language=pt-BR`;
@@ -332,7 +333,7 @@ async function getMovieDetails(filmeId, container) {
   });
     
 
-		if (data.title != "" && data.backdrop_path != null && data.vote_count >= 100) {
+		if (data.title !== "" && data.backdrop_path !== null && data.vote_count >= 100) {
 		  
 
 			// Elements
@@ -346,7 +347,7 @@ async function getMovieDetails(filmeId, container) {
 			let runtime = document.querySelector(`${container} .runtime`);
 
 			btnPlay.addEventListener('click', (event)=> {
-				getAllMoviesDetails(data.id, data.title || data.name, data.backgrop_path);
+				getAllMoviesDetails(currentMovieHigligths, data.title || data.name, data.backgrop_path);
 			});
 
 			const TextTitle = data.title.split(' ');
@@ -359,6 +360,9 @@ async function getMovieDetails(filmeId, container) {
 			}
 
 			title.innerText = TitleFiltered;
+			
+			document.querySelector('#home .scroll .image-background').setAttribute('src', `${IMG_URL + data.backdrop_path}`);
+		
 			background.setAttribute('src',
 				IMG_URL_PROMINENCE + data.backdrop_path);
 			const platform = plataformas[0].split(' ');
@@ -403,31 +407,13 @@ async function getMovieDetails(filmeId, container) {
 
 			console.log(data)
 
-			await checkMediaType(data.imdb_id,
-				container);
-
-			async function checkMediaType(imdbId, container) {
-				const tmdbApiUrl = `${BASE_URL}/find/${imdbId}?${API_KEY}&external_source=imdb_id`;
-
-				try {
-					const response = await fetch(tmdbApiUrl);
-					const data = await response.json();
-
-					if (data.movie_results.length > 0) {
-						mediaType.innerText = "Filme ";
-					} else if (data.tv_results.length > 0) {
-						mediaType.innerText = "Série ";
-					} else {
-						console.log('Nenhum resultado encontrado para o ID ', imdbId);
-					}
-				} catch (error) {
-					console.error('Erro ao obter dados:', error);
-					contentHome();
-				}
-			}
 
 		} else {
-			contentHome();
+			if (!document.querySelector('#home .popular').classList.contains('hidden')) {
+				contentHome(API_URL);
+			} else {
+				contentHome(API_URL_TvShows);
+			}
 		}
 
 	} catch (error) {
@@ -447,9 +433,10 @@ async function getMoviesHighlights(url, page, whichContainer) {
 		}
 
 		let firstMovie = data.results[generateRandomNumber()];
-		console.log(firstMovie)
+		console.log('numero da pagina', firstMovie);
+		currentMovieHigligths = firstMovie.id
    
-		await getMovieDetails(/*572802*/firstMovie.id,
+		await getMovieDetails(/*572802  340102*/firstMovie.id,
 			whichContainer);
 		initLazyLoad();
 	} catch (error) {
@@ -508,35 +495,35 @@ function scheduleImageUnload() {
 document.addEventListener('visibilitychange', scheduleImageUnload);
 document.addEventListener('scroll', scheduleImageUnload);
 
-function showMoviesSlides() {
-	contentHome();
-	contentSearch();
-	contentFilmPage();
+function showMoviesSlides(API) {
+	contentHome(API);
+	contentSearch(API);
+	contentFilmPage(API);
 }
 
-function contentHome() {
+function contentHome(API) {
 	function generateRandomPage() {
 		return Math.floor(Math.random() * 100);
 	}
 
 	// SIMPLE SLIDE CARD
-	getMoviesSlide(API_URL, generateRandomPage(), '.slide-1');
-	getMoviesSlide(API_URL, generateRandomPage(), '.slide-2');
-	getMoviesSlide(API_URL, generateRandomPage(), '.slide-3');
-	getMoviesSlide(API_URL, generateRandomPage(), '.slide-4');
+	getMoviesSlide(API, generateRandomPage(), '.slide-1');
+	getMoviesSlide(API, generateRandomPage(), '.slide-2');
+	getMoviesSlide(API, generateRandomPage(), '.slide-3');
+	getMoviesSlide(API, generateRandomPage(), '.slide-4');
 	
 	// BIG SLIDE CARD
-	getMoviesBigSlide(API_URL, 1, '.b-slide-1');
+	getMoviesBigSlide(API, 1, '.b-slide-1');
 
 	// SLIM SLIDE CARD
-	getMoviesSlimSlide(API_URL, generateRandomPage(), '.s-slide-1');
+	getMoviesSlimSlide(API, generateRandomPage(), '.s-slide-1');
 
 	// HIGHLIGHTS
 	getMoviesHighlights(API_URL, generateRandomPage(), '.popular-1');
 
 }
 
-function contentSearch() {
+function contentSearch(API) {
 	// SIMPLE SLIDE CARD
 	getMoviesSlide(API_URL, 9, '.slide-5');
 
@@ -545,6 +532,29 @@ function contentSearch() {
 
 }
 
-function contentFilmPage() {}
+function contentFilmPage(API) {}
 
-showMoviesSlides(); // monela a travessa
+showMoviesSlides(API_URL); // monela a travessa
+
+const btnMovieSubPage = document.querySelector('#home .category-selector .movie');
+
+const btnTvShowSubPage = document.querySelector('#home .category-selector .tvShow');
+
+
+btnMovieSubPage.addEventListener('click', ()=> {
+	btnTvShowSubPage.classList.remove('active');
+	btnMovieSubPage.classList.add('active');
+	showMoviesSlides(API_URL);
+	setTimeout(function() {
+		document.querySelector('#home .popular').classList.remove('hidden');
+	}, 1000);
+});
+
+btnTvShowSubPage.addEventListener('click', ()=> {
+	btnTvShowSubPage.classList.add('active');
+	btnMovieSubPage.classList.remove('active');
+	showMoviesSlides(API_URL_TvShows);
+	setTimeout(function() {
+		document.querySelector('#home .popular').classList.add('hidden');
+	}, 1000);
+});

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title></title>
+		
+	</head>
+	<body>
+		<h1 class="info"></h1>
+		
+		<script type="text/javascript" charset="utf-8">
+// Defina sua chave de API do TV Listings
+const API_KEY = '21dea5df8d35880c238ef4767d27aec0';
+
+// Função para obter a programação atual do canal HBO no Brasil
+async function getHBOChannelSchedule() {
+  try {
+    const response = await fetch(`https://api.tvlistings.com/program/listings/hbo?country=BR&apikey=${API_KEY}`);
+    const data = await response.json();
+    
+    // Retornar a programação do canal HBO
+    return data;
+  } catch (error) {
+    console.error('Erro ao obter a programação do canal HBO:', error);
+    return null;
+  }
+}
+
+// Exemplo de uso
+getHBOChannelSchedule()
+  .then(schedule => {
+    if (schedule) {
+    	let content = document.querySelector('.info')
+      console.log('Programação atual do canal HBO:', schedule);
+      content.innerHTML = "Programação atual do canal HBO: " + schedule
+      // Aqui você pode manipular os dados da programação do canal como desejado
+    } else {
+      console.log('Não foi possível obter a programação do canal HBO.');
+    }
+  });
+
+		</script>
+	</body>
+</html>

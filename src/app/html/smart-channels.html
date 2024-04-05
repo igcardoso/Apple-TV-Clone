@@ -285,9 +285,10 @@
 				          });
 					    		cardChannel.classList.add('active', `tt${channel.id_canal}`);
 					    		
+					    		let date = new Date();
 					    		var idProgram = `id_revel:1_${channel.id_canal}+`;
 					  		  var scriptProgramacao = document.createElement('script');
-									scriptProgramacao.src = `https://programacao.netcombo.com.br/gatekeeper/exibicao/select?q=${idProgram}&callback=callbackShows&json.wrf=callbackShows&wt=json&rows=20&sort=id_canal%20asc,dh_inicio%20asc&fl=dh_fim%20dh_inicio%20st_titulo%20titulo%20id_programa%20id_canal&fq=dh_inicio:%5B2024-04-04T00:00:00Z%20TO%202024-04-04T23:59:00Z%5D&callback=callbackShows%27%20-H%20%27Sec-Fetch-Mode:%20no-cors%27%20-H%20%27Referer:%20https://www.net.com.br/tv-por-assinatura/programacao/grade%27%20-H%20%27User-Agent:%20Mozilla/5.0%20(X11;%20Linux%20x86_64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/76.0.3809.132%20Safari/537.36`;
+									scriptProgramacao.src = `https://programacao.netcombo.com.br/gatekeeper/exibicao/select?q=${idProgram}&callback=callbackShows&json.wrf=callbackShows&wt=json&rows=20&sort=id_canal%20asc,dh_inicio%20asc&fl=dh_fim%20dh_inicio%20st_titulo%20titulo%20id_programa%20id_canal&fq=dh_inicio:%5B${String(date.getFullYear())}-${String(date.getMonth() + 1)}-${String(date.getDay())}T00:00:00Z%20TO%20${String(date.getFullYear())}-${String(date.getMonth() + 1)}-${String(date.getDay())}T23:59:00Z%5D&callback=callbackShows%27%20-H%20%27Sec-Fetch-Mode:%20no-cors%27%20-H%20%27Referer:%20https://www.net.com.br/tv-por-assinatura/programacao/grade%27%20-H%20%27User-Agent:%20Mozilla/5.0%20(X11;%20Linux%20x86_64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/76.0.3809.132%20Safari/537.36`;
 									document.body.appendChild(scriptProgramacao);
 					    		currentChannel = channel.id_canal;
 					        

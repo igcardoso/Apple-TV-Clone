@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de leitura de página HTML</title>
+    <style type="text/css" media="all">
+      body {
+      	background: #000;
+      	overflow: hidden;
+      	position: fixed;
+      	width: 100%;
+      	height: 100vh;
+      }
+      
+      * {
+      	margin: 0;
+      	padding: 0;
+      	font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,"Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      }
+      
+      .teste-1 {
+      	position: absolute;
+      	top: 0;
+      	left: 0;
+      	z-index: 100;
+      }
+      
+      .teste-2 {
+      	position: absolute;
+      	top: 0;
+      	right: 0;
+      	z-index: 100;
+      }
+      
+      .teste-3 {
+      	position: absolute;
+      	bottom: 0;
+      	left: 0;
+      	z-index: 100;
+      }
+      
+      .teste-4 {
+      	position: absolute;
+      	bottom: 0;
+      	right: 0;
+      	z-index: 100;
+      }
+      
+    	.slide {
+    		background: linear-gradient(to right, #000000bb, #00000094);
+    		position: absolute;
+    		top: 0;
+    		left: 0;
+    		z-index: 4;
+    		display: flex;
+    		flex-direction: column;
+    		align-items: left;
+    		width: 31em;
+    		height: 100%;
+    		gap: .5em;
+    		scroll-behavior: smooth;
+    		scroll-snap-type: y mandatory;
+    		overflow: hidden;
+    		overflow-x: scroll;
+    		transition: .3s;
+    		transform: translateX(-100%);
+    	}
+    	
+    	.slide.active {
+    		transform: translateX(0);
+    	}
+    	
+    	.slide .card {
+    		display: flex;
+    		align-items: center;
+    		justify-content: left;
+    		width: auto;
+    		height: 6em;
+    		scroll-snap-align: start;
+    		z-index: 5;
+    		margin-left: 4em;
+    		opacity: .5;
+    		gap: 1.2em;
+    	}
+    	
+    	.slide .card .currentProgramation {
+    		width: 18em;
+    		overflow: hidden;
+    		overflow-x: scroll;
+    		display: flex;
+    		align-items: center;
+    		justify-content: left;
+    		scroll-behavior: smooth;
+    		scroll-snap-type: x mandatory;
+    	  font-weight: 500;
+    		color: #ffffff;
+    	}
+    	
+    	.slide .card .currentProgramation .media {
+    		position: relative;
+    		overflow: hidden;
+    		padding: .3em .5em .3em .5em;
+    		border: 1.4px solid #ffffff;
+    		min-width: 14em;
+    		scroll-snap-align: start;
+    		z-index: 2;
+    		border-radius: .7em;
+    		background: none;
+    		color: #ffffff8d;
+    		display: flex;
+    		flex-direction: column;
+    	}
+    	
+    	.slide .card .currentProgramation .media.current {
+    		overflow: hidden;
+    		padding: .3em .5em .3em .5em;
+    		border: 1px solid #ffffff;
+    		min-width: 14em;
+    		scroll-snap-align: start;
+    		background: none;
+    		color: #fff;
+    		opacity: 1;
+    	}
+    	
+    	.slide .card .currentProgramation .media .progressBar {
+    		height: 3px;
+    		border-radius: 8em;
+    		background: #0697FE;
+    	}
+    	
+    	.slide .card.active {
+    		opacity: 1;
+    	}
+    	
+    	.slide .card img {
+    		width: 3em;
+    		height: 3em;
+    		background: #ffffff;
+    		border-radius: .8em;
+    	}
+    	
+    	.slide .card .number {
+    		font-weight: 700;
+    		color: #ffffff;
+    	}
+    	
+    	.slide .card .content {
+    		display: flex;
+    		flex-direction: column;
+    	}
+    	
+    	.slide .card .content .name {
+    		font-weight: 700;
+    		color: #ffffff;
+    	}
+    	
+    	iframe {
+    		position: fixed;
+    		top: 0;
+    		left: 0;
+    		width: 100%;
+    		height: 100vh;
+    		z-index: 1;
+    	}
+    </style>
+</head>
+<body>
+	 <button id="teste-1" class="teste-1 up">para cima</button>
+	 <button id="teste-2" class="teste-2 down">para baixo</button>
+	 <button id="teste-3" class="teste-3 left">para esquerda</button>
+	 <button id="teste-4" class="teste-4 right">para direita</button>
+	 <iframe data-lazyloaded="1" src="about:blank" loading="lazy" data-litespeed-src="https://playertv.net/tv.php?c=sbt" allow="encrypted-media" allowfullscreen frameborder="0"></iframe>
+	 <div class="slide"></div>
+    <script>
+    
+        
+        var currentChannel = 468;
+        // Crie um script para adicionar a função de retorno de chamada ao escopo global
+        let rows = 10000;
+				var script = document.createElement('script');
+				script.src = `https://programacao.netcombo.com.br/gatekeeper/canal/select?q=id_cidade:1&callback=callbackChannels&json.wrf=callbackChannels&wt=json&rows=${rows}&start=0&sort=cn_canal%20asc&fl=id_canal%20st_canal%20cn_canal%20nome%20url_imagem&fq=nome:*&_=1567799768090&callback=callbackChannels%27%20-H%20%27Sec-Fetch-Mode:%20no-cors%27%20-H%20%27Referer:%20https://www.net.com.br/tv-por-assinatura/programacao/grade%27%20-H%20%27User-Agent:%20Mozilla/5.0%20(X11;%20Linux%20x86_64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/76.0.3809.132%20Safari/537.36`;
+				document.body.appendChild(script);
+				
+				// Defina a função de retorno de chamada que será chamada quando os dados forem carregados
+				function callbackChannels(data) {
+				  // Extraia e exiba apenas os ids dos canais
+				  data.response.docs.forEach(function(channel) {
+				    let channelsData = [
+					    { id: 468, link: "https://playertv.net/tv.php?c=sbt" },
+					    { id: 435, link: "https://playertv.net/c/d.php?id=globoDF" },
+					    { id: 465, link: "https://playertv.net/playplusembed/live.php?ch=4" },
+					    { id: 2247, link: "https://playertv.net/tv.php?c=band" },
+					    { id: 1056, link: "https://playertv.net/tv.php?c=off" },
+					    { id: 1023, link: "https://playertv.net/tv.php?c=spt3" },
+					    { id: 470, link: "https://playertv.net/tv.php?c=spt2" },
+					    { id: 471, link: "https://playertv.net/tv.php?c=spt1" },
+					    { id: 432, link: "https://playertv.net/tv.php?c=globo-news" },
+					    { id: 438, link: "https://playertv.net/tv.php?c=d-hh" },
+					    { id: 1202, link: "https://playertv.net/tv.php?c=fish-tv" },
+					    { id: 426, link: "https://playertv.net/tv.php?c=espn" },
+					    { id: 427, link: "https://playertv.net/tv.php?c=espn2" },
+					    { id: 1034, link: "https://playertv.net/tv.php?c=espn4" },
+					    { id: 1021, link: "https://playertv.net/c/wbr.php?id=bandSports" },
+					    { id: 2350, link: "https://playertv.net/c/wbr.php?id=cnnBrasil" },
+					    { id: 592, link: "https://playertv.net/tv.php?c=recordNews" },
+					    { id: 1022, link: "https://playertv.net/c/wbr.php?id=bandNews" },
+					    { id: 472, link: "https://playertv.net/tv.php?c=nat-geo" },
+					    { id: 421, link: "https://playertv.net/tv.php?c=d-channel" },
+					    { id: 407, link: "https://playertv.net/tv.php?c=animal-planet" },
+					    { id: 2257, link: "https://playertv.net/c/u.php?id=h1" },
+					    { id: 419, link: "https://playertv.net/tv.php?c=d-turbo" },
+					    { id: 423, link: "https://playertv.net/tv.php?c=d-science" },
+					    { id: 420, link: "https://playertv.net/tv.php?c=d-kids" },
+					    { id: 462, link: "https://playertv.net/c/u.php?id=nick" },
+					    { id: 1270, link: "https://playertv.net/tv.php?c=cartoon" },
+					    { id: 832, link: "https://playertv.net/c/u.php?id=nickjr" },
+					    { id: 456, link: "https://playertv.net/c/u.php?id=mtv" },
+					    { id: 1103, link: "https://playertv.net/tv.php?c=star" },
+					    { id: 2438, link: "https://playertv.net/tv.php?c=warner" },
+					    { id: 1500, link: "https://playertv.net/c/u.php?id=sony" },
+					    { id: 490, link: "https://playertv.net/tv.php?c=fx" },
+					    { id: 482, link: "https://playertv.net/c/u.php?id=axn" },
+					    { id: 1026, link: "https://playertv.net/tv.php?c=tnt-novela" },
+					    { id: 1088, link: "https://playertv.net/c/u.php?id=comedyCentral" },
+					    { id: 457, link: "https://playertv.net/c/u.php?id=ae" },
+					    { id: 478, link: "https://playertv.net/tv.php?c=tnt" },
+					    { id: 532, link: "https://playertv.net/tv.php?c=megapix" },
+					    { id: 897, link: "https://playertv.net/tv.php?c=space" },
+					    { id: 1041, link: "https://playertv.net/tv.php?c=cinemax" },
+					    { id: 2423, link: "https://playertv.net/c/u.php?id=paramount" },
+					    { id: 473, link: "https://playertv.net/tv.php?c=tc-premium" },
+					    { id: 474, link: "https://playertv.net/tv.php?c=tc-action" },
+					    { id: 475, link: "https://playertv.net/tv.php?c=tc-touch" },
+					    { id: 899, link: "https://playertv.net/c/wbr.php?id=tcFun" },
+					    { id: 476, link: "https://playertv.net/tv.php?c=tc-pipoca" },
+					    { id: 477, link: "https://playertv.net/tv.php?c=tc-cult" },
+					    { id: 437, link: "https://playertv.net/tv.php?c=hbo" },
+					    { id: 436, link: "https://playertv.net/tv.php?c=hbo2" },
+					    { id: 2331, link: "https://playertv.net/tv.php?c=hbo-plus" },
+					    { id: 439, link: "https://playertv.net/tv.php?c=hbo-family" },
+					    { id: 453, link: "https://playertv.net/tv.php?c=hbo-pop" },
+					    /*{ id: 609, link: "https://playertv.net/tv.php?c=tvKorea" },*/
+					    { id: 1360, link: "https://playertv.net/c/p.php?id=premiere2" },
+					    { id: 1361, link: "https://playertv.net/c/p.php?id=premiere3" },
+					    { id: 1362, link: "https://playertv.net/c/p.php?id=premiere4" },
+					    { id: 1363, link: "https://playertv.net/c/p.php?id=premiere5" },
+					    { id: 1364, link: "https://playertv.net/c/p.php?id=premiere6" },
+					    { id: 693, link: "https://playertv.net/c/p.php?id=premiere7" },
+					    { id: 487, link: "https://playertv.net/tv.php?c=combate" },
+					    /*{ id: 463, link: "https://playertv.net/c/wbr.php?id=playboyTV" }*/
+					];
+				          
+				    channelsData.forEach((info, index) => {
+				    	if (info.id == channel.id_canal) {
+				    		// console.log(channel.nome, channel.id_canal, "embed: ", info.link)
+					    	let cardChannel = document.createElement('div');
+					    	cardChannel.classList.add('card');
+					    	let img = document.createElement('img');
+					    	img.setAttribute('src', channel.url_imagem);
+					    	let content = document.createElement('div');
+					    	content.classList.add('content');
+					    	let name = document.createElement('label');
+					    	name.classList.add('name');
+					    	name.innerText = channel.nome;
+					    	let labelIndex = document.createElement('p');
+					    	labelIndex.classList.add('number');
+					    	labelIndex.innerText = channel.cn_canal;
+					    	
+					    	let movie = document.createElement('div');
+					    	movie.classList.add('currentProgramation');
+					    	
+					    	cardChannel.appendChild(labelIndex);
+					    	cardChannel.appendChild(img);
+					    	cardChannel.appendChild(content);
+					    	content.appendChild(name);
+					    	content.appendChild(movie);
+					    	document.querySelector('.slide').appendChild(cardChannel);
+					    	document.querySelector('.slide .card:nth-child(1)').classList.add('active')
+					    	
+					    	cardChannel.addEventListener('click', ()=> {
+					    		document.querySelector('iframe').setAttribute('src', info.link);
+					    		document.querySelectorAll('.slide div').forEach(card => {
+				            card.classList.remove('active');
+				          });
+					    		cardChannel.classList.add('active', `tt${channel.id_canal}`);
+					    		
+					    		var idProgram = `id_revel:1_${channel.id_canal}+`;
+					  		  var scriptProgramacao = document.createElement('script');
+									scriptProgramacao.src = `https://programacao.netcombo.com.br/gatekeeper/exibicao/select?q=${idProgram}&callback=callbackShows&json.wrf=callbackShows&wt=json&rows=20&sort=id_canal%20asc,dh_inicio%20asc&fl=dh_fim%20dh_inicio%20st_titulo%20titulo%20id_programa%20id_canal&fq=dh_inicio:%5B2024-04-04T00:00:00Z%20TO%202024-04-04T23:59:00Z%5D&callback=callbackShows%27%20-H%20%27Sec-Fetch-Mode:%20no-cors%27%20-H%20%27Referer:%20https://www.net.com.br/tv-por-assinatura/programacao/grade%27%20-H%20%27User-Agent:%20Mozilla/5.0%20(X11;%20Linux%20x86_64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/76.0.3809.132%20Safari/537.36`;
+									document.body.appendChild(scriptProgramacao);
+					    		currentChannel = channel.id_canal;
+					        
+					    	});
+				    	}
+				    });
+				    
+				  });
+				}
+
+function callbackShows(data) {
+    // Verificar se há programas na resposta
+    if (data.response && data.response.docs && data.response.docs.length > 0) {
+        // Iterar sobre os programas
+        data.response.docs.forEach(function(program) {
+            let title = program.titulo;
+            let startTime = program.dh_inicio;
+            let endTime = program.dh_fim;
+            let time = startTime.slice(11, 16);
+            if (currentChannel == program.id_canal) {
+            	document.querySelectorAll(`.tt${currentChannel} .currentProgramation`).forEach(titleElement => {
+            		   let card = document.createElement('div');
+            		   card.classList.add('media');
+                   let Text= program.titulo.split(' ');
+							     let TextFiltered = Text.slice(0,
+										4).join(' ');
+						
+									 if (Text.length > 4) {
+										TextFiltered += '...';
+								   }
+								   let title = document.createElement('span');
+								   title.classList.add('title');
+      		         title.innerHTML = TextFiltered;
+      		         
+      		         let progressBar = document.createElement('span');
+      		         progressBar.classList.add('progressBar');
+      		         progressBar.style.width = '0';
+      		         
+                   card.appendChild(title)
+                   card.appendChild(progressBar)
+                   if (!isProgramOnAir(startTime, endTime)) {
+                   	titleElement.appendChild(card)
+                   }
+                  
+                });
+                // Verificar se o programa está no ar no momento atual
+                if (isProgramOnAir(startTime, endTime)) {
+                    // Atualizar o título do programa atual na página
+                    document.querySelectorAll(`.tt${currentChannel} .currentProgramation`).forEach(titleElement => {
+                        let card = document.createElement('div');
+              		      card.classList.add('media', 'current');
+              		      
+              		      let Text= program.titulo.split(' ');
+												let TextFiltered = Text.slice(0,
+													4).join(' ');
+									
+												if (Text.length > 4) {
+													TextFiltered += '...';
+												}
+											 let title = document.createElement('span');
+										   title.classList.add('title');
+		      		         title.innerHTML = TextFiltered;
+		      		         
+		      		         let progressBar = document.createElement('span');
+											      		         progressBar.classList.add('progressBar')
+									
+									    let startDateTime = new Date(startTime);
+									    let endDateTime = new Date(endTime);
+									    let currentTime = new Date();
+									
+									    let totalTime = (endDateTime - startDateTime) / (1000 * 60); 
+									    // Duração total do programa em minutos
+									    let elapsedTime = (currentTime - startDateTime) / (1000 * 60);
+									    // Tempo decorrido desde o início do programa em minutos
+									
+									    let percentageWatched = (elapsedTime / totalTime) * 100;
+									    
+									    let result = percentageWatched.toFixed(2).slice(1, 3)
+									    
+									    progressBar.style.width = `${result}%`;
+
+
+		                   card.appendChild(title)
+		                   card.appendChild(progressBar)
+		                   titleElement.appendChild(card)
+                 			  
+                        centerActiveCardHorizontally(currentChannel);
+                       
+                    });
+                }
+                console.log("Título:", title); // Adicionado para depuração
+            }
+        });
+    } else {
+        console.log("Nenhum programa encontrado.");
+    }
+}
+
+function isProgramOnAir(startTime, endTime) {
+	  var data = new Date();
+    var hours = String(data.toTimeString().slice(0, 5));
+    const currentTime = hours 
+    const start = startTime.slice(11).replace("Z", "");
+    const end = endTime.slice(11).replace("Z", ""); 
+    console.log(currentTime)
+    console.log(start)
+    console.log(end)
+    
+    return currentTime >= start && currentTime < end; 
+    
+}
+
+function createCard(channel) {
+    let cardChannel = document.createElement('div');
+    cardChannel.classList.add('card');
+    let img = document.createElement('img');
+    img.setAttribute('src', channel.url_imagem);
+    let content = document.createElement('div');
+    content.classList.add('content');
+    let name = document.createElement('label');
+    name.classList.add('name');
+    name.innerText = channel.nome;
+    let labelIndex = document.createElement('p');
+    labelIndex.classList.add('number');
+    labelIndex.innerText = index;
+
+    let movie = document.createElement('label');
+    movie.classList.add('currentProgramation');
+
+    cardChannel.appendChild(labelIndex);
+    cardChannel.appendChild(img);
+    cardChannel.appendChild(content);
+    content.appendChild(name);
+    content.appendChild(movie);
+
+    // Adicionar o card à lista de cards
+    document.querySelector('.slide').appendChild(cardChannel);
+}
+
+// Função para adicionar eventos de foco aos cards
+function addCardEventListeners() {
+    const cards = document.querySelectorAll('.card');
+    for (let i = 0; i < cards.length; i++) {
+        cards[i].addEventListener('focus', handleCardFocus);
+    }
+}
+
+
+// Event listener para o botão "Para cima"
+document.getElementById('teste-1').addEventListener('click', function() {
+    navigate('up');
+});
+
+// Event listener para o botão "Para baixo"
+document.getElementById('teste-2').addEventListener('click', function() {
+    navigate('down');
+});
+
+// Event listener para o botão "Para cima"
+document.getElementById('teste-3').addEventListener('click', function() {
+    navigate('left');
+});
+
+// Event listener para o botão "Para baixo"
+document.getElementById('teste-4').addEventListener('click', function() {
+    navigate('right');
+});
+
+// Função para lidar com o foco nos cards
+function handleCardFocus(event) {
+    const focusedCard = event.target;
+    focusedCard.scrollIntoView({
+        behavior: 'smooth', block: 'center'
+    });
+}
+
+// Adicionar eventos de teclado para navegação
+document.addEventListener('keydown', handleKeyDown);
+
+// Função para lidar com eventos de teclado
+function handleKeyDown(event) {
+    const keyCode = event.keyCode;
+
+    // Verificar as teclas de direção para navegação
+    if (keyCode === 38) {
+        navigate('up');
+    } else if (keyCode === 40) {
+        navigate('down');
+    } else if (keyCode === 37) {
+    	  navigate('left');
+    } else if (keyCode === 39) {
+    	  navigate('right');
+    }
+}
+
+// Função para navegação
+function navigate(direction) {
+    let nextIndex;
+    const allCards = document.querySelectorAll('.card');
+    const focusedCard = document.querySelector('.card.active');
+    const guide = document.querySelector('.slide');
+    
+
+    if (!focusedCard) {
+        return; // Se nenhum card estiver focado, saia da função
+    }
+
+    const currentIndex = Array.from(allCards).indexOf(focusedCard);
+
+    if (direction === 'up') {
+        nextIndex = currentIndex - 1 >= 0 ? currentIndex - 1 : allCards.length - 1;
+    } else if (direction === 'down') {
+        nextIndex = currentIndex + 1 < allCards.length ? currentIndex + 1 : 0;
+    }
+    
+    if (direction === 'left' && !guide.classList.contains('active')) {
+        guide.classList.add('active');
+    } else if (direction === 'right' && guide.classList.contains('active')) {
+        guide.classList.remove('active');
+    }
+
+    const nextCard = allCards[nextIndex];
+    if (nextCard) {
+        nextCard.click();
+        nextCard.classList.add('active');
+        focusedCard.classList.remove('active');
+        centerActiveCardVertically()
+    }
+}
+
+function centerActiveCardVertically() {
+    const slide = document.querySelector('.slide');
+    const activeCard = document.querySelector('.slide .card.active');
+    if (activeCard) {
+        const slideRect = slide.getBoundingClientRect();
+        const activeCardRect = activeCard.getBoundingClientRect();
+        const scrollOffset = activeCardRect.top - slideRect.top - (slideRect.height - activeCardRect.height) / 2;
+        slide.scrollTop += scrollOffset;
+    }
+}
+
+function centerActiveCardHorizontally(currentChannel) {
+    const currentProgramation = document.querySelector(`.tt${currentChannel} .currentProgramation`);
+    const activeCard = document.querySelector(`.tt${currentChannel} .currentProgramation .media.current`);
+    
+    		if (activeCard && currentProgramation) {
+        const currentProgramationRect = currentProgramation.getBoundingClientRect();
+        const activeCardRect = activeCard.getBoundingClientRect();
+        const scrollOffset = activeCardRect.left - currentProgramationRect.left - (currentProgramationRect.width - activeCardRect.width) / 2;
+        currentProgramation.scrollLeft += scrollOffset;
+    }
+}
+
+				
+    </script>
+</body>
+</html>

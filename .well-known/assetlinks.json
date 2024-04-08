@@ -1,12 +1,10 @@
 [
-    {
-        "relation": ["delegate_permission/common.handle_all_urls"],
-        "target": {
-            "namespace": "android_app",
-            "package_name": "xyz.appmaker.xzcrqb",
-            "sha256_cert_fingerprints": [
-                "3E:5E:F8:C2:86:DB:20:9C:00:61:BD:00:CA:6C:87:62:83:A4:AC:1F:6A:C8:D8:4F:2E:ED:DE:65:75:3E:91:C8"
-            ]
-        }
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "xyz.appmaker.ngpnmf",
+      "sha256_cert_fingerprints": ["9D:C5:08:3F:70:F4:51:96:5E:65:27:21:65:C6:86:5B:EA:41:F1:A4:03:70:AB:8E:2D:C8:69:36:BB:8C:F3:AA"]
     }
+  }
 ]

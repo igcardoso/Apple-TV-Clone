@@ -302,6 +302,7 @@ async function mediaIsSeries(serieId, save) {
 			let synopsi = document.querySelector(`${whereDisplay} .synopsi`);
 			let EP_synopsi = document.querySelector(`${episodeDetails} .synopsi`);
 			let contentActorsActresses = document.querySelector(`${FilmPageDisplay} .actors-actresses`);
+			contentActorsActresses.innerHTML = "";
 			let saveMovie = document.querySelectorAll(`${FilmPageDisplay} .firebase.save`);
 			const containment_btn_seasons = document.querySelector(`${FilmPageDisplay} .SelectSeasons`);
 			const containment_seasons = document.querySelector(`${FilmPageDisplay} .seasons`);
@@ -821,6 +822,7 @@ async function mediaIsMovie(movieId, save) {
 			let category = document.querySelector(`${whereDisplay} .category`);
 			let synopsi = document.querySelector(`${whereDisplay} .synopsi`);
 			let contentActorsActresses = document.querySelector(`${FilmPageDisplay} .actors-actresses`);
+			contentActorsActresses.innerHTML = "";
 			let saveMovie = document.querySelectorAll(`${FilmPageDisplay} .firebase.save`);
 			// let titleButtonPlay = document.querySelectorAll(`${FilmPageDisplay} .options-play .title`);
 			let Play_1 = document.querySelector(`${FilmPageDisplay} .options-play .option-1`);

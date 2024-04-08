@@ -1,8 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-     if (window.innerWidth > 576) {
-       window.location.href = "src/app/html/smart-channels.html";
-      // window.location.href = "src/app/html/smart-index.html";
-     }
+    if (window.innerWidth > 576) {
+      window.location.href = "src/app/html/smart-index.html";
+    }
     const navButtons = document.querySelectorAll(".option-bar");
 
     // Adiciona eventos de clique aos botões de navegação
@@ -217,3 +216,25 @@ function underMaintenance() {
             document.querySelector("#alert").classList.remove("active");
         });
 }
+
+let lastScrollPosition = 0;
+const scrollDiv = document.querySelector('header');
+const scrollNav = document.querySelector('nav');
+const divScroll = document.querySelector('#home .scroll');
+
+divScroll.addEventListener('scroll', () => {
+  const currentScrollPosition = divScroll.scrollTop;
+  console.log(currentScrollPosition)
+
+  if (currentScrollPosition > lastScrollPosition) {
+    // Rolagem para baixo
+    scrollDiv.style.transform = 'translateY(-100%)';
+    // scrollNav.style.transform = 'translateY(100%)';
+  } else {
+    // Rolagem para cima
+    scrollDiv.style.transform = 'translateY(0)';
+    // scrollNav.style.transform = 'translateY(0)';
+  }
+
+  lastScrollPosition = currentScrollPosition;
+});

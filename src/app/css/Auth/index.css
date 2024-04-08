@@ -9,7 +9,9 @@
 /* All */
 
 :root {
-  --main-color: #061ffe;
+  /*--main-color: #061ffe;*/
+  --main-color: #465AFF;
+  --second-color: #0082FF;
   /*--main-color: #0697FE;*/
 	/*--main-color: #FF5500;*/
 }
@@ -393,7 +395,7 @@ header .title {
 
 #login .login button,
 #create-account .login button {
-    background: var(--main-color);
+    background: linear-gradient(20deg, var(--main-color), var(--second-color));
     padding: 1em;
     border: none;
     border-radius: 8em;

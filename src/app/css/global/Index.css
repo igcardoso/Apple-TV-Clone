@@ -6,7 +6,12 @@
 }
 
 :root {
-	--blue-color: #0697FE;
+	/*--blue-color: #5100ff;*/
+	--blue-color: #465AFF;
+  --second-color: #0082FF;
+	/*--blue-color: #FF5500;*/
+	/*--blue-color: #0697FE;*/
+	/*--blue-color: #0647fe;*/
 	/* --blue-color: #691df2; */
 }
 

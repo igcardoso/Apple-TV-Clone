@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	const navButtons = document.querySelectorAll('.floating-element-option');
 	const clickAway = document.querySelectorAll('.click-away');
 
-	// Função para ocultar todas as abas e mostrar apenas a selecionada
 	function showFloatingElement(tabId) {
 		tabs.forEach(tab => tab.classList.remove('active'));
 

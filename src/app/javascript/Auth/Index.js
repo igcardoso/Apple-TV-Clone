@@ -56,7 +56,6 @@ document.getElementById("createAccountForm").addEventListener("submit", async ev
         signUp(signUp_email, signUp_password, firstName, lastName, userName);
     });
 
-// Função para cadastrar um novo usuário
 async function signUp(email, password, firstName, lastName, userName) {
     try {
         let userCredential = await createUserWithEmailAndPassword(auth, email, password);
@@ -88,7 +87,6 @@ async function signUp(email, password, firstName, lastName, userName) {
     }
 }
 
-// Verificar se o usuário está autenticado
 onAuthStateChanged(auth, user => {
     if (user) {
         window.collectData = function collectData(email, password, firstName, lastName, userName) {
@@ -132,7 +130,6 @@ window.showTab = function showTab(tabId) {
     }
 };
 
-// Função para lidar com cliques nos botões de navegação
 function handleNavClick(event) {
     const selectedPage = event.currentTarget.getAttribute("data-page");
 
@@ -145,10 +142,10 @@ function handleNavClick(event) {
         document.querySelector("#loading").style.display = "none";
     }
 
-    // Verifica se é uma tab ou stack tab
+    
     if (selectedPage === "profile") {
         setTimeout(function () {
-            // Stack tab
+          
             showTab(selectedPage);
             window.history.pushState(
                 {
@@ -160,7 +157,7 @@ function handleNavClick(event) {
         }, 200);
     } else {
         setTimeout(function () {
-            // Bottom tab
+            
             showTab(selectedPage);
             window.history.pushState(
                 {
@@ -173,7 +170,6 @@ function handleNavClick(event) {
     }
 }
 
-// Evento de popstate para lidar com o botão "voltar" do navegador
 window.addEventListener("popstate", function (event) {
     const page = event.state ? event.state.page : "home";
     showTab(page);
@@ -185,7 +181,6 @@ function appBackButtonsNavigation() {
 
 const navButtons = document.querySelectorAll(".option-bar");
 
-// Adiciona eventos de clique aos botões de navegação
 navButtons.forEach(button => {
     button.addEventListener("click", handleNavClick);
 });

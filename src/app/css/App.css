@@ -755,7 +755,7 @@ nav  .icon {
 .category-selector .movie.active, 
 .category-selector .tvShow.active{
 	background: #ffffff/*linear-gradient(20deg, var(--blue-color), var(--second-color))*/;
-	color: #ffffff;
+	color: #000000;
 	border-color: var(--blue-color);
 }
 

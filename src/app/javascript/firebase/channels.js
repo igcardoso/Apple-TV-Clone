@@ -129,16 +129,12 @@ channelData.forEach((channel, index) => {
   let channelName = document.createElement('p');
   channelName.textContent = channel.name;
 
-  // Adicionar os elementos à div do canal
-  // channelDiv.appendChild(posterImg);
   channelDiv.appendChild(logoImg);
   channelDiv.appendChild(channelName);
 
-  // Adicionar event listener para mudar o canal ao clicar
   channelDiv.addEventListener('click', () => {
     iframe_rendering_channels.setAttribute('src', channel.link);
   });
 
-  // Adicionar a div do canal ao slide
   channelsSlide.appendChild(channelDiv);
 });

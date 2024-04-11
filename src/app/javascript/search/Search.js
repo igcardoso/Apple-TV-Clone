@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	async function searchMedia(searchTerm) {
 		try {
-			// Modifique a URL da API para incluir a busca
 			var searchUrl = BASE_URL + '/search/multi?' + API_KEY + '&language=pt-BR&query=' + encodeURIComponent(searchTerm);
 
 			const response = await fetch(searchUrl);
@@ -44,14 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
 					posterImg.alt = media.title || media.name + ' Poster';
 
 					clickEffect.appendChild(posterImg);
-					//
-					// 					if (media.title || media.name) {
-					// 						let title = document.createElement('p');
-					// 						title.classList.add('title');
-					// 						title.textContent = media.title || media.name;
-					// 						clickEffect.appendChild(title);
-					// 					}
-
+					
 					card.appendChild(clickEffect);
 					if (media.poster_path != null || media.vote_count >= 90) {
 						resultsContainer.appendChild(card);
@@ -65,7 +57,6 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 	}
 
-	// Iniciar o lazy loading
 	function initLazyLoad() {
 		const lazyImages = document.querySelectorAll('.img');
 

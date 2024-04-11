@@ -2,7 +2,6 @@ let iframe_rendering_channels = document.querySelector('#channels .media iframe'
 
 let channelsSlide = document.getElementById('channelsSlide');
 
-// Lista de links e nomes dos canais
 let channelData = [
   { link: "https://playertv.net/tv.php?c=megapix",
     name: "megapix"

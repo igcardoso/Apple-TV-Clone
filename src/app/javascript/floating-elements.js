@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	// 	});
 	//
 
-	// Função para lidar com cliques nos botões de navegação
 	function handleNavClick(event) {
 		const selectedPage = event.currentTarget.getAttribute('data-page');
 		let currentPage = document.getElementById(selectedPage);
@@ -46,12 +45,10 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 	}
 
-	// Adiciona eventos de clique aos botões de navegação
 	navButtons.forEach(button => {
 		button.addEventListener('click', handleNavClick);
 	});
 
-	// Evento de popstate para lidar com o botão "voltar" do navegador
 	window.addEventListener('popstate',
 		function (event) {
 			const page = event.state ? event.state.page: 'home';

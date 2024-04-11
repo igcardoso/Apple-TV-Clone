@@ -96,11 +96,9 @@ async function getMoviesBigSlide(url, page, whichContainer) {
 
 		let moviesContainer = document.querySelector(`${whichContainer}`);
 
-		// Limpar o conteúdo atual
 		moviesContainer.innerHTML = '';
 
 		var indexMovie = 1;
-		// Iterar sobre os resultados e criar cards
 		data.results.forEach((movie, index) => {
 			let card = document.createElement('div');
 			card.classList.add('card', 'option-bar');
@@ -116,7 +114,6 @@ async function getMoviesBigSlide(url, page, whichContainer) {
 			let clickEffect = document.createElement('div');
 			clickEffect.classList.add('click-effect');
 
-			// Adicionar a imagem do poster dentro da div click-effect
 
 			let posterImg = document.createElement('img');
 			posterImg.setAttribute('data-src', IMG_URL + movie.backdrop_path);
@@ -157,7 +154,6 @@ async function getMoviesBigSlide(url, page, whichContainer) {
 
 			card.appendChild(opc7);
 
-			// Adicionar card ao contêiner
 
 			if (movie.backdrop_path !== null && (movie.title !== "" || movie.name !== "") && movie.vote_count > 130) {
 				indexMovie++
@@ -180,10 +176,8 @@ async function getMoviesSlide(url, page, whichContainer) {
 
 		let moviesContainer = document.querySelector(`${whichContainer}`);
 
-		// Limpar o conteúdo atual
 		moviesContainer.innerHTML = '';
 
-		// Iterar sobre os resultados e criar cards
 		data.results.forEach((movie, index) => {
 			let card = document.createElement('div');
 			card.classList.add('card');
@@ -197,13 +191,11 @@ async function getMoviesSlide(url, page, whichContainer) {
 			let clickEffect = document.createElement('div');
 			clickEffect.classList.add('click-effect');
 
-			// Adicionar a imagem do poster dentro da div click-effect
 			let posterImg = document.createElement('img');
 			posterImg.setAttribute('data-src', IMG_URL + movie.poster_path);
 			posterImg.classList.add('img');
 			
 
-			// Adicionar card ao contêiner
 			clickEffect.appendChild(posterImg);
 			card.appendChild(clickEffect);
 			if (movie.poster_path !== null) {
@@ -234,10 +226,8 @@ async function getMoviesSlimSlide(url, page, whichContainer) {
 
 		let moviesContainer = document.querySelector(`${whichContainer}`);
 
-		// Limpar o conteúdo atual
 		moviesContainer.innerHTML = '';
 
-		// Iterar sobre os resultados e criar cards
 		data.results.forEach((movie, index) => {
 			let card = document.createElement('div');
 			card.classList.add('card');
@@ -250,7 +240,6 @@ async function getMoviesSlimSlide(url, page, whichContainer) {
 			let clickEffect = document.createElement('div');
 			clickEffect.classList.add('click-effect');
 
-			// Adicionar a imagem do poster dentro da div click-effect
 			let posterImg = document.createElement('img');
 			posterImg.setAttribute('data-src',
 				IMG_URL + movie.backdrop_path);
@@ -262,7 +251,6 @@ async function getMoviesSlimSlide(url, page, whichContainer) {
 			title.textContent = movie.title || movie.name;
 
 
-			// Adicionar card ao contêiner
 			clickEffect.appendChild(posterImg);
 			clickEffect.appendChild(title);
 			card.appendChild(clickEffect);
@@ -453,8 +441,6 @@ async function getMoviesHighlights(url, page, whichContainer) {
 	}
 }
 
-
-// Iniciar o lazy loading
 window.initLazyLoad = function initLazyLoad() {
 	const lazyImages = document.querySelectorAll('.img');
 
@@ -499,7 +485,6 @@ function scheduleImageUnload() {
 // 	});
 // }
 
-// Adicionar listeners para monitorar a visibilidade dos cards
 document.addEventListener('visibilitychange', scheduleImageUnload);
 document.addEventListener('scroll', scheduleImageUnload);
 
@@ -542,7 +527,7 @@ function contentSearch(API) {
 
 function contentFilmPage(API) {}
 
-showMoviesSlides(API_URL); // monela a travessa
+showMoviesSlides(API_URL);
 
 const btnMovieSubPage = document.querySelector('#home .category-selector .movie');
 

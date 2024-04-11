@@ -51,10 +51,8 @@ window.obterUltimoNumeroDaUrl = function obterUltimoNumeroDaUrl(url) {
 }
 
 window.removerUltimoNumeroDaUrl = function removerUltimoNumeroDaUrl(url) {
-  // Expressão regular para encontrar o último número após o último hífen ou barra na URL
   const regex = /[-\/]\d+(?!.*[-\/])/;
 
-  // Remove o último número da URL substituindo-o por uma string vazia
   const novaUrl = url.replace(regex, '');
 
   return novaUrl;

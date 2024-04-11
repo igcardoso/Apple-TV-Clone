@@ -176,15 +176,12 @@
     
         
         var currentChannel = 468;
-        // Crie um script para adicionar a função de retorno de chamada ao escopo global
         let rows = 10000;
 				var script = document.createElement('script');
 				script.src = `https://programacao.netcombo.com.br/gatekeeper/canal/select?q=id_cidade:1&callback=callbackChannels&json.wrf=callbackChannels&wt=json&rows=${rows}&start=0&sort=cn_canal%20asc&fl=id_canal%20st_canal%20cn_canal%20nome%20url_imagem&fq=nome:*&_=1567799768090&callback=callbackChannels%27%20-H%20%27Sec-Fetch-Mode:%20no-cors%27%20-H%20%27Referer:%20https://www.net.com.br/tv-por-assinatura/programacao/grade%27%20-H%20%27User-Agent:%20Mozilla/5.0%20(X11;%20Linux%20x86_64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/76.0.3809.132%20Safari/537.36`;
 				document.body.appendChild(script);
 				
-				// Defina a função de retorno de chamada que será chamada quando os dados forem carregados
 				function callbackChannels(data) {
-				  // Extraia e exiba apenas os ids dos canais
 				  data.response.docs.forEach(function(channel) {
 				    let channelsData = [
 					    { id: 468, link: "https://playertv.net/tv.php?c=sbt" },
@@ -300,9 +297,7 @@
 				}
 
 function callbackShows(data) {
-    // Verificar se há programas na resposta
     if (data.response && data.response.docs && data.response.docs.length > 0) {
-        // Iterar sobre os programas
         data.response.docs.forEach(function(program) {
             let title = program.titulo;
             let startTime = program.dh_inicio;
@@ -334,9 +329,7 @@ function callbackShows(data) {
                    }
                   
                 });
-                // Verificar se o programa está no ar no momento atual
                 if (isProgramOnAir(startTime, endTime)) {
-                    // Atualizar o título do programa atual na página
                     document.querySelectorAll(`.tt${currentChannel} .currentProgramation`).forEach(titleElement => {
                         let card = document.createElement('div');
               		      card.classList.add('media', 'current');
@@ -360,9 +353,7 @@ function callbackShows(data) {
 									    let currentTime = new Date();
 									
 									    let totalTime = (endDateTime - startDateTime) / (1000 * 60); 
-									    // Duração total do programa em minutos
 									    let elapsedTime = (currentTime - startDateTime) / (1000 * 60);
-									    // Tempo decorrido desde o início do programa em minutos
 									
 									    let percentageWatched = (elapsedTime / totalTime) * 100;
 									    
@@ -379,7 +370,7 @@ function callbackShows(data) {
                        
                     });
                 }
-                console.log("Título:", title); // Adicionado para depuração
+                console.log("Título:", title); // 
             }
         });
     } else {
@@ -424,11 +415,9 @@ function createCard(channel) {
     content.appendChild(name);
     content.appendChild(movie);
 
-    // Adicionar o card à lista de cards
     document.querySelector('.slide').appendChild(cardChannel);
 }
 
-// Função para adicionar eventos de foco aos cards
 function addCardEventListeners() {
     const cards = document.querySelectorAll('.card');
     for (let i = 0; i < cards.length; i++) {
@@ -436,28 +425,6 @@ function addCardEventListeners() {
     }
 }
 
-/*
-// Event listener para o botão "Para cima"
-document.getElementById('teste-1').addEventListener('click', function() {
-    navigate('up');
-});
-
-// Event listener para o botão "Para baixo"
-document.getElementById('teste-2').addEventListener('click', function() {
-    navigate('down');
-});
-
-// Event listener para o botão "Para cima"
-document.getElementById('teste-3').addEventListener('click', function() {
-    navigate('left');
-});
-
-// Event listener para o botão "Para baixo"
-document.getElementById('teste-4').addEventListener('click', function() {
-    navigate('right');
-});*/
-
-// Função para lidar com o foco nos cards
 function handleCardFocus(event) {
     const focusedCard = event.target;
     focusedCard.scrollIntoView({
@@ -465,14 +432,11 @@ function handleCardFocus(event) {
     });
 }
 
-// Adicionar eventos de teclado para navegação
 document.addEventListener('keydown', handleKeyDown);
 
-// Função para lidar com eventos de teclado
 function handleKeyDown(event) {
     const keyCode = event.keyCode;
 
-    // Verificar as teclas de direção para navegação
     if (keyCode === 38) {
         navigate('up');
     } else if (keyCode === 40) {
@@ -484,7 +448,6 @@ function handleKeyDown(event) {
     }
 }
 
-// Função para navegação
 function navigate(direction) {
     let nextIndex;
     const allCards = document.querySelectorAll('.card');
@@ -493,7 +456,7 @@ function navigate(direction) {
     
 
     if (!focusedCard) {
-        return; // Se nenhum card estiver focado, saia da função
+        return; 
     }
 
     const currentIndex = Array.from(allCards).indexOf(focusedCard);

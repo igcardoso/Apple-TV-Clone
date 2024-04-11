@@ -1,7 +1,5 @@
-// Selecionar o elemento iframe
 let iframe_rendering_channels = document.querySelector('#channels .media iframe');
 
-// Selecionar o elemento slide onde as divs dos canais serão adicionadas
 let channelsSlide = document.getElementById('channelsSlide');
 
 // Lista de links e nomes dos canais

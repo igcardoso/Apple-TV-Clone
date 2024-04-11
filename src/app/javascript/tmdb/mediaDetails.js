@@ -952,7 +952,7 @@ async function mediaIsMovie(movieId, save) {
   			            smartCast(`https://embedder.net/e/${data.imdb_id}`, 'movie')
   			            break;
   			          case 'cast2':
-  			            smartCast(`https://v2.vidsrc.me/embed/${data.imdb_id}`, 'movie')
+  			            smartCast(`https://vidsrc.xyz/embed/movie/${data.imdb_id}`, 'movie')
   			            break;
   			          case 'cast3':
   			            smartCast(`https://superembeds.com/embed2/${data.imdb_id}`, 'movie')
@@ -983,7 +983,7 @@ async function mediaIsMovie(movieId, save) {
 			Play_2.addEventListener("click", ()=> {
 				contentIframe.innerHTML = '';
 				let iframe = document.createElement('iframe');
-				iframe.src = `https://v2.vidsrc.me/embed/${data.imdb_id}`;
+				iframe.src = `https://vidsrc.xyz/embed/movie/${data.imdb_id}`;
 				iframe.setAttribute('allowfullscreen', '');
 				contentIframe.appendChild(iframe);
 			});

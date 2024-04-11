@@ -107,25 +107,16 @@ let channelData = [
   }
 ];
 
-// Iterar sobre os dados dos canais e criar dinamicamente as divs dos canais
 channelData.forEach((channel, index) => {
-  // Criar a div do canal
   let channelDiv = document.createElement('div');
   channelDiv.classList.add('channel', 'option-bar');
   channelDiv.setAttribute('data-page', 'channels');
 
-  // Criar a imagem do poster do canal
-  // let posterImg = document.createElement('img');
-//   posterImg.classList.add('poster-channel');
-//   posterImg.src = `accets/channels/poster-${channel.name.toLowerCase().replace(" ", "-")}.png`;
-// 
-  // Criar a imagem do logo do canal
   let logoImg = document.createElement('img');
   logoImg.src = `accets/channels/logo-${channel.name.toLowerCase().replace(" ", "-")}.png`;
   logoImg.alt = 'logo';
   logoImg.classList.add('logo');
 
-  // Criar o parágrafo com o nome do canal
   let channelName = document.createElement('p');
   channelName.textContent = channel.name;
 

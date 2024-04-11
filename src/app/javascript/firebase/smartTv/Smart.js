@@ -32,7 +32,6 @@ console.log("Instância do Firestore:", db);
 const auth = getAuth(app);
 
 document.querySelector(".logout-button").addEventListener("click", () => {
-    // Faço um logout do meu usuário (saio da aplicação).
     signOut(auth)
         .then(() => {
             pageAlerts("alert", "Conta desconectada", "");
@@ -42,7 +41,6 @@ document.querySelector(".logout-button").addEventListener("click", () => {
         });
 });
 
-// Verificar se o usuário está autenticado
 onAuthStateChanged(auth, user => {
     if (user) {
       //==== USER DATA ====

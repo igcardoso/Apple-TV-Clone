@@ -148,7 +148,6 @@ function displayPageName(event) {
 		updateHeaderVisibility();
 	}
 
-	// Função para lidar com cliques nos botões de navegação
 	function handleNavClick(event) {
 		const selectedPage = event.currentTarget.getAttribute('data-page');
 		
@@ -168,7 +167,6 @@ function displayPageName(event) {
 			}
 
 
-		// Verifica se é uma tab ou stack tab
 		if (selectedPage === 'profile') {
 			setTimeout(function() {
 				// Stack tab
@@ -188,7 +186,6 @@ function displayPageName(event) {
 		}
 	}
 
-	// Evento de popstate para lidar com o botão "voltar" do navegador
 	window.addEventListener('popstate', function (event) {
 		const page = event.state ? event.state.page: 'home';
 		showTab(page);

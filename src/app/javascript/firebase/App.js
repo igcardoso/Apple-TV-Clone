@@ -32,7 +32,6 @@ console.log("Instância do Firestore:", db);
 const auth = getAuth(app);
 
 document.querySelector(".logout-button").addEventListener("click", () => {
-    // Faço um logout do meu usuário (saio da aplicação).
     signOut(auth)
         .then(() => {
             pageAlerts('alert', 'Conta desconectada', '')
@@ -42,7 +41,6 @@ document.querySelector(".logout-button").addEventListener("click", () => {
         });
 });
 
-// Verificar se o usuário está autenticado
 onAuthStateChanged(auth, user => {
     if (user) {
      
@@ -72,10 +70,9 @@ onAuthStateChanged(auth, user => {
         });
       //==== RECORD FAVORITE MOVIES ====
         window.movieSaveInDataBase = function movieSaveInDataBase(movieId, movieTitle, movieBackground) {
-            let userDocRef = doc(db, "users", auth.currentUser.uid); // Obtém uma referência ao documento do usuário
-            let movieSaveCollectionRef = collection(userDocRef, "movieSave"); // Cria uma referência para a coleção "movieSave" dentro do documento do usuário
-
-            // Adiciona um novo documento dentro da coleção "movieSave"
+            let userDocRef = doc(db, "users", auth.currentUser.uid);
+            let movieSaveCollectionRef = collection(userDocRef, "movieSave"); 
+            
             setDoc(doc(movieSaveCollectionRef, `${movieId}`), {
                 id: movieId,
                 title: movieTitle,
@@ -92,12 +89,9 @@ onAuthStateChanged(auth, user => {
             const user = auth.currentUser;
             if (user) {
                 try {
-                    // Referência para a coleção "movieSave" do usuário atual
                     const movieSaveCollectionRef = collection(db, "users", user.uid, "movieSave");
         
-                    // Ouvir alterações na coleção "movieSave"
                     onSnapshot(movieSaveCollectionRef, snapshot => {
-                        // Limpar a exibição atual
                         clearDisplay();
                         console.log(snapshot.empty)
                         if (snapshot.empty) {

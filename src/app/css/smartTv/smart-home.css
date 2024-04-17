@@ -5,7 +5,7 @@
 
 body {
   overflow: hidden;
-  background: #000000;
+  background: #2E2E2E;
 }
 
 iframe {
@@ -34,7 +34,7 @@ iframe {
 
 h1 {
   position: absolute;
-  top: 1em;
+  top: 2em;
   left: 2em;
   z-index: 115;
   color: #ffffff;

@@ -103,24 +103,36 @@
 		    </g>
 		</svg>
     </div>
-    <div id="click-away" class="click-away"></div>
    
    <div id="pages-and-header">
    	<header>
      <div class="content">
-       <div data-page="more-options" class="floating-element-option content-profile">
+       <div class="menu-home content-profile">
       <img class="profile img-user-profile" src="" /> 
-      <svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-    		<use xlink:href="src/icons/ios-arrow-back.svg#ios-arrow-back"></use>
+      <div class="menu"></div>
+      <!-- 
+      <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    		<use xlink:href="src/icons/ios-circle-more.svg#ios-circle-more"></use>
       </svg>
+      -->
       
-      <div id="more-options" class="floating-element header-more-options">
+      <div class="header-more-options">
       	<div class="info">
-      		<p>Seus usuários</p>
+      		<p>Menu</p>
         </div>
       	<div class="options">
       		<div class="users">
-      			<img class="img-user-profile" src="">
+      			<div class="option">
+      			  <div class="option-bar" data-page="profile">
+      			    Configurações
+      			  </div>
+      			  <div class="option-bar" data-page="downloads">
+      			    Downloads
+      			  </div>
+      			  <div data-page="events" class="option-bar">
+      			    Eventos
+      			  </div>
+      			</div>
       		</div>
       		<!-- <div class="users">
       			<img src="accets/default_profile_photo/fp_13.jpg">
@@ -243,7 +255,7 @@
           </div>
         </div>
         
-        <div id="media-page" class="tab-content">
+        <div id="media-page" class="tab-content stack">
         	<div class="scroll">
         		
         	</div>
@@ -482,7 +494,7 @@
        <!-- START SERVICES PAGE -->
        
         <!-- START SETTINGS PAGE -->
-        <div id="profile" class="tab-content">
+        <div id="profile" class="tab-content stack">
           <div class="scroll">
             <h1 class="title">Perfil</h1>
             <div class="informations">
@@ -518,7 +530,7 @@
 										</svg>
                   </div>
                 </div>
-                <div data-page="downloads" class="options option-bar">
+                <!--<div data-page="downloads" class="options option-bar">
                   <div class="click-effect">
                     <svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
                       <use xlink:href="src/icons/ios-cloud-download.svg#ios-cloud-download"></use>
@@ -528,7 +540,7 @@
                 			<use xlink:href="src/icons/ios-arrow-forward.svg#ios-arrow-forward"></use>
 										</svg>
                   </div>
-                </div>
+                </div>-->
                 <div data-page="account-manager" class="options option-bar">
                   <div class="click-effect">
                     <svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
@@ -567,7 +579,7 @@
                 </div>
               </div>
               <div class="container">
-                <div data-page="events" class="options option-bar">
+                <!--<div data-page="events" class="options option-bar">
                   <div class="click-effect">
                     <svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
                       <use xlink:href="src/icons/ios-calendar.svg#ios-calendar"></use>
@@ -577,7 +589,7 @@
                 			<use xlink:href="src/icons/ios-arrow-forward.svg#ios-arrow-forward"></use>
 										</svg>
                   </div>
-                </div>
+                </div>-->
                 <div data-page="devices-conected" class="options option-bar">
                   <div class="click-effect">
                     <svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
@@ -683,7 +695,7 @@
         <!-- END SETTINGS PAGE -->
         
         <!-- START EDIT PROFILE PAGE -->
-        <div id="edit-profile" class="tab-content">
+        <div id="edit-profile" class="tab-content stack">
           <div class="scroll">
             <div class="profile-picture">
               <h2>Editar meu Avatar</h2>
@@ -700,7 +712,7 @@
         
         
         <!-- START CONTINUE WATCHING -->
-        <div id="continue-watching" class="tab-content">
+        <div id="continue-watching" class="tab-content stack">
         	<div class="scroll">
         		<div class="simple-page-header">
               <svg class="icon back" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
@@ -713,9 +725,17 @@
         <!-- END CONTINUE WATCHING -->
         
         <!-- START DOWNLOADS PAGE -->
-        <div id="downloads" class="tab-content">
+        <div id="downloads" class="tab-content stack">
           <div class="scroll">
-            <div class="simple-page-header">
+            <div class="msg-page">
+              <div class="title">
+                Opa! Esta pagina não está disponível
+              </div>
+              <div class="text">
+                A função de download dos títulos ainda não está dispovível para uso. Aguarde as proxímas atualizações.
+              </div>
+            </div>
+            <!--<div class="simple-page-header">
               <svg class="icon back" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
               	<use xlink:href="src/icons/ios-arrow-back.svg#ios-arrow-back"></use>
 							</svg>
@@ -763,13 +783,76 @@
                 </div>
               </div>
               
-            </div>
+            </div>-->
           </div>
         </div>
         <!-- END DOWNLOADS PAGE -->
+        <!-- START EVENTS PAGE -->
+        <div id="events" class="tab-content">
+          <div class="scroll">
+            <div class="msg-page">
+              <div class="title">
+                Opa! Esta pagina não está disponível
+              </div>
+              <div class="text">
+                A pagina de eventos ainda não está dispovível para uso. Aguarde as proxímas atualizações.
+              </div>
+            </div>
+            <!--<div class="simple-page-header">
+              <svg class="icon back" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+              	<use xlink:href="src/icons/ios-arrow-back.svg#ios-arrow-back"></use>
+							</svg>
+              <p data-page="search" class="option-bar">Meus downloads</p>
+            </div>
+            <div class="list-downloads">
+             
+              <div class=" card">
+                <div class="click-effect">
+                  <div class="image">
+                  <img src="accets/Teste-4.jpg">
+                </div>
+                <div class="content">
+                  <div class="text">
+                    <h3>La casa de papel</h3>
+                    <div class="size">
+                      <div class="file-size"><span>0.98</span>GB</div><div class="season">T<span>3</span> - </div><div class="episode">Episódio <span class="ep-number">4</span></div></div>
+                  </div>
+                  <div class="content-icon">
+                    <svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                      <use xlink:href="src/icons/ios-cloud-download.svg#ios-cloud-download"></use>
+                    </svg>
+                  </div>
+                </div>
+                </div>
+              </div>
+              <div class=" card">
+                <div class="click-effect">
+                  <div class="image">
+                  <img src="accets/Teste-3.jpg">
+                </div>
+                <div class="content">
+                  <div class="text">
+                    <h3>Aquaman 2: O Reino Perdido (2023)</h3>
+                    <div class="size">
+                      <div class="file-size"><span>2</span>GB</div>
+                      </div>
+                  </div>
+                  <div class="content-icon">
+                    <svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                      <use xlink:href="src/icons/ios-cloud-done.svg#ios-cloud-done"></use>
+                    </svg>
+                  </div>
+                </div>
+                </div>
+              </div>
+              
+            </div>-->
+          </div>
+        </div>
+        <!-- END  EVENTS PAGE -->
         
         <!-- START ACCOUNT MANAGER PAGE -->
-        <div id="account-manager" class="tab-content">
+        <div id="account-manager" class="tab-content stack">
           <div class="scroll">
             <div class="simple-page-header">
             <svg class="icon back" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
@@ -782,7 +865,7 @@
        <!-- END ACCOUNT MANAGER PAGE -->
        
         <!-- START SECURITY PRIVACY PAGE -->
-        <div id="security-privacy" class="tab-content">
+        <div id="security-privacy" class="tab-content stack">
           <div class="scroll">
             <div class="simple-page-header">
             <svg class="icon back" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
@@ -795,7 +878,7 @@
         <!-- END SECURITY PRIVACY PAGE -->
         
         <!-- START SEARCH PAGE -->
-        <div id="search" class="tab-content">
+        <div id="search" class="tab-content stack">
           <div class="scroll">
             <div class="header">
             	<div class="container">
@@ -845,7 +928,7 @@
           </div>
           </div>
         </div>
-        <div id="film-page" class="tab-content">
+        <div id="film-page" class="tab-content stack">
         	<div class="header">
         			<div class="back btn-back">
         				<div class="click-effect">
@@ -1128,14 +1211,14 @@
             </div>
           </div>
         </div>
-        <div id="play" class="tab-content">
+        <div id="play" class="tab-content stack">
         	<div class="scroll">
         		<div class="media">
         			
         		</div>
         	</div>
         </div>
-        <div id="episode-details" class="tab-content">
+        <div id="episode-details" class="tab-content stack">
         	<div class="header">
         			<div class="back btn-back">
         				<div class="click-effect">
@@ -1366,12 +1449,12 @@
             </div>
           </div>
         </div>
-        <div id="trailer" class="tab-content">
+        <div id="trailer" class="tab-content stack">
         	<div class="scroll">
         		<div class="media"></div>
         	</div>
         </div>
-        <div id="channels" class="tab-content">
+        <div id="channels" class="tab-content stack">
           <div class="scroll">
             <div class="media">
               <iframe loading="lazy" allow="encrypted-media" allowfullscreen frameborder="0" ></iframe>
@@ -1409,15 +1492,15 @@
         <label>lista</label>
       </div>
     </button>-->
-    <button class="option-bar option-nav-bottom" data-page="profile">
+    <!--<button class="option-bar option-nav-bottom" data-page="profile">
       <div class="click-effect">
         <svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
         	<use xlink:href="src/icons/ios-cog.svg#ios-cog"></use>
         </svg> 
-        <!-- <img class="profile" src="accets/default_profile_photo/fp_2.jpg" alt="" />  -->
+        <!-- <img class="profile" src="accets/default_profile_photo/fp_2.jpg" alt="" />  --
         <label>Config.</label>
       </div>
-    </button>
+    </button>-->
   </nav>
 <script type="text/javascript" charset="utf-8">
     if ("serviceWorker" in navigator) {

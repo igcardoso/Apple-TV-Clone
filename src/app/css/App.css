@@ -295,7 +295,7 @@ nav  .icon {
   overflow: hidden;
   background: linear-gradient(25deg, #000000, #000008);
   transition: .3s;
-  transform: translateX(100%);
+  transform: translateX(-100%);
 }
 
 #content .tab-content.active {

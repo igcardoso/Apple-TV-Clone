@@ -23,11 +23,11 @@ function updateHeaderVisibility() {
       disable();
     }
 
-    if (isAnyStackTabActive) {
+   /*if (isAnyStackTabActive) {
         // header.classList.add('hidden');
         header.classList.add("hidden-display");
         navBar.style.display = "flex";
-    } else if (filmPageElement.classList.contains("active")) {
+    } else*/ if (filmPageElement.classList.contains("active")) {
         document.querySelector("#play .media").innerHTML = "";
         document.querySelector("#trailer .media").innerHTML = "";
     } else if (episodeDetails.classList.contains("active")) {

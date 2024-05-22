@@ -295,11 +295,11 @@ nav  .icon {
   overflow: hidden;
   background: linear-gradient(25deg, #000000, #000008);
   transition: .3s;
-  transform: translateX(-100%);
+  display: none;
 }
 
 #content .tab-content.active {
-  transform: translateX(0);
+  display: block;
 }
 
 #content .tab-content.hidden-ios {

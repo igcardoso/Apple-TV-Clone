@@ -221,11 +221,11 @@ divScroll.addEventListener('scroll', () => {
 
   if (currentScrollPosition > lastScrollPosition) {
     // Rolagem para baixo
-    scrollNav.style.transform = 'translateY(100%)';
+    // scrollNav.style.transform = 'translateY(100%)';
     // scrollNav.style.transform = 'translateY(100%)';
   } else {
     // Rolagem para cima
-    scrollNav.style.transform = 'translateY(0)';
+    // scrollNav.style.transform = 'translateY(0)';
     // scrollNav.style.transform = 'translateY(0)';
   }
 

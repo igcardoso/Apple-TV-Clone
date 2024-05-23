@@ -117,7 +117,7 @@ nav  .icon {
   padding-bottom: 1em;
   text-align: center;
   scroll-behavior: smooth;
-  scroll-snap-align: start;
+  /*scroll-snap-align: start;*/
 }
 
 
@@ -171,7 +171,7 @@ nav  .icon {
   display: flex;
   padding: 0 0 0 .9em;
   scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
+  /*scroll-snap-type: x mandatory;*/
   margin-left: .9em;
 }
 
@@ -189,7 +189,7 @@ nav  .icon {
 
 .all-slides .card, .content {
   border-radius: 1em;
-  scroll-snap-align: start;
+  /*scroll-snap-align: start;*/
 }
 
 .slide .card {
@@ -1291,7 +1291,7 @@ nav  .icon {
 	overflow: hidden;
 	overflow-x: scroll;
 	scroll-behavior: smooth;
-	scroll-snap-type: x mandatory;
+	/*scroll-snap-type: x mandatory;*/
 	width: calc(100% - 3em);
 	position: relative;
 	display: flex;
@@ -1308,7 +1308,7 @@ nav  .icon {
 	overflow: hidden;
 	position: relative;
 	text-align: center;
-	scroll-snap-align: start;
+	/*scroll-snap-align: start;*/
 }
 
 #film-page .actors-actresses .actors:hover {
@@ -1809,7 +1809,7 @@ nav  .icon {
 	border-radius: 1em;
 	margin: 1em;
 	scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
+  /*scroll-snap-type: x mandatory;*/
 }
 
 #edit-profile .profile-picture .options .dynamic div {
@@ -1819,7 +1819,7 @@ nav  .icon {
   /*background: linear-gradient(25deg, var(--blue-color), #0400f2a8, #8900f2a8);*/
   position: relative;
   transition: .5s;
-  scroll-snap-align: start;
+  /*scroll-snap-align: start;*/
   display: flex;
   align-items: center;
   justify-content: center;

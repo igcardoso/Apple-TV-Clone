@@ -82,8 +82,10 @@ function displayPageName(event) {
 		const markerNavBottom = document.querySelectorAll('.option-nav-bottom');
     if (selectedTab.classList.contains('stack')) {
       document.querySelector('header').style.display = 'none';
+      navBar.style.display = 'none';
     } else {
       document.querySelector('header').style.display = 'flex';
+      navBar.style.display = 'flex';
     }
     
 		if (tabId != 'play' && tabId != 'episode-details' && tabId != 'film-page' && tabId != 'channels') {

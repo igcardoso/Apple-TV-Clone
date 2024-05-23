@@ -209,7 +209,7 @@ function underMaintenance() {
             document.querySelector("#alert").classList.remove("active");
         });
 }
-
+/*
 let lastScrollPosition = 0;
 const scrollDiv = document.querySelector('header');
 const scrollNav = document.querySelector('nav');
@@ -221,13 +221,14 @@ divScroll.addEventListener('scroll', () => {
 
   if (currentScrollPosition > lastScrollPosition) {
     // Rolagem para baixo
-    // scrollNav.style.transform = 'translateY(100%)';
+    scrollNav.style.transform = 'translateY(100%)';
     // scrollNav.style.transform = 'translateY(100%)';
   } else {
     // Rolagem para cima
-    // scrollNav.style.transform = 'translateY(0)';
+    scrollNav.style.transform = 'translateY(0)';
     // scrollNav.style.transform = 'translateY(0)';
   }
 
   lastScrollPosition = currentScrollPosition;
 });
+*/

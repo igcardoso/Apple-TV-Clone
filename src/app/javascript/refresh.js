@@ -1,9 +1,8 @@
+/*
 const content = document.getElementById('content');
 const pagesAndHeader = document.getElementById('pages-and-header');
 const refreshIndicator = document.getElementById('refreshIndicator');
 const iconRefreshIndicator = document.getElementById('iconRefreshIndicator');
-var API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&' + API_KEY + '&language=pt-BR';
-
 let currentContent;
 var isRefreshing;
 

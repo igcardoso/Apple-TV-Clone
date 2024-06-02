@@ -6,6 +6,7 @@
 	height: 300px;
 	z-index: 1000;
 	overflow: hidden;
+	border-bottom: 1px solid #ffffff12;
 }
 
 #iconRefreshIndicator {

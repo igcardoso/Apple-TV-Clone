@@ -36,7 +36,7 @@
   background: url('../../../accets/12-Dark.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position-x: -50px;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 1px 1px 1px #ffffff12;
@@ -50,6 +50,7 @@
   height: 1em;
   text-align: center;
   margin-top: 80%;
+  animation: backgroundEffect 2s linear infinite;
 }
 
 #loading-app p.netflix-effect {

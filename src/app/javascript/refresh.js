@@ -1,4 +1,4 @@
-/*
+
 const content = document.getElementById('content');
 const pagesAndHeader = document.getElementById('pages-and-header');
 const refreshIndicator = document.getElementById('refreshIndicator');

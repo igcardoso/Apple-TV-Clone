@@ -764,6 +764,10 @@ nav  .icon {
 
 /* HOME PAGE */
 
+#channelsSlide {
+  display: none;
+}
+
 #home .scroll .image-background {
 	position: absolute;
 	top: 0;

@@ -71,7 +71,7 @@
     animation: spin 1s linear infinite;
   }
   
-  .loading-icon:before {
+ .loading-icon:before {
     content: '';
     inset: 0;
     width: 3.5px;
@@ -83,7 +83,35 @@
     left: .3em;
   }
   
-  @keyframes spin {
+  
+ /* ----- */
+ 
+ .refresh-icon {
+    margin: auto;
+    border: 2px solid #ffffff9f;
+    border-radius: 8em;
+    width: 22px;
+    height: 22px;
+    position: relative;
+  }
+ 
+ .refresh-icon.spin {
+   animation: spin 1s linear infinite;
+ }
+ 
+ .refresh-icon:before {
+    content: '';
+    inset: 0;
+    width: 3.5px;
+    height: 3.5px;
+    border-radius: 8em;
+    background: #ffffff9f;
+    position: absolute;
+    top: .3em;
+    left: .3em;
+  }
+  
+ @keyframes spin {
     to {
       transform: rotate(0deg);
     } from {

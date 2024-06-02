@@ -209,7 +209,7 @@ function underMaintenance() {
             document.querySelector("#alert").classList.remove("active");
         });
 }
-/*
+
 let lastScrollPosition = 0;
 const scrollDiv = document.querySelector('header');
 const scrollNav = document.querySelector('nav');
@@ -231,4 +231,3 @@ divScroll.addEventListener('scroll', () => {
 
   lastScrollPosition = currentScrollPosition;
 });
-*/

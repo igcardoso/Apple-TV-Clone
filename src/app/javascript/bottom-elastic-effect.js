@@ -1,4 +1,4 @@
-
+/*
 let touchStartYRefresh;
 let isRefreshingCustom = false;
 let startOfSpinCustom;

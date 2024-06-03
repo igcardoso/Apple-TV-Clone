@@ -437,8 +437,10 @@ async function getMoviesHighlights(url, page, whichContainer) {
 
 window.initLazyLoad = function initLazyLoad() {
 	const lazyImages = document.querySelectorAll('.img');
+	const lazyLoader = document.querySelectorAll('.all-slides .card');
 
 	lazyImages.forEach(imagens => imagens.classList.remove('loaded'));
+	lazyLoader.forEach(imagens => imagens.classList.remove('loaded'));
 
 	const lazyLoad = target => {
 		const io = new IntersectionObserver((entries,
@@ -455,8 +457,23 @@ window.initLazyLoad = function initLazyLoad() {
 
 		io.observe(target);
 	};
+	
+	const lazyLoad2 = target => {
+		const io = new IntersectionObserver((entries,
+			observer) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					const img = entry.target;
+					img.classList.add('loaded');
+				}
+			});
+		});
+
+		io.observe(target);
+	};
 
 	lazyImages.forEach(lazyLoad);
+	lazyLoader.forEach(lazyLoad2);
 }
 
 

@@ -218,7 +218,31 @@ nav  .icon {
 
 .all-slides .card, .content {
   border-radius: 1em;
-  scroll-snap-align: start;
+  scroll-snap-align: start; 
+}
+
+.slide .card:before {
+  content: '';
+  inset: 0;
+  width: 6em;
+  height: 16em;
+  position: absolute;
+  top: -2em;
+  left: -5em;
+  background: linear-gradient(to left, #ffffff00, #ffffff27, #ffffff00);
+  transform: rotate(25deg);
+  animation: loader 1s linear infinite;
+}
+.slide .card.loaded:before {
+  display: none;
+  background: none;
+}
+@keyframes loader {
+  0% {
+    left: -20em;
+  } 100% {
+    left: 20em;
+  }
 }
 
 .slide .card {

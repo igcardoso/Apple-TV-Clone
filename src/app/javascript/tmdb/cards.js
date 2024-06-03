@@ -450,7 +450,9 @@ window.initLazyLoad = function initLazyLoad() {
 					const img = entry.target;
 					img.src = img.dataset.src;
 					observer.unobserve(img);
-					img.classList.add('loaded');
+				setTimeout(function() {
+				  img.classList.add('loaded');
+				}, 2000);
 				}
 			});
 		});

@@ -466,7 +466,9 @@ window.initLazyLoad = function initLazyLoad() {
 			entries.forEach(entry => {
 				if (entry.isIntersecting) {
 					const img = entry.target;
-					img.classList.add('loaded');
+					setTimeout(function() {
+					  img.classList.add('loaded');
+					}, 2000);
 				}
 			});
 		});

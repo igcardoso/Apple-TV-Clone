@@ -631,7 +631,7 @@ nav  .icon {
 	height: 100%;
 	visibility: hidden;
 	transition: .2s ease-out;
-	transition-delay: .1s;
+	transition-delay: .3s;
 }
 
 .results .img.loaded {

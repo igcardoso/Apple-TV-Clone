@@ -1045,8 +1045,7 @@ function toShare(id, nome) {
 	if (navigator.share) {
 		navigator.share({
 			title: 'Compartilhar filme' + nome,
-			text: `> *Clique no link para assistir ao filme* 
-			${nome}`,
+			text: `> *Clique no link para assistir ao filme* \n ${nome}`,
 			url: urlToShare,
 		})
 		.then(() => console.log('URL compartilhada com sucesso'))

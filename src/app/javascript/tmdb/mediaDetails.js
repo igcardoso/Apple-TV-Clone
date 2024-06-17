@@ -1037,15 +1037,15 @@ async function mediaIsMovie(movieId, save) {
 	}
 }
 
-function toShare(id) {
+function toShare(id, nome) {
 	const urlToShare = 'https://stream-os.netlify.app/index.html?share=' + id;
 	const url = urlToShare
 	// window.postMessage(url);
 
 	if (navigator.share) {
 		navigator.share({
-			title: 'Compartilhar filme',
-			text: 'Compartilhe',
+			title: 'Compartilhar filme' + nome,
+			text: 'Clique no link para assistir ao filme' + nome,
 			url: urlToShare,
 		})
 		.then(() => console.log('URL compartilhada com sucesso'))

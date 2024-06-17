@@ -610,7 +610,7 @@ async function mediaIsSeries(serieId, save) {
 
 						document.querySelector(`${FilmPageDisplay} .share`).addEventListener('click',
 							()=> {
-								toShare(data.id);
+								toShare(data.id, data.name);
 							});
 
 						const contentImg = document.createElement('div');
@@ -813,7 +813,7 @@ async function mediaIsMovie(movieId, save) {
 			contentActorsActresses.innerHTML = '';
 
 			document.querySelector(`${FilmPageDisplay} .share`).addEventListener('click', ()=> {
-				toShare(data.id);
+				toShare(data.id, data.title);
 			});
 			
 		  saveMovie.forEach(saveMovie => {

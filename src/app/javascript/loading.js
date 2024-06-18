@@ -6,5 +6,5 @@ document.addEventListener('DOMContentLoaded', function() {
 	setTimeout(function() {
 		document.querySelector('#loading-app').style.display = 'none';
 		//document.querySelector('#pages-and-header').style.display = 'block';
-	}, 0);
+	}, 3000);
 });

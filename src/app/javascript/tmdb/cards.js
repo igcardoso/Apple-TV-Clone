@@ -160,10 +160,17 @@ async function getMoviesBigSlide(url, page, whichContainer) {
 
 			// Adicionar card ao contêiner
 
-			if (movie.vote_count > 900) {
-				indexMovie++
-				moviesContainer.appendChild(card);
-			}
+			if (movie.title != null) {
+		    if (movie.vote_count > 900) {
+		      indexMovie++
+					moviesContainer.appendChild(card);
+				}
+		  } else {
+		    if (movie.vote_count > 200) {
+		      indexMovie++
+					moviesContainer.appendChild(card);
+				}
+		  }
 		});
 
 
@@ -183,7 +190,7 @@ async function getMoviesSlide(url, page, whichContainer) {
 
 		// Limpar o conteúdo atual
 		moviesContainer.innerHTML = '';
-
+    
 		// Iterar sobre os resultados e criar cards
 		data.results.forEach((movie, index) => {
 			let card = document.createElement('div');
@@ -206,9 +213,15 @@ async function getMoviesSlide(url, page, whichContainer) {
 			// Adicionar card ao contêiner
 			clickEffect.appendChild(posterImg);
 			card.appendChild(clickEffect);
-				if (movie.vote_count > 900) {
+		  if (movie.title != null) {
+		    if (movie.vote_count > 900) {
 					moviesContainer.appendChild(card);
 				}
+		  } else {
+		    if (movie.vote_count > 200) {
+					moviesContainer.appendChild(card);
+				}
+		  }
 		});
 
 
@@ -258,9 +271,15 @@ async function getMoviesSlimSlide(url, page, whichContainer) {
 			clickEffect.appendChild(posterImg);
 			clickEffect.appendChild(title);
 			card.appendChild(clickEffect);
-			if (movie.vote_count > 900) {
-				moviesContainer.appendChild(card);
-			}
+			if (movie.title != null) {
+		    if (movie.vote_count > 900) {
+					moviesContainer.appendChild(card);
+				}
+		  } else {
+		    if (movie.vote_count > 200) {
+					moviesContainer.appendChild(card);
+				}
+		  }
 		});
 
 		initLazyLoad();
@@ -477,7 +496,7 @@ function scheduleImageUnload() {
 document.addEventListener('visibilitychange', scheduleImageUnload);
 document.addEventListener('scroll', scheduleImageUnload);
 
-function showMoviesSlides(API) {
+window.showMoviesSlides = function showMoviesSlides(API) {
 	contentHome(API);
 	contentSearch(API);
 	contentDiscover(API);
@@ -490,21 +509,21 @@ window.generateRandomPage = function generateRandomPage() {
 
 function contentHome(API) {
 	// SIMPLE SLIDE CARD
-	getMoviesSlide(API_URL, generateRandomPage(), '.slide-1');
-	getMoviesSlide(API_URL, generateRandomPage(), '.slide-2');
-	getMoviesSlide(API_URL, generateRandomPage(), '.slide-3');
-	getMoviesSlide(API_URL, generateRandomPage(), '.slide-4');
+	getMoviesSlide(API, generateRandomPage(), '.slide-1');
+	getMoviesSlide(API, generateRandomPage(), '.slide-2');
+	getMoviesSlide(API, generateRandomPage(), '.slide-3');
+	getMoviesSlide(API, generateRandomPage(), '.slide-4');
 	
 	// BIG SLIDE CARD
-	getMoviesBigSlide(API_URL, 1, '.b-slide-1');
+	getMoviesBigSlide(API, 1, '.b-slide-1');
 
 	// SLIM SLIDE CARD
-	getMoviesSlimSlide(API_URL, generateRandomPage(), '.s-slide-1');
-	getMoviesSlimSlide(API_URL, generateRandomPage(), '.s-slide-3');
-	getMoviesSlimSlide(API_URL, generateRandomPage(), '.s-slide-4');
-	getMoviesSlimSlide(API_URL, generateRandomPage(), '.s-slide-5');
-	getMoviesSlimSlide(API_URL, generateRandomPage(), '.s-slide-6');
-	getMoviesSlimSlide(API_URL, generateRandomPage(), '.s-slide-7');
+	getMoviesSlimSlide(API, generateRandomPage(), '.s-slide-1');
+	getMoviesSlimSlide(API, generateRandomPage(), '.s-slide-3');
+	getMoviesSlimSlide(API, generateRandomPage(), '.s-slide-4');
+	getMoviesSlimSlide(API, generateRandomPage(), '.s-slide-5');
+	getMoviesSlimSlide(API, generateRandomPage(), '.s-slide-6');
+	getMoviesSlimSlide(API, generateRandomPage(), '.s-slide-7');
 	
 
 	// HIGHLIGHTS

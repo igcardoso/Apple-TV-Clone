@@ -12,8 +12,6 @@ contentElementCustom.addEventListener('touchstart', handleTouchStartCustom);
 contentElementCustom.addEventListener('touchmove', handleTouchMoveCustom);
 contentElementCustom.addEventListener('touchend', handleTouchEndCustom);
 
-// Adicione um ouvinte de evento ao objeto window para detectar alterações no histórico de navegação
-
 window.addEventListener('popstate', function(event) {
   setTimeout(function() {
     currentPage = event.state ? event.state.page : 'home';
@@ -21,7 +19,6 @@ window.addEventListener('popstate', function(event) {
   }, 1);
 });
 
-// Adicione um ouvinte de evento para os botões com o atributo data-page
 document.addEventListener('click', function(event) {
   const targetButton = event.target.closest('[data-page]');
   if (targetButton) {

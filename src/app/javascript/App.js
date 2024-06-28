@@ -4,13 +4,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     const navButtons = document.querySelectorAll(".option-bar");
 
-    // Adiciona eventos de clique aos botões de navegação
     navButtons.forEach(button => {
         button.addEventListener("click", handleNavClick);
         updateHeaderVisibility();
     });
-
-    // Inicialmente, mostra a página inicial
+    
     showTab("home");
     updateHeaderVisibility();
 });
@@ -18,16 +16,13 @@ document.addEventListener("DOMContentLoaded", function () {
 // PAGINA SEARCH
 
 document.addEventListener("click", function (event) {
-    // Verifica se o clique ocorreu em um link que abre em uma nova guia
     if (
         event.target.tagName === "A" &&
         event.target.getAttribute("target") === "_blank"
     ) {
-        // Impede que a nova guia seja aberta
+      
         event.preventDefault();
 
-        // Se necessário, você pode realizar alguma ação adicional aqui
-        // (por exemplo, abrir o link na mesma guia com window.open)
     }
 });
 
@@ -91,10 +86,8 @@ function handleThemeChange(event) {
     }
 }
 
-// Adiciona um ouvinte para a mudança de preferência de esquema de cores
 darkModeMediaQuery.addListener(handleThemeChange);
 
-// Executa a função de tratamento inicialmente para verificar o estado atual
 handleThemeChange(darkModeMediaQuery);
 
 const PgSearch = document.querySelector("#search .scroll");

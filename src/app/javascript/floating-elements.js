@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	const navButtons = document.querySelectorAll('.floating-element-option');
 	const clickAway = document.querySelectorAll('.click-away');
 
-	// Função para ocultar todas as abas e mostrar apenas a selecionada
 	function showFloatingElement(tabId) {
 		tabs.forEach(tab => tab.classList.remove('active'));
 
@@ -29,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	// 	});
 	//
 
-	// Função para lidar com cliques nos botões de navegação
 	function handleNavClick(event) {
 		const selectedPage = event.currentTarget.getAttribute('data-page');
 		let currentPage = document.getElementById(selectedPage);
@@ -46,13 +44,11 @@ document.addEventListener('DOMContentLoaded', function () {
 			headerButtonBehavior(selectedPage);
 		}
 	}
-
-	// Adiciona eventos de clique aos botões de navegação
+	
 	navButtons.forEach(button => {
 		button.addEventListener('click', handleNavClick);
 	});
 
-	// Evento de popstate para lidar com o botão "voltar" do navegador
 	window.addEventListener('popstate',
 		function (event) {
 			const page = event.state ? event.state.page: 'home';

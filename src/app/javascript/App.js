@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     if (window.innerWidth > 576) {
-      window.location.href = "src/app/html/smart-index.html";
+      //window.location.href = "src/app/html/smart-index.html";
+      window.alert("O acesso ao site sera diretamente no dispositivo cujo qual fora inicido. Sendo assim o dispositivo de tela grande atual tera que exibir a versão mobile de site, até que ua versão totalmente funcional especifica para dispositivos grandes seja lançada. Agradecemos a compreenção.
     }
     const navButtons = document.querySelectorAll(".option-bar");
 

@@ -1,5 +1,4 @@
 var API_KEY = 'api_key=1cf50e6248dc270629e802686245c2c8';
-var API_KEY = 'api_key=1cf50e6248dc270629e802686245c2c8';
 var BASE_URL = 'https://api.themoviedb.org/3';
 var API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&' + API_KEY + '&language=pt-BR';
 var API_URL_TvShows = BASE_URL + '/discover/tv?sort_by=popularity.desc&' + API_KEY + '&language=pt-BR';

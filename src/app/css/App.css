@@ -827,6 +827,7 @@ nav  .icon {
 	filter: blur(20px) brightness(.8);*/
 	object-fit: cover;
 	z-index: -1;
+	display: none;
 }
 
 #home .scroll .image-background:after {

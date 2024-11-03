@@ -853,7 +853,7 @@ nav  .icon {
 	padding: .3em .7em .3em .7em;
 	border-radius: 8em;
 	border: none /*1.3px solid transparent*/;
-	background: #f6f6f612;
+	background: none;
 	color: #ffffff;
 	z-index: 50;
 	font-weight: 700;

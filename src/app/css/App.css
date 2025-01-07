@@ -1355,7 +1355,7 @@ nav  .icon {
   align-items: center;
   justify-content: center;
   z-index: 50;
-  background: linear-gradient(20deg, var(--blue-color), var(--second-color));
+  background:var(--blue-color);
   gap: .5em;
 }
 

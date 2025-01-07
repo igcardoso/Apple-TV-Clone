@@ -395,7 +395,7 @@ header .title {
 
 #login .login button,
 #create-account .login button {
-    background: linear-gradient(20deg, var(--main-color), var(--second-color));
+    background:/*  linear-gradient(20deg, var(--main-color),  */var(--second-color)/*)*/;
     padding: 1em;
     border: none;
     border-radius: 8em;

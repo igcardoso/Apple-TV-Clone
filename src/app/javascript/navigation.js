@@ -119,30 +119,23 @@ function showTab(tabId) {
 			let pageAreaWithScroll = document.querySelector(`#${tabId} .scroll`);
 			let header = document.querySelector('header');
 
-			header.classList.toggle("sticky", pageAreaWithScroll.scrollTop > 0);
-			navBar.classList.toggle("sticky", pageAreaWithScroll.scrollTop > 0);
+			
 			var ultimaPosicaoScroll = 0;
 			pageAreaWithScroll.addEventListener("scroll", function() {
         const posicaoAtualScroll = pageAreaWithScroll.scrollTop;
             
-            // Verifica a direção do scroll
+            header.classList.remove("sticky", pageAreaWithScroll.scrollTop = 0);
+            header.classList.toggle("sticky", pageAreaWithScroll.scrollTop > 0);
             if (posicaoAtualScroll > ultimaPosicaoScroll) {
-                // Scroll para BAIXO - Adiciona sticky
-                header.classList.add("sticky");
                 navBar.classList.add("sticky");
             } else {
-                // Scroll para CIMA - Remove sticky
-                header.classList.remove("sticky");
                 navBar.classList.remove("sticky");
             }
         
-            // Remove sticky se estiver no topo da página
             if (posicaoAtualScroll <= 0) {
-                header.classList.remove("sticky");
                 navBar.classList.remove("sticky");
             }
         
-            // Atualiza a última posição do scroll
             ultimaPosicaoScroll = posicaoAtualScroll;
     
 			});

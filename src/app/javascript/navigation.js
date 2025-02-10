@@ -125,7 +125,7 @@ function showTab(tabId) {
         const posicaoAtualScroll = pageAreaWithScroll.scrollTop;
             
             header.classList.remove("sticky", pageAreaWithScroll.scrollTop = 0);
-            header.classList.toggle("sticky", pageAreaWithScroll.scrollTop > 0);
+            header.classList.add("sticky", pageAreaWithScroll.scrollTop > 0);
             if (posicaoAtualScroll > ultimaPosicaoScroll) {
                 navBar.classList.add("sticky");
             } else {

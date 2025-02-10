@@ -2136,7 +2136,7 @@ nav {
   background: #0d0d0dae /* #0d0d0d85 */;
 	backdrop-filter: blur(40px);
 	webkit-backdrop-filter: blur(40px);
-  border-bottom: 1px solid #f6f6f612;
+  border-top: 1px solid #f6f6f612;
   padding: 0 0 .5em 0;
   z-index: 200;
 }
@@ -2225,7 +2225,9 @@ header.hidden-display {
 header.sticky {
   /* webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px); */
-	background: #000000;
+	background: #0d0d0dae /* #0d0d0d85 */;
+	backdrop-filter: blur(40px);
+	webkit-backdrop-filter: blur(40px);
 	border-bottom-color: #f6f6f612;
 }
 

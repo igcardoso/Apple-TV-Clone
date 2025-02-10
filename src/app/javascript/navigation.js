@@ -118,7 +118,7 @@ function showTab(tabId) {
 		if (tabId != 'profile' && !selectedTab.classList.contains('stack-tab-content') && !selectedTab.classList.contains('floating-element')) {
 			
 			let ultimaPosicaoScroll = 0;
-
+let pageAreaWithScroll = document.querySelector(`#${tabId} .scroll`);
 pageAreaWithScroll.addEventListener("scroll", function() {
     const posicaoAtualScroll = pageAreaWithScroll.scrollTop;
     

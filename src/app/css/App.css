@@ -2226,8 +2226,8 @@ header.sticky {
   /* webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px); */
 	background: #0d0d0dae /* #0d0d0d85 */;
-	backdrop-filter: blur(40px);
-	webkit-backdrop-filter: blur(40px);
+	filter: blur(40px);
+	webkit-filter: blur(40px);
 	border-bottom-color: #f6f6f612;
 }
 

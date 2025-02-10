@@ -2141,6 +2141,10 @@ nav {
   z-index: 200;
 }
 
+nav.sticky {
+  transform: translateY(-100%);
+}
+
 nav.keyboard-visible {
   transform: translateY(100%);
 }

@@ -119,6 +119,13 @@ function showTab(tabId) {
 			
 			let ultimaPosicaoScroll = 0;
 let pageAreaWithScroll = document.querySelector(`#${tabId} .scroll`);
+
+let pageAreaWithScroll = document.querySelector(`#${tabId} .scroll`);
+			let header = document.querySelector('header');
+
+			header.classList.toggle("sticky", pageAreaWithScroll.scrollTop > 0);
+			navBar.classList.toggle("sticky", pageAreaWithScroll.scrollTop > 0);
+		
 pageAreaWithScroll.addEventListener("scroll", function() {
     const posicaoAtualScroll = pageAreaWithScroll.scrollTop;
     

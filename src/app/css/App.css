@@ -851,7 +851,7 @@ nav  .icon {
 .category-selector .option {
 	padding: .3em .7em .3em .7em;
 	border-radius: 8em;
-	border: none /*1.3px solid transparent*/;
+	border: 1.2px solid #ffffff6c;
 	background: none;
 	color: #ffffff;
 	z-index: 50;

@@ -879,6 +879,7 @@ nav  .icon {
 	position: relative;
 	display: flex;
 	border-radius: 1em;
+	border: 1px solid #ffffff6c;
 	transition: linear .3s;
 	opacity: 1;
 }

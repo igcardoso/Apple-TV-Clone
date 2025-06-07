@@ -561,7 +561,8 @@ async function mediaIsSeries(serieId, save) {
         			            smartCast(`https://v2.vidsrc.me/embed/${data.id}/${season.season_number}/${episodeNumber}`, 'serie')
         			            break;
         			          case 'cast3':
-        			            smartCast(`https://superembeds.com/embed2/${data.id}-${season.season_number}-${episodeNumber}`, 'serie')
+        			            smartCast(`https://playerflixapi.com/serie/${data.id}/${season.season_number}/${episodeNumber}`, 'serie')
+        			            // smartCast(`https://superembeds.com/embed2/${data.id}-${season.season_number}-${episodeNumber}`, 'serie')
         			            break;
         			          case 'cast4':
         			            // smartCast(`https://multiembed.mov/?video_id=${data.imdb_id}`)

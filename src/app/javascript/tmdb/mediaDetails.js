@@ -593,7 +593,8 @@ async function mediaIsSeries(serieId, save) {
 							play_3.addEventListener("click", ()=> {
 								contentIframe.innerHTML = '';
 								const iframe = document.createElement('iframe');
-								iframe.src = `https://superembeds.com/embed2/${data.id}-${season.season_number}-${episodeNumber}`;
+								// iframe.src = `https://superembeds.com/embed2/${data.id}-${season.season_number}-${episodeNumber}`;
+								iframe.src = `https://playerflixapi.com/serie/${data.id}/${season.season_number}/${episodeNumber}`;
 								iframe.setAttribute('allowfullscreen', '');
 								contentIframe.appendChild(iframe);
 

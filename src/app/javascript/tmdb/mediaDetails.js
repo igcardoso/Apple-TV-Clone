@@ -965,14 +965,14 @@ async function mediaIsMovie(movieId, save) {
 			Play_2.addEventListener("click", ()=> {
 				contentIframe.innerHTML = '';
 				let iframe = document.createElement('iframe');
-				iframe.src = `https://v2.vidsrc.me/embed/${data.imdb_id}`;
+				iframe.src = `https://superflixapi.life/filme/${data.imdb_id}`;
 				iframe.setAttribute('allowfullscreen', '');
 				contentIframe.appendChild(iframe);
 			});
 			Play_3.addEventListener("click", ()=> {
 				contentIframe.innerHTML = '';
 				let iframe = document.createElement('iframe');
-				iframe.src = `https://superembeds.com/embed2/${data.imdb_id}`;
+				iframe.src = `https://superflixapi.life/filme/${data.imdb_id}`;
 				iframe.setAttribute('allowfullscreen', '');
 				contentIframe.appendChild(iframe);
 			});

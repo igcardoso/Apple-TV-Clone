@@ -561,7 +561,7 @@ async function mediaIsSeries(serieId, save) {
         			            smartCast(`https://v2.vidsrc.me/embed/${data.id}/${season.season_number}/${episodeNumber}`, 'serie')
         			            break;
         			          case 'cast3':
-        			            smartCast(`https://superflixapi.life/serie/${data.id}/${season.season_number}/${episodeNumber}`, 'serie')
+        			            smartCast(`https://playerflixapi.com/serie/${data.id}/${season.season_number}/${episodeNumber}`, 'serie')
         			            // smartCast(`https://superembeds.com/embed2/${data.id}-${season.season_number}-${episodeNumber}`, 'serie')
         			            break;
         			          case 'cast4':
@@ -594,7 +594,7 @@ async function mediaIsSeries(serieId, save) {
 								contentIframe.innerHTML = '';
 								const iframe = document.createElement('iframe');
 								// iframe.src = `https://superembeds.com/embed2/${data.id}-${season.season_number}-${episodeNumber}`;
-								iframe.src = `https://superflixapi.life/serie/${data.id}/${season.season_number}/${episodeNumber}`;
+								iframe.src = `https://playerflixapi.com/serie/${data.id}/${season.season_number}/${episodeNumber}`;
 								iframe.setAttribute('allowfullscreen', '');
 								contentIframe.appendChild(iframe);
 
@@ -934,7 +934,7 @@ async function mediaIsMovie(movieId, save) {
   			            smartCast(`https://embedder.net/e/${data.imdb_id}`, 'movie')
   			            break;
   			          case 'cast2':
-  			            smartCast(`https://superflixapi.life/filme/${data.imdb_id}`, 'movie')
+  			            smartCast(`https://v2.vidsrc.me/embed/${data.imdb_id}`, 'movie')
   			            break;
   			          case 'cast3':
   			            smartCast(`https://superembeds.com/embed2/${data.imdb_id}`, 'movie')

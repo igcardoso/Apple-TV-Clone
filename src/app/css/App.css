@@ -2138,7 +2138,7 @@ nav {
   justify-content: center;
   background: #000000 /* #0d0d0d85 */;
   border-top: 1px solid #f6f6f612;
-  padding: 0 0 .5em 0;
+  padding: 0 0 0 0;
   z-index: 200;
 }
 

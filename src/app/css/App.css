@@ -1350,13 +1350,13 @@ nav  .icon {
 
 #film-page .header.sticky .share-and-save .icon,
 #episode-details .header.sticky .share-and-save .icon {
-	background: #35322b75;
+	background: transparent;
 	fill: #0C84FF;
 }
 
 #episode-details .header.sticky .back .icon,
 #film-page .header.sticky .back .icon {
-	background: #35322b75;
+	background: transparent;
 	fill: #0C84FF;
 }
 

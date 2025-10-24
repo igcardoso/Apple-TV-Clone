@@ -2193,9 +2193,9 @@ nav .option-bar .click-effect .icon {
 nav .option-bar.active .click-effect .icon {
 	fill: #ffffff/*var(--blue-color)*/;
   	opacity: 1;
-	background: #ffffff17;
+	background: #ffffff2c;
 	border-radius: 8em;
-	padding: 3px 15px 3px 15px;
+	padding: 5px 20px 5px 20px;
 }
 
 /* HEADER */

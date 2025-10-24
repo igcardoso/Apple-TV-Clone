@@ -1314,9 +1314,7 @@ nav  .icon {
 
 #film-page .header.sticky,
 #episode-details .header.sticky {
-	webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
-	background: #000000a8;
+	background: #000000;
 	border-bottom-color: #f6f6f612;
 }
 
@@ -1335,6 +1333,7 @@ nav  .icon {
 #film-page .header .share-and-save .icon,
 #episode-details .header .share-and-save .icon {
 	background: #35322b75;
+	color: #0C84FF;
 	padding: .3em;
 	border-radius: 8em;
 	width: 1.3em;
@@ -1344,6 +1343,7 @@ nav  .icon {
 #episode-details .header .back .icon,
 #film-page .header .back .icon {
   background: #35322b75;
+  color: #0C84FF;
 	padding: .3em;
 	border-radius: 8em;
 	width: 1.3em;
@@ -2242,8 +2242,8 @@ header #name-page {
 header .content-profile {
   position: relative;
   border-radius: 8em;
-  width: 5vh;
-  height: 5vh;
+  width: 4vh;
+  height: 4vh;
   /* background: #f6f6f612; */
   display: flex;
   align-items: center;

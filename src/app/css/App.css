@@ -2192,7 +2192,10 @@ nav .option-bar .click-effect .icon {
 
 nav .option-bar.active .click-effect .icon {
 	fill: #ffffff/*var(--blue-color)*/;
-  opacity: 1;
+  	opacity: 1;
+	background: #ffffff17;
+	border-radius: 8em;
+	padding: 3px 6px 3px 6px;
 }
 
 /* HEADER */

@@ -189,7 +189,6 @@ nav  .icon {
 
 .all-slides .card, .content {
   border-radius: 1em;
-  border: .2px solid #a3a3a356;
   scroll-snap-align: start; 
 
 }
@@ -224,12 +223,14 @@ nav  .icon {
   background: #f6f6f612;
   margin: .3em;
   overflow: hidden;
+  border: .2px solid #a3a3a356;
 }
 
 .slim-slide .card {
   min-width: 11em;
   height: 6.6em;
   background: #f6f6f612; 
+  border: none;
   margin: .3em;
   overflow: hidden;
 }

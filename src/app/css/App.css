@@ -1348,6 +1348,18 @@ nav  .icon {
 	height: 1.3em;
 }
 
+#film-page .header.sticky .share-and-save .icon,
+#episode-details .header.sticky .share-and-save .icon {
+	background: #35322b75;
+	color: #0C84FF;
+}
+
+#episode-details .header.sticky .back .icon,
+#film-page .header.sticky .back .icon {
+	background: #35322b75;
+	color: #0C84FF;
+}
+
 #film-page .float-btn-play {
   border-radius: .8em;
   background: none;

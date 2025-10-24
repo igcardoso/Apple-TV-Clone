@@ -188,7 +188,7 @@ nav  .icon {
 }
 
 .all-slides .card, .content {
-  border-radius: 9em;
+  border-radius: 1em;
   scroll-snap-align: start; 
 }
 /*

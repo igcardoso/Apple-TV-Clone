@@ -157,7 +157,7 @@ function showTab(tabId) {
 
 
 		}
-		displayPageName();
+		// displayPageName();
 		updateHeaderVisibility();
 	}
 

@@ -73,8 +73,8 @@
 
 nav  .icon {
   fill: currentColor;
-  width: 1.2em;
-  height: 1.2em;
+  width: 1.3em;
+  height: 1.3em;
 }
 
 /* CARDES GLOBAL STYLE  */
@@ -2164,6 +2164,8 @@ nav.keyboard-visible {
 nav .option-bar {
   width: 100%;
   padding: .5em 0 .5em 0;
+  height: 100%;
+  box-sizing: border-box;
   background-color: transparent;
   border: none;
 }
@@ -2191,7 +2193,7 @@ nav .option-bar .click-effect label {
   transition: .3s;
 }
 nav .option-bar.active .click-effect label {
-	color: #ffffff /*var(--blue-color)*/;
+  color: #ffffff /*var(--blue-color)*/;
   opacity: 1;
 }
 

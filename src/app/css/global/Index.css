@@ -11,20 +11,6 @@
 	/* --blue-color: #691df2; */
 }
 
-@media screen and (max-width: 700px) {
-  ::-webkit-scrollbar { 
-    display: none;
-    background: red;
-  }
-}
-
-::-webkit-scrollbar { 
-  background: #000000;
-} ::-webkit-scrollbar-thumb {
-  width: 6px;
-  background: var(--blue-color);
-  border-radius: 8em;
-}
 
 *:not(:empty) {/* inclui todos o elemento, excluindo apenas os que não tem texto, ou seja peda todos os que tem texto*/
   user-select: none; 

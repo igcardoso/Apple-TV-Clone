@@ -286,7 +286,6 @@ header .title {
 
 #login,
 #create-account {
-    background: rgb(26, 26, 26);
     height: calc(100vh - 6em);
     padding-top: 6em;
 }
@@ -560,7 +559,9 @@ form input.error {
         
     #login p,
     #create-account p {
-        width: 100%;
+        width: calc(100% - 40px);
+        margin-left: 20px;
+        margin-right: 20px;
         margin-top: 2em;
     }
 

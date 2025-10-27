@@ -18,8 +18,10 @@
     <link rel="apple-touch-icon" href="../../../accets/app-icons//icon-512x512.png">
     <meta name="apple-mobile-web-app-status-bar" content="#000000">
     <meta name="theme-color" content="#000000">
+    <link href="https://cdn.boxicons.com/fonts/basic/boxicons.min.css" rel="stylesheet">
+    <link href="https://cdn.boxicons.com/fonts/brands/boxicons-brands.min.css" rel="stylesheet">
     <!-- app photo guia -->
-    <link rel="icon" href="../../../../../../accets/app-icons//icon-72x72.png" type="image/png" />
+    <link rel="icon" href="../../../accets/app-icons/Apple-icon-app.webp" type="image/png" />
     <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
     <script>
       window.OneSignalDeferred = window.OneSignalDeferred || [];
@@ -29,7 +31,7 @@
         });
       });
     </script>
-    <title>Login</title>
+    <title>Apple TV+</title>
 </head>
 <body>
   <div id="alert">
@@ -96,118 +98,54 @@
     <header>
         <div class="align">
             <div class="menu">
-                <div></div>
-                <div></div>
+                <img class="app-icon" src="../../../accets/app-icons/Apple-icon-app.webp" alt="">
+                <div>
+                    Abra o app TV
+                    <img class="icon-arrow" src="../../icons/arrow-up-svgrepo-com.svg" alt="">
+                </div>
             </div>
-            <div class="title">Stream TV+</div>
+            <div class="title">
+                <div class="app-name">
+                    Apple TV+
+                </div>
+                <div class="plus">
+                    BRA1
+                </div>
+            </div>
             <div>
                 <button data-page="login" class="option-bar next-page">
-                    inciar sessão
+                    <img src="../../icons/icons8-user-90.png" alt="">
+                    Iniciar sessão
                 </button>
             </div>
         </div>
-        <div class="options">
-            <div class="sub-option">
-                <div>
-                    <svg
-                        class="icon"
-                        viewBox="0 0 1024 1024"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <use
-                            xlink:href="../../icons/ios-text.svg#ios-text"
-                        ></use>
-                    </svg>
-                </div>
-                <div>Termos e condições</div>
-            </div>
-            <div class="sub-option">
-                <div>
-                    <svg
-                        class="icon"
-                        viewBox="0 0 1024 1024"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <use
-                            xlink:href="../../icons/ios-finger-print.svg#ios-finger-print-1"
-                        ></use>
-                        <use
-                            xlink:href="../../icons/ios-finger-print.svg#ios-finger-print-2"
-                        ></use>
-                        <use
-                            xlink:href="../../icons/ios-finger-print.svg#ios-finger-print-3"
-                        ></use>
-                        <use
-                            xlink:href="../../icons/ios-finger-print.svg#ios-finger-print-4"
-                        ></use>
-                        <use
-                            xlink:href="../../icons/ios-finger-print.svg#ios-finger-print-5"
-                        ></use>
-                    </svg>
-                </div>
-                <div>Politica de privacidade</div>
-            </div>
-            <div class="sub-option store">Fine store</div>
-        </div>
+        
     </header>
     <div id="home" class="tab-content">
         <div class="content-grid">
-            <img src="../../../accets/Auth/backdrop.jpg" />
+            <video class="background" muted loop autoplay src="../../../accets/media/videos/videoplayback.webm"></video>
             <div class="info">
-                <h2>Assista uma grande variedadede conteúdos</h2>
-                <p>
-                    Desfrute de uma infinita variedade de filmes, séries e
-                    canais de TV gratuitos em um único aplicativo! Com um
-                    design intuitivo e de fácil navegação, nossa plataforma
-                    oferece entretenimento ilimitado na ponta dos seus
-                    dedos.
+                <button class="tag">
+                    Vitória no Emmy© 2025
+                </button>
+                <h1 class="title-movie">
+                    SILO
+                </h1>
+                <div class="ifs">
+                    <img src="../../../accets/app-icons/Apple-icon-app.webp" alt="">
+                    <span>Programa de TV •</span>
+                    <span> Fição científica •</span>
+                    <span>Aventura</span>
+                </div>
+                <p class="text">
+                    Em uma sociedade subterrânea uma heroina começa uma rebelião.
                 </p>
+                <button data-page="create-account" class="Create-account option-bar">
+                    Criar um conta
+                </button>
             </div>
         </div>
-        <div class="carousel-container">
-            <div class="carousel">
-                <div class="slide">
-                    <img
-                        src="../../../accets/Auth/hbo-hover_0.png"
-                        alt=""
-                    />
-                    <div class="button">Disponível</div>
-                </div>
-                <div class="slide">
-                    <img
-                        src="../../../accets/Auth/DC-Hover (1).png"
-                        alt=""
-                    />catálogo
-                    <div class="button">Disponível</div>
-                </div>
-                <div class="slide">
-                    <img
-                        src="../../../accets/Auth/ucl-hubs-br.jpg"
-                        alt=""
-                    />
-                    <div class="button">Disponível</div>
-                </div>
-                <div class="slide more">
-                    <svg
-                        class="svg-icon"
-                        viewBox="0 0 1024 1024"
-                        version="1.1"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                            id="ios-arrow-forward"
-                            d="M588.2 512L334 258c-18.8-18.8-18.8-49.2 0-67.8s49.2-18.6 68 0L690 478c18.2 18.2 18.6 47.4 1.4 66.2L402.2 834c-9.4 9.4-21.8 14-34 14s-24.6-4.6-34-14c-18.8-18.8-18.8-49.2 0-67.8l254-254.2z"
-                        />
-                    </svg>
-                </div>
-            </div>
-        </div>
-        <button
-            data-page="create-account"
-            class="Create-account option-bar"
-        >
-            Criar um conta
-        </button>
+        
     </div>
     <div id="login" class="tab-content">
         <h2>Inicie sessão com o e-mail Prime TV+</h2>

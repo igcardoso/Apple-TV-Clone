@@ -286,6 +286,7 @@ header .title {
 
 #login,
 #create-account {
+    background: rgb(26, 26, 26);
     height: calc(100vh - 6em);
     padding-top: 6em;
 }
@@ -306,44 +307,61 @@ header .title {
     margin-top: 2em;
 }
 
-#login form input,
-#create-account form input {
-    padding: 1.5em;
-    width: calc(100% - 5em);
-    background: #161616;
+#login form div,
+#create-account form div {
+    width: 400px;
+    background: #ffffff07;
     border: none;
-    border-radius: 1.2em;
+    border-radius: .8em;
     color: #ffffff;
-}
-
-#login form input:focus,
-#create-account form input:focus {
-    outline: 1px solid var(--second-color);
-}
-
-#login .login,
-#create-account .login {
-    position: absolute;
-    bottom: 1em;
-    width: 100%;
+    position: relative;
+    overflow: hidden;
     display: flex;
     align-items: center;
-    justify-content: center;
-    z-index: 9;
+    justify-content: space-between;
 }
 
-#login .login button,
-#create-account .login button {
-    background:/*  linear-gradient(20deg, var(--second-color),  */var(--second-color)/*)*/;
-    padding: 1em;
-    border: none;
+#login form input,
+#create-account form input {
+    padding: 1.5em 35px 1.5em 1.5em;
+    width: 100%;
+    background: none;
+    border: 1px solid #ffffff70;
+    border-radius: 1em;
+    outline: none;
+    box-sizing: border-box;
+}
+
+#login form div :focus,
+#create-account form div input:focus {
+    border: 1px solid #ffffff70;
+}
+
+#login  button,
+#create-account button {
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: 1px solid #fff;
     border-radius: 8em;
     color: #f6f6f6;
     font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    opacity: .4;
+    img {
+        width: 15px;
+        filter: invert(1);
+    }
 }
 
 #login p,
 #create-account p {
+    margin: auto;
+    width: 40%;
     margin-top: 2em;
 }
 
@@ -533,6 +551,17 @@ form input.error {
                 color: #111111;
             }
         }
+    }
+        
+    #login form div,
+    #create-account form div {
+        width: calc(100% - 5em);
+    }
+        
+    #login p,
+    #create-account p {
+        width: 100%;
+        margin-top: 2em;
     }
 
 }

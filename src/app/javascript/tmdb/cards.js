@@ -301,7 +301,6 @@ async function getMovieDetails(filmeId, container) {
 			// Elements
 			let title = document.querySelector(`${container} .title`);
 			let btnPlay = document.querySelector(`${container} .play`);
-			let background = document.querySelector(`${container} .image-destaque`);
 			let plataforms = document.querySelector(`${container} .plataform`);
 			let mediaType = document.querySelector(`${container} .media-type`);
 			let vote = document.querySelector(`${container} .vote_count`);
@@ -324,11 +323,9 @@ async function getMovieDetails(filmeId, container) {
 			title.innerText = TitleFiltered;
 			
 			if (container == '.popular-1') {
-			  document.querySelector('#home .scroll .image-background').setAttribute('src', `${IMG_URL + data.backdrop_path}`);
+			  document.querySelector('#home .scroll .image-background').setAttribute('src', `${IMG_URL_PROMINENCE + data.backdrop_path}`);
 			}
 			
-			background.setAttribute('src',
-				IMG_URL_PROMINENCE + data.backdrop_path);
 			const platform = plataformas[0].split(' ');
 			const filtered = platform.slice(0,
 				3).join(' ');
@@ -575,3 +572,26 @@ btnTvShowSubPage.addEventListener('click', ()=> {
 		document.querySelector('#home .popular').classList.add('hidden');
 	}, 1000);
 });
+
+
+
+
+
+
+
+
+
+
+const PgHome = document.querySelector("#home .scroll");
+const backgroundDiv = document.querySelector('.image-background-content');
+const SCROLL_FACTOR = 0.3;
+
+function handleBackgroundScroll() {
+	const scrollTop = PgHome.scrollTop;
+	const transformY = scrollTop * SCROLL_FACTOR;
+	
+	backgroundDiv.style.transform = `translateY(-${transformY}px)`;
+}
+
+PgHome.addEventListener('scroll', handleBackgroundScroll);
+handleBackgroundScroll(); // Inicializar

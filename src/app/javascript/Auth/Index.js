@@ -41,7 +41,8 @@ document.getElementById("loginForm").addEventListener("submit", async event => {
         alert("Login bem-sucedido!");
     } catch (error) {
         console.error("Erro ao fazer login:", error);
-        alert("Erro ao fazer login. Verifique suas credenciais.");
+        let text = "Erro ao fazer login. Verifique suas credenciais.";
+        pageAlerts("alert", "Senha fraca", text);
     }
 });
 
@@ -61,7 +62,6 @@ async function signUp(email, password, firstName, lastName, userName) {
         let userCredential = await createUserWithEmailAndPassword(auth, email, password);
         collectData(email, password, firstName, lastName, userName);
     } catch (error) {
-        console.error("Erro ao cadastrar novo usuário:", error.code);
         if (error.code == "auth/missing-password") {
             let signUp_password = document.getElementById("signUp_password");
             signUp_password.classList.add("error");
@@ -122,10 +122,10 @@ window.showTab = function showTab(tabId) {
     selectedTab.classList.add("active");
 
     if (tabId == "login") {
-        document.querySelector("header .next-page").style.display = "none";
+        document.querySelector("header .next-page").style.opacity = "0";
         document.querySelector("header .title").style.marginLeft = "-2em";
     } else {
-        document.querySelector("header .next-page").style.display = "flex";
+        document.querySelector("header .next-page").style.opacity = "1";
         document.querySelector("header .title").style.marginLeft = "3.5em";
     }
 };
@@ -186,3 +186,4 @@ navButtons.forEach(button => {
 });
 
 showTab("home");
+

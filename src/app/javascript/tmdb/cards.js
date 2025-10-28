@@ -616,4 +616,4 @@ handleBackgroundScroll(); // Inicializar
 
 setTimeout(function() {
   document.querySelector('.video-background').style.display = "block";
-}, 6000);
+}, 9000);

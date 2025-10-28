@@ -1671,6 +1671,11 @@ nav  .icon {
       background: #ffffff;
       color: #000000;
     }
+    .cc,
+    .sdh,
+    .ad {
+      border: 1px solid #ffffff;
+    }
   }
 }
 

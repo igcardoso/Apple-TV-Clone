@@ -804,6 +804,13 @@ nav  .icon {
   opacity: .7;
 }
 
+.imagotipo-app {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 70px;
+}
+
 .scroll .image-background-content {
 	position: fixed;
 	top: 0;

@@ -127,7 +127,7 @@ function showTab(tabId) {
           const opacity = Math.min(posicaoAtualScroll / 100, 1);
           
           header.style.setProperty('--after-opacity', opacity);
-          document.querySelector('#name-page').style.setProperty('--after-opacity', opacity);
+          document.querySelector('#name-page').style.setProperty('--img-opacity', opacity);
           
           ultimaPosicaoScroll = posicaoAtualScroll;
       });

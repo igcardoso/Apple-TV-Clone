@@ -2184,7 +2184,7 @@ header {
 		width: 100%;
 		height: 100%;
 		z-index: 99;
-		opacity: 0;
+		opacity: var(--after-opacity, 0);
   }
 }
 
@@ -2194,10 +2194,6 @@ header.hidden {
 
 header.hidden-display {
 	display: none;
-}
-
-header.sticky::after {
-  opacity: 1;
 }
 
 header #name-page {

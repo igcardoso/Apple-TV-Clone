@@ -1638,6 +1638,7 @@ nav  .icon {
 	font-size: .7em;
 }
 
+#film-page  .container .imdb .date,
 #episode-details  .container .imdb .date {
 	color: #f6f6f6;
 	font-weight: 400;

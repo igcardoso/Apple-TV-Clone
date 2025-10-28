@@ -399,14 +399,12 @@ async function getMovieDetails(filmeId, container) {
 					}
 				} catch (error) {
 					console.error('Erro ao obter dados:', error);
-					highlights('.popular-2');
 					highlights('.popular-1');
 				}
 			}
 
 		} else {
 			highlights('.popular-1');
-			highlights('.popular-2');
 		}
 
 	} catch (error) {
@@ -553,7 +551,6 @@ function contentDiscover(API) {
 	getMoviesSlimSlide(API_URL, generateRandomPage(), '.s-slide-9');
 	getMoviesSlimSlide(API_URL, generateRandomPage(), '.s-slide-10');
 	
-	highlights('.popular-2');
 }
 
 window.highlights = function highlights(atributeTab) {

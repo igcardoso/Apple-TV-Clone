@@ -2302,6 +2302,7 @@ nav .option-bar .click-effect label {
   color: #e3e3e3;
   opacity: .6;
   font-weight: 600;
+  font-size: .8em;
   transition: .3s;
 }
 nav .option-bar.active .click-effect label {

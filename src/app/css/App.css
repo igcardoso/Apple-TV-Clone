@@ -2277,7 +2277,7 @@ nav .option-bar {
   background-color: transparent;
   border: none;
   img {
-	width: 15px;
+	width: 16px;
 	filter: invert(1);
   }
 }
@@ -2313,15 +2313,15 @@ nav .option-bar .click-effect .icon {
   fill: #e3e3e3;
   opacity: .6;
   transition: 0s;
-  padding: 8px 23px 8px 23px;
+  padding: 7px 23px 7px 23px;
 }
 
 nav .option-bar.active .click-effect .icon {
 	fill: #ffffff/*var(--blue-color)*/;
-  	opacity: 1;
+  opacity: 1;
 	background: #ffffff2c;
 	border-radius: 8em;
-	padding: 8px 23px 8px 23px;
+	padding: 7px 23px 7px 23px;
 }
 
 /* HEADER */

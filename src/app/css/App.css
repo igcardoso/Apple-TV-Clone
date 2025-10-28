@@ -820,6 +820,7 @@ nav  .icon {
 	height: 37em;
 	z-index: -1;
 	transition: all 0s linear;
+	overflow: hidden;
 	video {
 	  position: absolute;
 	  top: 0;

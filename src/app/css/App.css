@@ -819,7 +819,7 @@ nav  .icon {
 	width: 100%;
 	height: 37em;
 	z-index: -1;
-	transition: all .2s linear;
+	transition: all 0s linear;
 	&::after {
 		content: '';
 		inset: 0;

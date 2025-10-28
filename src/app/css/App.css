@@ -1552,14 +1552,6 @@ nav  .icon {
 	margin: 0 .5em 0 .5em;
 }
 
-#home .popular .imdb .img {
-	width: 2em;
-	height: 1em;
-	border-radius: .2em;
-	position: relative;
-	overflow: hidden;
-}
-
 #home .popular .imdb img {
 	width: 100%;
 	height: 100%;
@@ -1629,8 +1621,7 @@ nav  .icon {
 #film-page .container .category {
 	display: flex;
 	align-items: center;
-	gap: .5em;
-	justify-content: center;
+	gap: 2px;
 }
 
 #episode-details .container .category {

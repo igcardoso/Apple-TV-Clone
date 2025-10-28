@@ -295,6 +295,7 @@ async function mediaIsSeries(serieId, save) {
 			let release_date = document.querySelector(`${whereDisplay} .release_date`);
 			let Ep_episode_name = document.querySelector(`${episodeDetails} .episode-name`);
 			let category = document.querySelector(`${whereDisplay} .category`);
+			let typeMedia = document.querySelector(`${whereDisplay} .typeMedia`);
 			let synopsi = document.querySelector(`${whereDisplay} .synopsi`);
 			let EP_synopsi = document.querySelector(`${episodeDetails} .synopsi`);
 			let contentActorsActresses = document.querySelector(`${FilmPageDisplay} .actors-actresses`);
@@ -306,8 +307,8 @@ async function mediaIsSeries(serieId, save) {
 			contentActorsActresses.innerHTML = '';
 			containment_btn_seasons.innerHTML = '';
 			containment_seasons.innerHTML = '';
-
-
+			
+			typeMedia.innerHTML = "Programa de TV •"
 
 			const TextTitle = data.name.split(' ');
 			const maxWords = 6;

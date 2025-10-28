@@ -1461,14 +1461,15 @@ nav  .icon {
 
 #film-page .float-btn-play {
   border-radius: 8em;
-  background: none;
-  padding: .4em .8em .4em .8em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 50;
-  background: #ffffff;
-  gap: .5em;
+	background: none;
+	padding: 15px 30px 15px 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 1em 0 0;
+	background: #f6f6f6;
+	gap: .5em;
+	border: none;
 }
 
 #film-page .float-btn-play .icon {

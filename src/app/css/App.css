@@ -1662,6 +1662,11 @@ nav  .icon {
     width: 30px;
     filter: invert(1);
   }
+  .tgs {
+    padding: 1px 2px 1px 2px;
+    font-weight: 700;
+    font-size: .9em;
+  }
 }
 
 #episode-details  .container .imdb .date {

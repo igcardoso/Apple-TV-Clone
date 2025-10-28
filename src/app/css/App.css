@@ -836,7 +836,7 @@ nav  .icon {
 		position: absolute;
 		top: 0;
 		left: 0;
-		background: linear-gradient(to top, #00000097, #00000000);
+		background: linear-gradient(to top, #000000bd, #00000000);
 		width: 100%;
 		height: 100%;
 		z-index: 2;
@@ -848,7 +848,7 @@ nav  .icon {
 		position: absolute;
 		top: 0;
 		left: 0;
-		background: linear-gradient(to bottom, #2014003a, #00000000);
+		background: linear-gradient(to bottom, #3a250200, #00000000);
 		width: 100%;
 		height: 100%;
 		z-index: 2;
@@ -984,6 +984,8 @@ nav  .icon {
 	border-radius: .8em;
 	border: 1px solid #ffffffad;
 	box-shadow: 0px 0px 20px #ffffff1a;
+	-webkit-backdrop-filter: blur(5px);
+	backdrop-filter: blur(5px);
 	font-size: .7em;
 	font-weight: 600;
 }
@@ -1068,9 +1070,58 @@ nav  .icon {
 	gap: .5em;
 	border: none;
 }
+
 #home .popular .bottom .btn .btn-play strong {
 	font-size: 1.1em;
 	color: #000000;
+}
+
+#home .popular .content-mark {
+	position: absolute;
+	bottom: 14px;
+	left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	button {
+		display: flex;
+		align-items: center;
+		justify-content: center;		
+		gap: 10px;
+		padding: 0;
+		border-radius: 8em;
+		border: 0;
+		background: none;
+		div {
+			width: 8px;
+			height: 8px;
+			border-radius: 8em;
+			background: #ffffff7a;
+			&:nth-child(5) {
+				width: 7px;
+				height: 7px;
+			}
+			&:nth-child(6) {
+				width: 5px;
+				height: 5px;
+			}
+			&.active {
+				position: relative;
+				width: 20px;
+				&::after {
+					content: '';
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 8px;
+					height: 8px;
+					border-radius: 8em;
+					background: #ffffff;
+				}
+			}
+		}
+	}
 }
 
 #home {
@@ -1209,6 +1260,8 @@ nav  .icon {
 	border-radius: .8em;
 	border: 1px solid #ffffffad;
 	box-shadow: 0px 0px 20px #ffffff1a;
+	-webkit-backdrop-filter: blur(5px);
+	backdrop-filter: blur(5px);
 	font-size: .7em;
 	font-weight: 600;
 }
@@ -1296,6 +1349,54 @@ nav  .icon {
 #discover .popular .bottom .btn .btn-play strong {
 	font-size: 1.1em;
 	color: #000000;
+}
+
+#discover .popular .content-mark {
+	position: absolute;
+	bottom: 14px;
+	left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	button {
+		display: flex;
+		align-items: center;
+		justify-content: center;		
+		gap: 10px;
+		padding: 0;
+		border-radius: 8em;
+		border: 0;
+		background: none;
+		div {
+			width: 8px;
+			height: 8px;
+			border-radius: 8em;
+			background: #ffffff7a;
+			&:nth-child(5) {
+				width: 7px;
+				height: 7px;
+			}
+			&:nth-child(6) {
+				width: 5px;
+				height: 5px;
+			}
+			&.active {
+				position: relative;
+				width: 20px;
+				&::after {
+					content: '';
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 8px;
+					height: 8px;
+					border-radius: 8em;
+					background: #ffffff;
+				}
+			}
+		}
+	}
 }
 
 /* FILM PAGE */

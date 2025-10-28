@@ -1054,7 +1054,7 @@ nav  .icon {
 }
 
 #home .session-title {
-  font-weight: 900;
+  font-weight: 700;
   font-size: 1.1em;
   margin: .9em 0 .5em 1.2em;
 }
@@ -1095,7 +1095,7 @@ nav  .icon {
 }
 
 #discover .session-title {
-  font-weight: 900;
+  font-weight: 700;
   font-size: 1em;
   margin: 2em 0 1em 1.2em;
 }
@@ -1501,7 +1501,7 @@ nav  .icon {
 #film-page .session-title,
 #episode-details .session-title {
 	margin: 5em 0 0 1em;
-	font-weight: 900;
+	font-weight: 700;
 	opacity: .5;
 }
 

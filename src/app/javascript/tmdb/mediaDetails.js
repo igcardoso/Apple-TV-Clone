@@ -350,12 +350,12 @@ async function mediaIsSeries(serieId, save) {
 
 			if (data.genres.length = 1) {
 				let genre_1 = document.createElement('div');
-				genre_1.innerHTML = `${movieGenres[0].name} • ${movieGenres[1].name}`
+				genre_1.innerHTML = movieGenres[0].name;
 				category.appendChild(genre_1);
 
 			} else if (data.genres.length = 2) {
 				let genre_1 = document.createElement('div');
-				genre_1.innerHTML = `${movieGenres[0].name} • ${movieGenres[1].name}`
+				genre_1.innerHTML = movieGenres[0].name;
 				category.appendChild(genre_1);
 
 				let genre_2 = document.createElement('div');
@@ -364,15 +364,15 @@ async function mediaIsSeries(serieId, save) {
 
 			} else if (data.genres.length > 2) {
 				let genre_1 = document.createElement('div');
-				genre_1.innerHTML = `${movieGenres[0].name} • ${movieGenres[1].name}`
+				genre_1.innerHTML = movieGenres[0].name;
 				category.appendChild(genre_1);
 
 				let genre_2 = document.createElement('div');
-				genre_2.innerHTML = `${movieGenres[0].name} • ${movieGenres[1].name}`
+				genre_2.innerHTML = movieGenres[0].name;
 				category.appendChild(genre_2);
 
 				let genre_3 = document.createElement('div');
-				genre_3.innerHTML = `${movieGenres[0].name} • ${movieGenres[1].name}`
+				genre_3.innerHTML = movieGenres[0].name;
 				category.appendChild(genre_3);
 
 			} else {
@@ -866,12 +866,12 @@ async function mediaIsMovie(movieId, save) {
 
 			if (data.genres.length = 1) {
 				let genre_1 = document.createElement('div');
-				genre_1.innerHTML = `${movieGenres[0].name} • ${movieGenres[1].name}`
+				genre_1.innerHTML = movieGenres[0].name;
 				category.appendChild(genre_1);
 
 			} else if (data.genres.length = 2) {
 				let genre_1 = document.createElement('div');
-				genre_1.innerHTML = `${movieGenres[0].name} • ${movieGenres[1].name}`
+				genre_1.innerHTML = movieGenres[0].name;
 				category.appendChild(genre_1);
 
 				let genre_2 = document.createElement('div');
@@ -880,15 +880,15 @@ async function mediaIsMovie(movieId, save) {
 
 			} else if (data.genres.length > 2) {
 				let genre_1 = document.createElement('div');
-				genre_1.innerHTML = `${movieGenres[0].name} • ${movieGenres[1].name}`
+				genre_1.innerHTML = movieGenres[0].name;
 				category.appendChild(genre_1);
 
 				let genre_2 = document.createElement('div');
-				genre_2.innerHTML = `${movieGenres[0].name} • ${movieGenres[1].name}`
+				genre_2.innerHTML = movieGenres[0].name;
 				category.appendChild(genre_2);
 
 				let genre_3 = document.createElement('div');
-				genre_3.innerHTML = `${movieGenres[0].name} • ${movieGenres[1].name}`
+				genre_3.innerHTML = movieGenres[0].name;
 				category.appendChild(genre_3);
 
 			} else {

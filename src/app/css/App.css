@@ -1409,6 +1409,7 @@ nav  .icon {
 	width: calc(100% - 1em);
 	border: 1px solid transparent;
 	opacity: 1;
+	box-sizing: border-box;
 }
 
 #film-page .header.sticky,

@@ -807,6 +807,8 @@ async function mediaIsMovie(movieId, save) {
 			let contentActorsActresses = document.querySelector(`${FilmPageDisplay} .actors-actresses`);
 			let saveMovie = document.querySelectorAll(`${FilmPageDisplay} .firebase.save`);
 			// let titleButtonPlay = document.querySelectorAll(`${FilmPageDisplay} .options-play .title`);
+			
+			typeMedia.innerHTML = "Filme •"
 			let Play_1 = document.querySelector(`${FilmPageDisplay} .options-play .option-1`);
 			let Play_2 = document.querySelector(`${FilmPageDisplay} .options-play .option-2`);
 			let Play_3 = document.querySelector(`${FilmPageDisplay} .options-play .option-3`);

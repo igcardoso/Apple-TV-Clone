@@ -821,7 +821,7 @@ nav  .icon {
   opacity: .7;
 }
 
-#home .scroll .image-background-content {
+.scroll .image-background-content {
 	position: fixed;
 	top: 0;
 	left: 0;

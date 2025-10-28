@@ -1,12 +1,12 @@
 {
-    "name": "Stream TV+",
-    "short_name": "Stream TV",
+    "name": "Apple TV+",
+    "short_name": "Apple TV",
     "start_url": "index.html",
     "display": "standalone",
     "background_color": "#000000",
     "theme_color": "#000000",
     "orientation": "portrait-primary",
-    "scope": "https://playflix-os.netlify.app/",
+    "scope": "https://stream-os.netlify.app/",
     "prefer_related_applications": false,
     "id": "1e42bc7a-768d-461a-86d7-7dd3d2da9032",
     "supports_edge_panel": false,
@@ -21,13 +21,13 @@
     "scope_extensions": ["notifications", "offline_storage"],
     "launch_handler": {
         "ios": {
-            "url": "https://playflix-os.netlify.app/index.html"
+            "url": "https://stream-os.netlify.app/index.html"
         },
         "android": {
-            "url": "https://playflix-os.netlify.app/index.html"
+            "url": "https://stream-os.netlify.app/index.html"
         },
         "windows": {
-            "url": "https://playflix-os.netlify.app/desktop.html"
+            "url": "https://stream-os.netlify.app/desktop.html"
         }
     },
     "protocol_handlers": [
@@ -43,49 +43,49 @@
 
     "icons": [
         {
-            "src": "/accets/app-icons/icon-72x72.png",
+            "src": "/accets/app-icons/Apple-icon-app.webp",
             "type": "image/png",
             "sizes": "72x72",
             "purpose": "any"
         },
         {
-            "src": "/accets/app-icons/icon-96x96.png",
+            "src": "/accets/app-icons/Apple-icon-app.webp",
             "type": "image/png",
             "sizes": "96x96",
             "purpose": "any"
         },
         {
-            "src": "/accets/app-icons/icon-128x128.png",
+            "src": "/accets/app-icons/Apple-icon-app.webp",
             "type": "image/png",
             "sizes": "128x128",
             "purpose": "any"
         },
         {
-            "src": "/accets/app-icons/icon-144x144.png",
+            "src": "/accets/app-icons/Apple-icon-app.webp",
             "type": "image/png",
             "sizes": "144x144",
             "purpose": "any"
         },
         {
-            "src": "/accets/app-icons/icon-152x152.png",
+            "src": "/accets/app-icons/Apple-icon-app.webp",
             "type": "image/png",
             "sizes": "152x152",
             "purpose": "any"
         },
         {
-            "src": "/accets/app-icons/icon-192x192.png",
+            "src": "/accets/app-icons/Apple-icon-app.webp",
             "type": "image/png",
             "sizes": "192x192",
             "purpose": "any"
         },
         {
-            "src": "/accets/app-icons/icon-384x384.png",
+            "src": "/accets/app-icons/Apple-icon-app.webp",
             "type": "image/png",
             "sizes": "384x384",
             "purpose": "any"
         },
         {
-            "src": "/accets/app-icons/icon-512x512.png",
+            "src": "/accets/app-icons/Apple-icon-app.webp",
             "type": "image/png",
             "sizes": "512x512",
             "purpose": "any"

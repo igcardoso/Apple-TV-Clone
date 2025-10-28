@@ -852,11 +852,10 @@ nav  .icon {
 }
 
 .category-selector {
-    display: none;
     position: sticky;
     top: 4rem;
     margin: 4.5em 0 0 1em;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: left;
     gap: .5em;

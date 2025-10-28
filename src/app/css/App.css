@@ -1628,7 +1628,7 @@ nav  .icon {
 	text-align: center;
 }
 
-#film-page .container .imdb .runtime,
+#film-page .container .runtime,
 #episode-details .container .imdb .runtime {
 	font-size: .7em;
 }
@@ -1639,7 +1639,7 @@ nav  .icon {
 	font-size: .7em;
 }
 
-#film-page  .container .imdb .release_date,
+#film-page  .container .release_date,
 #episode-details  .container .imdb .date {
 	color: #f6f6f6;
 	font-weight: 400;

@@ -543,7 +543,9 @@ function contentSearch(API) {
 
 }
 
-function contentFilmPage(API) {}
+function contentFilmPage(API) {
+  getMoviesSlide(API, generateRandomPage(), '.slide-19');
+}
 
 function contentDiscover(API) {
 	getMoviesSlide(API, generateRandomPage(), '.slide-11');

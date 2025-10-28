@@ -973,7 +973,7 @@ nav  .icon {
 	box-sizing: border-box;
 }
 
-#home .popular .text .tag span:nth-child(2) {
+#home .popular .text .tag span {
 	font-weight: 800;
 }
 

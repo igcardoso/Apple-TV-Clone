@@ -289,7 +289,7 @@ async function getMoviesSlimSlide(url, page, whichContainer) {
 }
 
 async function getMovieDetails(filmeId, container) {
-	const detalhesUrl = `${BASE_URL}/movie/${filmeId}?${API_KEY}&language=pt-BR`;
+	const detalhesUrl = `${BASE_URL}/tv/${filmeId}?${API_KEY}&language=pt-BR`;
 
 	try {
 		const response = await fetch(detalhesUrl);

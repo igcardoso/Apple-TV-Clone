@@ -603,7 +603,7 @@ btnTvShowSubPage.addEventListener('click', ()=> {
 const PgHome = document.querySelector("#home .scroll");
 const backgroundDiv1 = document.querySelector('.imagebg-1');
 const backgroundDiv2 = document.querySelector('.imagebg-2');
-const SCROLL_FACTOR = 0.3;
+const SCROLL_FACTOR = 0.6;
 
 function handleBackgroundScroll() {
 	const scrollTop = PgHome.scrollTop;

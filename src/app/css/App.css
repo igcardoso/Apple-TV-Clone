@@ -1639,13 +1639,17 @@ nav  .icon {
 	font-size: .7em;
 }
 
-#film-page .container .runtime {
+#film-page .container .content-runtime-and-date {
+  
+}
+
+#film-page .container .content-runtime-and-date .runtime {
   font-size: .7em;
   z-index: 100;
   text-align: left;
 }
 
-#film-page  .container .release_date {
+#film-page  .container .content-runtime-and-date .release_date {
   color: #f6f6f6;
 	font-weight: 400;
 	font-size: .7em;

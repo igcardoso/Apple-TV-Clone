@@ -2219,7 +2219,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: .3em 1vh .3em 1vh;
+  padding: .2em 1vh .2em 1vh;
   background: 0;
   border-bottom: 1px solid;
   border-bottom-color: transparent;
@@ -2251,6 +2251,10 @@ header #name-page {
 	font-family: Sans-Serif;
 	font-weight: 700;
 	font-size: 1em;
+	img {
+		width: 38px;
+		filter: invert(1);
+	}
 }
 
 header .content-profile {

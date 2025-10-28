@@ -1467,17 +1467,17 @@ nav  .icon {
   align-items: center;
   justify-content: center;
   z-index: 50;
-  background:var(--blue-color);
+  background: #ffffff;
   gap: .5em;
 }
 
 #film-page .float-btn-play .icon {
-  fill: #f6f6f6;
+  fill: #000000;
 }
 
 #film-page .float-btn-play span {
-  font-weight: 800;
-  color: #f6f6f6;
+  font-weight: 500;
+  color: #000000;
   font-size: .8em;
 }
 

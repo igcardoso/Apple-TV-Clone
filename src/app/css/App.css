@@ -1472,8 +1472,8 @@ nav  .icon {
 	border: none;
 }
 
-#film-page .float-btn-play span {
-  font-weight: 500;
+#film-page .float-btn-play strong {
+  font-weight: 600;
   color: #000000;
   font-size: .8em;
 }

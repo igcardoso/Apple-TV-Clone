@@ -424,7 +424,7 @@ async function getMoviesHighlights(url, page, whichContainer) {
 		}
 
 		let firstMovie = data.results[generateRandomNumber()];
-		let movieStatic = "522402";
+		let movieStatic = "125988";
 		
 		await getMovieDetails(movieStatic,
 			whichContainer);

@@ -973,13 +973,6 @@ nav  .icon {
 	box-sizing: border-box;
 }
 
-#home .popular .text {
-  display: flex;
-	flex-direction: column;
-	align-content: center;
-	gap: 10px;
-}
-
 #home .popular .text .tag span:nth-child(2) {
 	font-weight: 800;
 }

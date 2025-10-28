@@ -2277,8 +2277,8 @@ nav .option-bar {
   background-color: transparent;
   border: none;
   img {
-	width: 16px;
-	filter: invert(1);
+  	width: 16px;
+  	filter: invert(1);
   }
 }
 

@@ -1666,6 +1666,11 @@ nav  .icon {
     padding: 1px 2px 1px 2px;
     font-weight: 700;
     font-size: .9em;
+    opacity: .7;
+    .tg-4k {
+      background: #ffffff;
+      color: #000000;
+    }
   }
 }
 

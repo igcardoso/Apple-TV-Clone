@@ -2183,7 +2183,7 @@ header {
 		background: red;
 		width: 100%;
 		height: 100%;
-		z-index: 80;
+		z-index: 99;
 		opacity: 1;
   }
 }
@@ -2207,6 +2207,7 @@ header #name-page {
 	font-family: Sans-Serif;
 	font-weight: 700;
 	font-size: 1em;
+	z-index: 100;
 	img {
 		width: 38px;
 		filter: invert(1);

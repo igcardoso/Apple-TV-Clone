@@ -1644,14 +1644,10 @@ nav  .icon {
 
 #film-page .container .info .synopsi,
 #episode-details .container .info .synopsi {
-	margin: 1em;
+	margin: 1em 20px 1em 1em;
 	text-align: left;
 	font-weight: 500;
 	opacity: .7;
-	padding: 1em .5em 1em .5em;
-	border-radius: 1.2em;
-	background: linear-gradient(25deg, #ffffff1e, #ffffff12, #ffffff1e);
-	border: 1px solid #f6f6f62e;
 }
 
 #film-page .session-title,

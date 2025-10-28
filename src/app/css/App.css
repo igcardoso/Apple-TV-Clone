@@ -1460,7 +1460,7 @@ nav  .icon {
 }
 
 #film-page .float-btn-play {
-  border-radius: .8em;
+  border-radius: 8em;
   background: none;
   padding: .4em .8em .4em .8em;
   display: flex;

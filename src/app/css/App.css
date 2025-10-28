@@ -1644,6 +1644,7 @@ nav  .icon {
   display: flex;
   align-items: center;
   justify-content: left;
+  gap: 5px;
   .runtime {
     font-size: .7em;
     z-index: 100;

@@ -1404,7 +1404,7 @@ nav  .icon {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: .5em;
+	padding: 14px;
 	padding-bottom: .5em;
 	width: calc(100% - 1em);
 	border: 1px solid transparent;

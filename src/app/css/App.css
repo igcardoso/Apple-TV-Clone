@@ -1667,6 +1667,7 @@ nav  .icon {
     font-weight: 700;
     font-size: .8em;
     opacity: .7;
+    border-radius: .5em;
     &.tg-4k {
       background: #ffffff;
       color: #000000;

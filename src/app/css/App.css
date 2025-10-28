@@ -824,6 +824,7 @@ nav  .icon {
 	  width: 100%;
 	  height: 100%;
 	  object-fit: cover;
+	  display: none;
 	}
 	&::after {
 		content: '';

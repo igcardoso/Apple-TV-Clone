@@ -613,7 +613,7 @@ function handleBackgroundScroll() {
 	const scrollTop = PgHome.scrollTop;
 	const transformY = scrollTop * SCROLL_FACTOR;
 	
-	backgroundDiv.style.transform = `translateY(${transformY}px)`;
+	backgroundDiv.style.transform = `translateY-(${transformY}px)`;
 }
 
 PgHome.addEventListener('scroll', handleBackgroundScroll);

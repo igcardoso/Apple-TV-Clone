@@ -826,7 +826,7 @@ nav  .icon {
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 29em;
+	height: 34em;
 	z-index: -1;
 	transition: all .5s linear;
 	&::after {
@@ -852,6 +852,7 @@ nav  .icon {
 }
 
 .category-selector {
+    display: none;
     position: sticky;
     top: 4rem;
     margin: 4.5em 0 0 1em;
@@ -887,7 +888,7 @@ nav  .icon {
 
 #home .popular {
 	width: 100%;
-	height: 29em;
+	height: 34em;
 	margin: 1.5em auto 2em;
 	position: relative;
 	display: flex;

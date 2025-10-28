@@ -1637,10 +1637,12 @@ nav  .icon {
 	
 #film-page .container .category div,
 #episode-details .container .category div {
-	padding: .7em;
+	position: relative;
+	overflow: hidden;
+	padding: .5em;
 	border-radius: 8em;
 	font-size: .7em;
-	background: #f6f6f612;
+	/*background: #f6f6f63a;*/
 	text-align: center;
 }
 

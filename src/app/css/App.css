@@ -2163,7 +2163,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 18px 1vh .2em 1vh;
+  padding: .3em 1vh .2em 1vh;
   background: 0;
   border-bottom: 1px solid;
   border-bottom-color: transparent;

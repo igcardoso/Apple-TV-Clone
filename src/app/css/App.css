@@ -996,8 +996,7 @@ nav  .icon {
 	display: none;
 }
 
-#home,
-#discover.popular .text .logotipo {
+#home .popular .text .logotipo {
 	width: 300px;
 	margin: 10px auto 10px;
 }
@@ -1112,7 +1111,6 @@ nav  .icon {
 	font-size: .8em;
 	font-weight: 700;
 	opacity: 1;
-	display: none;
 }
 
 /* DISCOVER PAGE */
@@ -1208,6 +1206,12 @@ nav  .icon {
 	max-width: 100%;
 	font-weight: 600;
 	font-size: 2.2em;
+	display: none;
+}
+
+#discover .popular .text .logotipo {
+	width: 300px;
+	margin: 10px auto 10px;
 }
 
 #discover .popular .text .logo {

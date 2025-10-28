@@ -809,6 +809,7 @@ nav  .icon {
   top: 20px;
   left: 20px;
   width: 70px;
+  filter: invert(1);
 }
 
 .scroll .image-background-content {

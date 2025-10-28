@@ -2174,6 +2174,18 @@ header {
   transform: translateX(0);
   transition: 0s;
   /* background: #f6f6f610; */
+  &::after {
+    content: '';
+		inset: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: red;
+		width: 100%;
+		height: 100%;
+		z-index: 99;
+		opacity: 1;
+  }
 }
 
 header.hidden {

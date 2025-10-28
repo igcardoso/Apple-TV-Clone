@@ -338,7 +338,7 @@ async function getMovieDetails(filmeId, container) {
 			  document.querySelector('#home .scroll .image-background').setAttribute('src', `${IMG_URL_PROMINENCE + data.backdrop_path}`);
 			}
 			if (container == '.popular-2') {
-			  document.querySelector('#home .scroll .image-background-2').setAttribute('src', `${IMG_URL_PROMINENCE + data.backdrop_path}`);
+			  document.querySelector('#discover .scroll .image-background-2').setAttribute('src', `${IMG_URL_PROMINENCE + data.backdrop_path}`);
 			}
 			
 			const platform = plataformas[0].split(' ');

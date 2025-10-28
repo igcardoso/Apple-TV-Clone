@@ -1645,16 +1645,15 @@ nav  .icon {
   align-items: center;
   justify-content: left;
   width: 100%;
+  opacity: .7;
   gap: 5px;
   .runtime {
-    font-size: .7em;
     z-index: 100;
     text-align: left;
   }
   .release_date {
     color: #f6f6f6;
   	font-weight: 400;
-  	font-size: .7em;
   	z-index: 100;
   	text-align: left;
   }

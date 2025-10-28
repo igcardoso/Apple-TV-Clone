@@ -2290,6 +2290,10 @@ nav .option-bar {
   box-sizing: border-box;
   background-color: transparent;
   border: none;
+  img {
+	width: 15px;
+	filter: invert(1);
+  }
 }
 
 nav .option-bar .click-effect {

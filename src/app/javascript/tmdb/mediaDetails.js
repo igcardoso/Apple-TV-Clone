@@ -869,10 +869,6 @@ async function mediaIsMovie(movieId, save) {
 				genre_1.innerHTML = movieGenres[0].name;
 				category.appendChild(genre_1);
 				
-				let genre_2 = document.createElement('div');
-				genre_2.innerHTML = movieGenres[1].name;
-				category.appendChild(genre_2);
-				
 			} else if (data.genres.length = 2) {
 				let genre_1 = document.createElement('div');
 				genre_1.innerHTML = movieGenres[0].name;

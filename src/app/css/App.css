@@ -1472,6 +1472,17 @@ nav  .icon {
 	background: #f6f6f6;
 	gap: .5em;
 	border: none;
+	&.cast {
+		padding: 0;
+		height: 50px;
+		width: 50px;
+		background: #343434;
+		border: 1px solid #7c7c7c46;
+		img {
+			filter: invert(1);
+			width: 30px;
+		}
+	}
 }
 
 #film-page .float-btn-play strong,

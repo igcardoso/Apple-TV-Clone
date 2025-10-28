@@ -46,7 +46,7 @@ function handleTouchMoveCustom(event) {
   const isPullingUp = event.touches[0].clientY < touchStartYRefresh;
 
   if (isAtBottom && isPullingUp) {
-    const offset = (touchStartYRefresh - event.touches[0].clientY) / 80;
+    const offset = (touchStartYRefresh - event.touches[0].clientY) / 0;
     pagesAndHeaderElementCustom.style.transform = `translateY(-${offset}px)`;
     startOfSpinCustom = offset;
   }

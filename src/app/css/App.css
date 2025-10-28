@@ -985,6 +985,7 @@ nav  .icon {
 }
 
 #home .popular .text .tag {
+  width: auto;
 	opacity: .7;
 	background: #111111;
 	padding: 3px 10px 3px 10px;

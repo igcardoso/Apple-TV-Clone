@@ -1568,6 +1568,7 @@ nav  .icon {
 	align-items: center;
 	justify-content: center;
 	gap: .5em;
+	font-size: .7em;
 }
 
 #film-page .container .imdb .img,

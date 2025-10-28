@@ -976,7 +976,7 @@ nav  .icon {
 #home .popular .text {
   display: flex;
 	flex-direction: column;
-	gap: 100x;
+	gap: 10px;
 }
 
 #home .popular .text .tag span:nth-child(2) {

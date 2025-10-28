@@ -294,8 +294,7 @@ async function getMovieDetails(filmeId, container) {
 	try {
 		const response = await fetch(detalhesUrl);
 		const data = await response.json();
-		const plataformas = data.production_companies.map(company => company.name);
-
+	
 		if (data.vote_count >= 400) {
 
 			// Elements
@@ -341,10 +340,6 @@ async function getMovieDetails(filmeId, container) {
 			  document.querySelector('#discover .scroll .image-background-2').setAttribute('src', `${IMG_URL_PROMINENCE + data.backdrop_path}`);
 			}
 			
-			const platform = plataformas[0].split(' ');
-			const filtered = platform.slice(0,
-				3).join(' ');
-			plataforms.innerText = filtered;
 			vote.innerText = `${data.vote_average} relevate`;
 
 

@@ -613,3 +613,7 @@ function handleBackgroundScroll() {
 
 PgHome.addEventListener('scroll', handleBackgroundScroll);
 handleBackgroundScroll(); // Inicializar
+
+setTimeout(function() {
+  document.querySelector('.video-background').style.display = "block";
+}, 3000);

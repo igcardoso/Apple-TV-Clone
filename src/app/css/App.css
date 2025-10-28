@@ -2313,7 +2313,7 @@ nav .option-bar .click-effect .icon {
   fill: #e3e3e3;
   opacity: .6;
   transition: 0s;
-  padding: 5px 20px 5px 20px;
+  padding: 8px 23px 8px 23px;
 }
 
 nav .option-bar.active .click-effect .icon {
@@ -2321,7 +2321,7 @@ nav .option-bar.active .click-effect .icon {
   	opacity: 1;
 	background: #ffffff2c;
 	border-radius: 8em;
-	padding: 9px 20px 9px 20px;
+	padding: 8px 23px 8px 23px;
 }
 
 /* HEADER */

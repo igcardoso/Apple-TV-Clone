@@ -2201,9 +2201,11 @@ header #name-page {
 	font-weight: 700;
 	font-size: 1em;
 	z-index: 100;
+	opacity: var(--img-opacity, 0);
 	img {
 		width: 38px;
 		filter: invert(1);
+		
 	}
 }
 

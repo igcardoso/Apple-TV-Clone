@@ -828,6 +828,7 @@ nav  .icon {
 	  height: 100%;
 	  object-fit: cover;
 	  display: none;
+	  z-index: 1;
 	}
 	&::after {
 		content: '';
@@ -838,7 +839,7 @@ nav  .icon {
 		background: linear-gradient(to top, #00000097, #00000000);
 		width: 100%;
 		height: 100%;
-		z-index: 1;
+		z-index: 2;
 		opacity: 1;
 	}
 	&::before {
@@ -850,7 +851,7 @@ nav  .icon {
 		background: linear-gradient(to bottom, #2014003a, #00000000);
 		width: 100%;
 		height: 100%;
-		z-index: 1;
+		z-index: 2;
 		opacity: 1;
 	}
 	.image-background,

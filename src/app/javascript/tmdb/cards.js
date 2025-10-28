@@ -596,13 +596,13 @@ btnTvShowSubPage.addEventListener('click', ()=> {
 
 const PgHome = document.querySelector("#home .scroll");
 const backgroundDiv = document.querySelector('.image-background-content');
-const SCROLL_FACTOR = 0.05;
+const SCROLL_FACTOR = 0.09;
 
 function handleBackgroundScroll() {
 	const scrollTop = PgHome.scrollTop;
 	const transformY = scrollTop * SCROLL_FACTOR;
 	
-	backgroundDiv.style.transform = `translateY(-${transformY}px)`;
+	backgroundDiv.style.transform = `translateY(${transformY}px)`;
 }
 
 PgHome.addEventListener('scroll', handleBackgroundScroll);

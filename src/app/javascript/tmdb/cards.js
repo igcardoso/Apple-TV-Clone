@@ -546,7 +546,14 @@ function contentSearch(API) {
 function contentFilmPage(API) {}
 
 function contentDiscover(API) {
-	
+	getMoviesSlide(API, generateRandomPage(), '.slide-11');
+	getMoviesSlide(API, generateRandomPage(), '.slide-12');
+	getMoviesSlide(API, generateRandomPage(), '.slide-13');
+	getMoviesSlide(API, generateRandomPage(), '.slide-14');
+	getMoviesSlide(API, generateRandomPage(), '.slide-15');
+	getMoviesSlide(API, generateRandomPage(), '.slide-16');
+	getMoviesSlide(API, generateRandomPage(), '.slide-17');
+	getMoviesSlide(API, generateRandomPage(), '.slide-18');
   getMoviesSlimSlide(API_URL, generateRandomPage(), '.s-slide-8');
 	getMoviesSlimSlide(API_URL, generateRandomPage(), '.s-slide-9');
 	getMoviesSlimSlide(API_URL, generateRandomPage(), '.s-slide-10');

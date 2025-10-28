@@ -3,7 +3,7 @@
     "short_name": "Apple TV",
     "start_url": "index.html",
     "display": "standalone",
-    "background_color": "#000000",
+    "background_color": "#313131",
     "theme_color": "#000000",
     "orientation": "portrait-primary",
     "scope": "https://stream-os.netlify.app/",

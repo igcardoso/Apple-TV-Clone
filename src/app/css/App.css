@@ -834,6 +834,18 @@ nav  .icon {
 		z-index: 1;
 		opacity: 1;
 	}
+	&::before {
+		content: '';
+		inset: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: linear-gradient(to bottom, #321f003a, #00000000);
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+		opacity: 1;
+	}
 	.image-background,
 	.image-background-2 {
 		position: relative;

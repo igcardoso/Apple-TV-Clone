@@ -1670,6 +1670,7 @@ nav  .icon {
     .tg-4k {
       background: #ffffff;
       color: #000000;
+      
     }
     .tg-cc,
     .tg-sdh,
@@ -1677,6 +1678,7 @@ nav  .icon {
       border: 1px solid #ffffff;
       color: #ffffff;
       background: 0;
+    
     }
   }
 }

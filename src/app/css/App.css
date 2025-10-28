@@ -852,12 +852,13 @@ nav  .icon {
 }
 
 .category-selector {
-    position: relative;
-	margin: 4.5em 0 0 1em;
-	display: flex;
-	align-items: center;
-	justify-content: left;
-	gap: .5em;
+    position: sticky;
+    top: 5rem;
+    margin: 4.5em 0 0 1em;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: .5em;
 }
 
 .category-selector .option {

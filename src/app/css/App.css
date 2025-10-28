@@ -1596,6 +1596,10 @@ nav  .icon {
 	width: 100%;
 }
 
+#film-page .container .typeMedia {
+  font-size: .7em;
+}
+
 #film-page .container .category {
 	display: flex;
 	align-items: center;

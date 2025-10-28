@@ -1533,7 +1533,7 @@ nav  .icon {
 #film-page .container .info,
 #episode-details .container .info {
 	position: absolute;
-	bottom: 4em;
+	bottom: 30px;
 	left: 0;
 	z-index: 10;
 	width: 100%;

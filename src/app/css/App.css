@@ -826,8 +826,9 @@ nav  .icon {
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 25em;
+	height: 27em;
 	z-index: -1;
+	transition: all .5s linear;
 	&::after {
 		content: '';
 		inset: 0;
@@ -851,7 +852,7 @@ nav  .icon {
 }
 
 .category-selector {
-  position: relative;
+    position: relative;
 	margin: 4.5em 0 0 1em;
 	display: flex;
 	align-items: center;
@@ -885,7 +886,7 @@ nav  .icon {
 
 #home .popular {
 	width: 80%;
-	height: 25em;
+	height: 27em;
 	overflow: hidden;
 	margin: 1.5em auto 2em;
 	position: relative;
@@ -960,7 +961,7 @@ nav  .icon {
 
 #home .popular .bottom {
 	position: absolute;
-	bottom: 2em;
+	bottom: 37px;
 	left: 0;
 	display: flex;
 	flex-direction: column;
@@ -968,17 +969,25 @@ nav  .icon {
 	width: 100%;
 }
 
-#home .popular .text p span:nth-child(2) {
+#home .popular .text .tag span:nth-child(2) {
 	font-weight: 800;
 }
 
-#home .popular .text p {
+#home .popular .text .tag {
 	opacity: .7;
+	background: #111111;
+	padding: 3px 10px 3px 10px;
+	border-radius: 8em;
+	border: 1px solid #ffffffad;
+	box-shadow: 0px 0px 20px #ffffff1a;
+	font-size: .7em;
+	font-weight: 600;
 }
 
 #home .popular .text .title {
 	max-width: 100%;
 	font-weight: 600;
+	font-size: 2.2em;
 }
 
 #home .popular .imdb {
@@ -1006,7 +1015,7 @@ nav  .icon {
 #home .popular .imdb .category {
 	display: flex;
 	align-items: center;
-	gap: .5em;
+	gap: 2px;
 }
 	
 #home .popular .imdb .category div {
@@ -1017,11 +1026,10 @@ nav  .icon {
 	font-size: .7em;
 	/*background: #f6f6f63a;*/
 	text-align: center;
-	border: 1px solid #fff;
 }
 
 #home  .popular .imdb .vote_count {
-	color: #fff;
+	color: rgb(0, 145, 255);
 	font-weight: 800;
 	font-size: .7em;
 }
@@ -1032,24 +1040,20 @@ nav  .icon {
 }
 
 #home .popular .btn-play {
-	border-radius: .8em;
-  background: none;
-  padding: .6em .8em .6em .8em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 1em 0 0;
-  background: #f6f6f6;
-  gap: .5em;
-  border: none;
+	border-radius: 8em;
+	background: none;
+	padding: 15px 30px 15px 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 1em 0 0;
+	background: #f6f6f6;
+	gap: .5em;
+	border: none;
 }
-
-#home .popular .btn-play .icon {
-	fill: #000000;
-}
-
 #home .popular .bottom .btn .btn-play span {
-	font-weight: 800;
+	font-weight: 900;
+	font-size: 1.4em;
 	color: #000000;
 }
 

@@ -306,10 +306,22 @@ async function getMovieDetails(filmeId, container) {
 			let vote = document.querySelector(`${container} .vote_count`);
 			let category = document.querySelector(`${container} .category`);
 			let runtime = document.querySelector(`${container} .runtime`);
+			let synopseP = document.querySelector(`${container} .synopse-p`);
 
 			btnPlay.addEventListener('click', (event)=> {
 				getAllMoviesDetails(data.id, data.title || data.name, data.backgrop_path);
 			});
+			
+
+			const TextOverview = data.overview.split(' ');
+			let OverviewFiltered = TextOverview.slice(0,
+				10).join(' ');
+
+			if (TextOverview.length > 10) {
+				OverviewFiltered += '...';
+			}
+
+			synopseP.innerText = OverviewFiltered;
 
 			const TextTitle = data.title.split(' ');
 			const maxWords = 6;
@@ -320,7 +332,7 @@ async function getMovieDetails(filmeId, container) {
 				TitleFiltered += '...';
 			}
 
-			title.innerText = TitleFiltered;
+			title.innerText = TitleFiltered.toUpperCase();
 			
 			if (container == '.popular-1') {
 			  document.querySelector('#home .scroll .image-background').setAttribute('src', `${IMG_URL_PROMINENCE + data.backdrop_path}`);
@@ -339,7 +351,7 @@ async function getMovieDetails(filmeId, container) {
 
 			if (data.genres.length >= 2) {
 				let genre_1 = document.createElement('div');
-				genre_1.innerHTML = movieGenres[0].name;
+				genre_1.innerHTML = `${movieGenres[0].name} &nbsp;&nbsp;&nbsp;•`;
 				category.appendChild(genre_1);
 
 				let genre_2 = document.createElement('div');

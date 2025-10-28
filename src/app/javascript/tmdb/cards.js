@@ -340,7 +340,7 @@ async function getMovieDetails(filmeId, container) {
 			  document.querySelector('#discover .scroll .image-background-2').setAttribute('src', `${IMG_URL_PROMINENCE + data.backdrop_path}`);
 			}
 			
-			vote.innerText = `${data.vote_average} relevate`;
+			vote.innerText = `${data.vote_average}`;
 
 
 			let movieGenres = data.genres

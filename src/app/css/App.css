@@ -1627,9 +1627,14 @@ nav  .icon {
 	text-align: center;
 }
 
+#film-page .container .imdb .runtime,
+#episode-details .container .imdb .runtime {
+	font-size: .7em;
+}
+
 #film-page  .container .imdb .vote_count {
 	color: var(--blue-color);
-	font-weight: 700;
+	font-weight: 800;
 	font-size: .7em;
 }
 

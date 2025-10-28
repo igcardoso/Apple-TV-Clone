@@ -850,7 +850,10 @@
       						</div>
       					</div>
           		<div class="float-bottom">
-          		  <button class="float-btn-play">
+          		  <button data-page="play" class=" The-movies float-btn-play option-1 option-bar">
+        		      <strong>Reproduzir agora</strong>
+        		    </button>
+          		  <button class="The-series float-btn-play">
         		      <strong>Reproduzir agora</strong>
         		    </button>
           		</div>
@@ -898,107 +901,10 @@
             	</div>
             </div>
             </div>
-            <div class="not-is-drive session-title">
-            	OPÇÕES DE PLAY
-            </div>
             
             <div class="The-series">
             	<div class="dynamic SelectSeasons"></div>
               <div class="dynamic seasons"></div>
-            </div>
-            <div class="not-is-drive The-movies">
-		         <div class="players options-play">
-		          	<p class="audio-language">
-		          		DUBLADO
-		          	</p>
-		          	<div data-page="play" class="option-3 option option-bar">
-		          	 	 <div class="button-play">
-		          	 	 	<svg class="click-effect icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-		  							<use xlink:href="src/icons/ios-play.svg#path-1"></use>
-		   						 </svg>
-		          	 	 </div>
-		          	 	 <div class="content">
-		            	 	 	<div class="language">
-		            	 	 		Idioma | DUBLADO
-		            	 	  </div>
-		            		  <div class="title">
-		            		    Reproduzir
-		            		  </div>
-		            		  <div class="provided-by">
-		            		 		<p>Fornecido por: </p>
-		            		 		<p> Superembeds</p>
-		            		  </div>
-		            		  <div class="progress-bar">
-		            	 	  </div>
-		          	 	 </div>
-		          	</div>
-		          	<div data-page="play" class="option-1 option option-bar">
-		          	 	 <div class="button-play">
-		          	 	 	<svg class="click-effect icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-		  							<use xlink:href="src/icons/ios-play.svg#path-1"></use>
-		   						 </svg>
-		          	 	 </div>
-		          	 	 <div class="content">
-		            	 	 	<div class="language">
-		            	 	 		Idioma | DUBLADO
-		            	 	  </div>
-		            		  <div class="title">
-		            		  	Reproduzir
-		            		  </div>
-		            		  <div class="provided-by">
-		            		 		<p>Fornecido por: </p>
-		            		 		<p> Embedder.net</p>
-		            		  </div>
-		            		  <div class="progress-bar">
-		            	 	  </div>
-		          	 	 </div>
-		          	</div>
-		          	<p class="audio-language">
-		          		LEGENDADO 
-		          	</p>
-		          	<div data-page="play" class="option-2 option option-bar">
-		          	 	 <div class="button-play">
-		          	 	 	<svg class="click-effect icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-		  							<use xlink:href="src/icons/ios-play.svg#path-1"></use>
-		   						 </svg>
-		          	 	 </div>
-		          	 	 <div class="content">
-		            	 	 	<div class="language">
-		            	 	 		Idioma | LEGENDADO 
-		            	 	  </div>
-		            		  <div class="title">
-		            		  	Reproduzir
-		            		  </div>
-		            		  <div class="provided-by">
-		            		 		<p>Fornecido por: </p>
-		            		 		<p> Vidsrc</p>
-		            		  </div>
-		            		  <div class="progress-bar">
-		            	 	  </div>
-		          	 	 </div>
-		          	</div>
-		          	<div data-page="play" class="option-4 option option-bar">
-		          	 	 <div class="button-play">
-		          	 	 	<svg class="click-effect icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-		  							<use xlink:href="src/icons/ios-play.svg#path-1"></use>
-		   						 </svg>
-		          	 	 </div>
-		          	 	 <div class="content">
-		            	 	 	<div class="language">
-		            	 	 		Idioma | LEGENDADO 
-		            	 	  </div>
-		            		  <div class="title">
-		            		  	Player 4
-		            		  </div>
-		            		  <div class="provided-by">
-		            		 		<p>Fornecido por: </p>
-		            		 		<p> Multiembed</p>
-		            		  </div>
-		            		  <div class="progress-bar">
-		            	 	  </div>
-		          	 	 </div>
-		          	</div>
-		          </div>
             </div>
             <br />
             <br />
@@ -1132,12 +1038,24 @@
           			<h1 class="title"></h1>
           			
           			<div class="imdb">
-          				<div class="runtime"></div>
           				<div class="episode-name"></div>
-          			  <div class="date"></div>
           			</div>
-          			
-          		<div class="synopsi"></div>
+          			<div class="float-bottom">
+                  <button data-page="play" class="float-btn-play option-1 option-bar">
+                    <strong>Reproduzir agora</strong>
+                  </button>
+                </div>
+          		  <div class="synopsi"></div>
+                <div class="content-runtime-and-date">
+                  <div class="date"></div>
+                  •
+                  <div class="runtime"></div>
+                  <div class="tgs tg-4k">4K</div>
+                  <img src="src/icons/Dolby_Atmos_Logo.svg" alt="" />
+                  <div class="tgs tg-cc">CC</div>
+                  <div class="tgs tg-sdh">SDH</div>
+                  <div class="tgs tg-ad">AD</div>
+                </div>
           		</div>
           		
           		<div class="category"></div>
@@ -1149,109 +1067,8 @@
               	</div>
               </div>
           	</div>
-          	<div class="session-title">
-            	OPÇÕES DE PLAY
-            </div>
-						<div class="options-play">
-						  <p class="audio-language">
-		          		DUBLADO
-		          </p>
-		          <div data-page="play" class="option-3 option option-bar">
-            	 	 <div class="button-play">
-            	 	 	<svg class="click-effect icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-    							<use xlink:href="src/icons/ios-play.svg#path-1"></use>
-     						 </svg>
-            	 	 </div>
-            	 	 <div class="content">
-	            	 	 	<div class="language">
-	            	 	 		Idioma | DUBLADO
-	            	 	  </div>
-	            		  <div class="title">
-	            		  	Player 3
-	            		  </div>
-	            		  <div class="provided-by">
-	            		 		<p>Fornecido por: </p>
-	            		 		<p> Superembeds</p>
-	            		  </div>
-	            		  <div class="progress-bar">
-	            	 	  </div>
-            	 	 </div>
-            	</div>
-            	<div data-page="play" class="option-1 option option-bar">
-            	 	 <div class="button-play">
-            	 	 	<svg class="click-effect icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-    							<use xlink:href="src/icons/ios-play.svg#path-1"></use>
-     						 </svg>
-            	 	 </div>
-            	 	 <div class="content">
-	            	 	 	<div class="language">
-	            	 	 		Idioma | DUBLADO
-	            	 	  </div>
-	            		  <div class="title">
-	            		  	Player 1
-	            		  </div>
-	            		  <div class="provided-by">
-	            		 		<p>Fornecido por: </p>
-	            		 		<p> Embedder.net</p>
-	            		  </div>
-	            		  <div class="progress-bar">
-	            	 	  </div>
-            	 	 </div>
-            	</div>
-            	<p class="audio-language">
-		          		LEGENDADO 
-		          </p>
-            	<div data-page="play" class="option-2 option option-bar">
-            	 	 <div class="button-play">
-            	 	 	<svg class="click-effect icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-    							<use xlink:href="src/icons/ios-play.svg#path-1"></use>
-     						 </svg>
-            	 	 </div>
-            	 	 <div class="content">
-	            	 	 	<div class="language">
-	            	 	 		Idioma | LEGENDADO 
-	            	 	  </div>
-	            		  <div class="title">
-	            		  	Player 2
-	            		  </div>
-	            		  <div class="provided-by">
-	            		 		<p>Fornecido por: </p>
-	            		 		<p> Vidsrc</p>
-	            		  </div>
-	            		  <div class="progress-bar">
-	            	 	  </div>
-            	 	 </div>
-            	</div>
-            	<div data-page="play" class="option-4 option option-bar">
-            	 	 <div class="button-play">
-            	 	 	<svg class="click-effect icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-    							<use xlink:href="src/icons/ios-play.svg#path-1"></use>
-     						 </svg>
-            	 	 </div>
-            	 	 <div class="content">
-	            	 	 	<div class="language">
-	            	 	 		Idioma | LEGENDADO 
-	            	 	  </div>
-	            		  <div class="title">
-	            		  	Player 4
-	            		  </div>
-	            		  <div class="provided-by">
-	            		 		<p>Fornecido por: </p>
-	            		 		<p> Multiembed</p>
-	            		  </div>
-	            		  <div class="progress-bar">
-	            	 	  </div>
-            	 	 </div>
-            	</div>
-            </div>
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
+          	
+           
         	</div>
         	<div class="back-smart-cast-options"></div>
         	<div class="options-player-smartTv">

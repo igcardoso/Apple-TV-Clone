@@ -1460,8 +1460,9 @@ nav  .icon {
 	fill: #0C84FF;
 }
 
-#film-page .float-btn-play {
-  border-radius: 8em;
+#film-page .float-btn-play,
+#episode-details .float-btn-play {
+  	border-radius: 8em;
 	background: none;
 	padding: 15px 30px 15px 30px;
 	display: flex;
@@ -1473,7 +1474,8 @@ nav  .icon {
 	border: none;
 }
 
-#film-page .float-btn-play strong {
+#film-page .float-btn-play strong,
+#episode-details .float-btn-play strong {
   font-weight: 600;
   color: #000000;
   font-size: 1.1em;
@@ -1549,7 +1551,7 @@ nav  .icon {
 }
 
 #episode-details .container .info .title {
-	font-size: 1.4em;
+	font-size: 2.2em;
 	margin: 0 .5em 0 .5em;
 }
 
@@ -1582,6 +1584,7 @@ nav  .icon {
 
 #episode-details .container .imdb .episode-name {
 	font-weight: 800;
+	font-size: .9em;
 }
 
 #film-page .container .imdb img {
@@ -1589,7 +1592,8 @@ nav  .icon {
 	height: 100%;
 }
 
-#film-page .container .float-bottom {
+#film-page .container .float-bottom,
+#episode-details .container .float-bottom {
 	display: flex;
 	align-items: center;
 	gap: .5em;
@@ -1598,7 +1602,8 @@ nav  .icon {
 	width: 100%;
 }
 
-#film-page .container .typeMedia {
+#film-page .container .typeMedia,
+#episode-details .container .typeMedia {
   font-size: .7em;
 }
 
@@ -1641,7 +1646,8 @@ nav  .icon {
 	font-size: .7em;
 }
 
-#film-page .container .content-runtime-and-date {
+#film-page .container .content-runtime-and-date,
+#episode-details .container .content-runtime-and-date {
   text-align: left;
   display: flex;
   align-items: center;

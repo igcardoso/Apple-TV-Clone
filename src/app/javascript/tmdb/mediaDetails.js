@@ -24,52 +24,23 @@ async function getAllMoviesDetails(filmeId, title, background, save) {
 		});
 		
     
-    let floatPlay = document.querySelector(`${FilmPageDisplay} .float-btn-play`);
-    let options_play = document.querySelector(`${FilmPageDisplay} .options-play`);
-    
 		if (data) {
 			if (title != data.title) {
 				await mediaIsSeries(correctId, save);
-				if (filmeId == 73169) {
-    		  noDrive.forEach(movies=> {
-    				  movies.style.display = 'none';
-    			});
-    			floatPlay.addEventListener('click', ()=> {
-            window.location.href = 'src/app/html/movie-on-drive.html';
-          });
-    		} else {
-    			noDrive.forEach(movies=> {
-    			  movies.style.display = 'none';
-    			});
-          floatPlay.addEventListener('click', ()=> {
-            options_play.scrollIntoView({ behavior: 'smooth' });
-          });
-    		}
+				
 				Elements_series.forEach(series=> {
-				  series.style.display = 'block';
+					series.style.display = 'block';
 				});
 				Elements_movies.forEach(series=> {
 				  series.style.display = 'none';
 				});
 			} else {
 				await mediaIsMovie(correctId, save);
-				if (filmeId == 73169) {
-    		  noDrive.forEach(movies=> {
-    				  movies.style.display = 'none';
-    			});
-    			floatPlay.addEventListener('click', ()=> {
-            window.location.href = 'src/app/html/movie-on-drive.html';
-          });
-    		} else {
-  				noDrive.forEach(movies=> {
-  				  if (!movies.classList.contains('options-player-smartTv')) {
-  				    movies.style.display = 'block';
-  				  }
-  				});
-  				floatPlay.addEventListener('click', ()=> {
-            options_play.scrollIntoView({ behavior: 'smooth' });
-          });
-    		}
+				
+				// floatPlay.addEventListener('click', ()=> {
+				// 	options_play.scrollIntoView({ behavior: 'smooth' });
+				// });
+					
 				Elements_series.forEach(series=> {
 				  series.style.display = 'none';
 				});
@@ -122,56 +93,57 @@ async function mediaLibraryIsSeries(serieId) {
 		const data = await response.json();
 		// const plataformas = data.production_companies.map(company => company.name);
 	
-		  let cardSave = document.createElement('div');
-      cardSave.classList.add('card');
-      cardSave.style.backgroundImage = `url('${IMG_URL + data.poster_path}')`
-      
-      let destiny = document.createElement('div');
-      destiny.classList.add('lib-img');
-      destiny.setAttribute('data-page', 'film-page');
-      
-      let movie_cancel_delete = document.createElement('div');
-      movie_cancel_delete.classList.add('cancel');
-      movie_cancel_delete.innerHTML = "cancelar";
-      movie_cancel_delete.addEventListener('click',()=> {
-       cardSave.classList.remove('long-press');
-      });
-      
-      let movie_delete = document.createElement('div');
-      movie_delete.classList.add('delete');
-      movie_delete.innerHTML = "remover";
-      movie_delete.addEventListener('click',()=> {
-       deleteMovieDocument(data.id)
-      });
-      
-      cardSave.appendChild(movie_delete);
-      cardSave.appendChild(movie_cancel_delete);
-      cardSave.appendChild(destiny);
-      
-      // Adiciona evento de pressionar e segurar ao card
-      let pressTimer;
-      cardSave.addEventListener('touchstart', function(event) {
-      cardSave.style.transform = "scale(0.9)";
-        pressTimer = window.setTimeout(function() {
-            cardSave.classList.add('long-press');
-            cardSave.style.transform = "scale(1)";
-        }, 1000);
-      });
-      
-      // Cancela o temporizador se o usuário soltar o card antes do tempo limite
-      cardSave.addEventListener('touchend', function() {
-        cardSave.style.transform = "scale(1)";
-        clearTimeout(pressTimer);
-      });
-      
-      // Adiciona o card à lista de slides da biblioteca
-      document.querySelector('#library .library-slides').appendChild(cardSave);
-      
-      // Adiciona evento de clique ao card
-      destiny.addEventListener('click', function(event) {
-        handleNavClick(event);
-        getAllMoviesDetails(data.id, data.name, data.backgrop_path, 'save');
-      });
+		let cardSave = document.createElement('div');
+		cardSave.classList.add('card');
+		cardSave.style.backgroundImage = `url('${IMG_URL + data.poster_path}')`
+		
+		let destiny = document.createElement('div');
+		destiny.classList.add('lib-img');
+		destiny.setAttribute('data-page', 'film-page');
+		
+		let movie_cancel_delete = document.createElement('div');
+		movie_cancel_delete.classList.add('cancel');
+		movie_cancel_delete.innerHTML = "cancelar";
+
+		movie_cancel_delete.addEventListener('click',()=> {
+			cardSave.classList.remove('long-press');
+		});
+		
+		let movie_delete = document.createElement('div');
+		movie_delete.classList.add('delete');
+		movie_delete.innerHTML = "remover";
+		movie_delete.addEventListener('click',()=> {
+			deleteMovieDocument(data.id)
+		});
+		
+		cardSave.appendChild(movie_delete);
+		cardSave.appendChild(movie_cancel_delete);
+		cardSave.appendChild(destiny);
+		
+		// Adiciona evento de pressionar e segurar ao card
+		let pressTimer;
+		cardSave.addEventListener('touchstart', function(event) {
+		cardSave.style.transform = "scale(0.9)";
+			pressTimer = window.setTimeout(function() {
+				cardSave.classList.add('long-press');
+				cardSave.style.transform = "scale(1)";
+			}, 1000);
+		});
+		
+		// Cancela o temporizador se o usuário soltar o card antes do tempo limite
+		cardSave.addEventListener('touchend', function() {
+			cardSave.style.transform = "scale(1)";
+			clearTimeout(pressTimer);
+		});
+		
+		// Adiciona o card à lista de slides da biblioteca
+		document.querySelector('#library .library-slides').appendChild(cardSave);
+		
+		// Adiciona evento de clique ao card
+		destiny.addEventListener('click', function(event) {
+			handleNavClick(event);
+			getAllMoviesDetails(data.id, data.name, data.backgrop_path, 'save');
+		});
       
 	//	initLazyLoad();
 	} catch (error) {
@@ -525,10 +497,7 @@ async function mediaIsSeries(serieId, save) {
 							EP_synopsi.innerText = `${episode.episodeSynopsis}`;
 							EP_background.setAttribute('src', episode.backgroundUrl);
 
-							let play_1 = document.querySelector(`${episodeDetails} .option-1`);
-							let play_2 = document.querySelector(`${episodeDetails} .option-2`);
-							let play_3 = document.querySelector(`${episodeDetails} .option-3`);
-							let play_4 = document.querySelector(`${episodeDetails} .option-4`);
+							let play = document.querySelector(`${episodeDetails} .option-1`);
 							
 							
         			let SmartCast = document.querySelectorAll('#episode-details .firebase.cast');
@@ -577,21 +546,7 @@ async function mediaIsSeries(serieId, save) {
         			    });
         			  });
         			});
-							play_1.addEventListener("click", ()=> {
-								contentIframe.innerHTML = '';
-								const iframe = document.createElement('iframe');
-								iframe.src = `https://embedder.net/e/${data.id}/${season.season_number}/${episodeNumber}`;
-								iframe.setAttribute('allowfullscreen', '');
-								contentIframe.appendChild(iframe);
-							});
-							play_2.addEventListener("click", ()=> {
-								contentIframe.innerHTML = '';
-								const iframe = document.createElement('iframe');
-								iframe.src = `https://v2.vidsrc.me/embed/${data.id}/${season.season_number}/${episodeNumber}`;
-								iframe.setAttribute('allowfullscreen', '');
-								contentIframe.appendChild(iframe);
-							});
-							play_3.addEventListener("click", ()=> {
+							play.addEventListener("click", ()=> {
 								contentIframe.innerHTML = '';
 								const iframe = document.createElement('iframe');
 								// iframe.src = `https://superembeds.com/embed2/${data.id}-${season.season_number}-${episodeNumber}`;
@@ -600,13 +555,6 @@ async function mediaIsSeries(serieId, save) {
 								contentIframe.appendChild(iframe);
 
 							});
-							play_4.addEventListener("click", ()=> {
-									contentIframe.innerHTML = '';
-									const iframe = document.createElement('iframe');
-									iframe.src = `https://multiembed.mov/?video_id=${data.imdb_id}`;
-									iframe.setAttribute('allowfullscreen', '');
-									contentIframe.appendChild(iframe);
-								});
 
 						});
 
@@ -810,11 +758,8 @@ async function mediaIsMovie(movieId, save) {
 			// let titleButtonPlay = document.querySelectorAll(`${FilmPageDisplay} .options-play .title`);
 			
 			typeMedia.innerHTML = "Filme •"
-			let Play_1 = document.querySelector(`${FilmPageDisplay} .options-play .option-1`);
-			let Play_2 = document.querySelector(`${FilmPageDisplay} .options-play .option-2`);
-			let Play_3 = document.querySelector(`${FilmPageDisplay} .options-play .option-3`);
-			let Play_4 = document.querySelector(`${FilmPageDisplay} .options-play .option-4`);
-
+			let Play = document.querySelector(`${FilmPageDisplay} .option-1`);
+			
 			let contentIframe = document.querySelector('#play .media');
 			contentActorsActresses.innerHTML = '';
 
@@ -822,11 +767,11 @@ async function mediaIsMovie(movieId, save) {
 				toShare(data.id, data.title);
 			});
 			
-		  saveMovie.forEach(saveMovie => {
-		    saveMovie.addEventListener('click', ()=> {
-			    movieSaveInDataBase(data.imdb_id, data.title, data.backdrop_path);
-			  });
-		  });
+			saveMovie.forEach(saveMovie => {
+				saveMovie.addEventListener('click', ()=> {
+					movieSaveInDataBase(data.imdb_id, data.title, data.backdrop_path);
+				});
+			});
 
 			getMovieTrailerLink(data.id);
 
@@ -959,36 +904,16 @@ async function mediaIsMovie(movieId, save) {
 			    }
 			  });
 			});
-			Play_1.addEventListener("click", ()=> {
-				contentIframe.innerHTML = '';
-				let iframe = document.createElement('iframe');
-				iframe.src = `https://embedder.net/e/${data.imdb_id}`;
-				iframe.setAttribute('allowfullscreen', '');
-				contentIframe.appendChild(iframe);
-			});
-			Play_2.addEventListener("click", ()=> {
-				contentIframe.innerHTML = '';
-				let iframe = document.createElement('iframe');
-				iframe.src = `https://superflixapi.life/filme/${data.imdb_id}`;
-				iframe.setAttribute('allowfullscreen', '');
-				contentIframe.appendChild(iframe);
-			});
-			Play_3.addEventListener("click", ()=> {
-				contentIframe.innerHTML = '';
-				let iframe = document.createElement('iframe');
-				iframe.src = `https://superflixapi.life/filme/${data.imdb_id}`;
-				iframe.setAttribute('allowfullscreen', '');
-				contentIframe.appendChild(iframe);
-			});
-			Play_4.addEventListener("click", ()=> {
-					contentIframe.innerHTML = '';
-					const iframe = document.createElement('iframe');
-					iframe.src = `https://multiembed.mov/?video_id=${data.imdb_id}`;
-					iframe.setAttribute('allowfullscreen', '');
-					contentIframe.appendChild(iframe);
-				});
 
-			console.log(data)
+
+			Play.addEventListener("click", ()=> {
+				contentIframe.innerHTML = '';
+				let iframe = document.createElement('iframe');
+				iframe.src = `https://superflixapi.life/filme/${data.imdb_id}`;
+				iframe.setAttribute('allowfullscreen', '');
+				contentIframe.appendChild(iframe);
+			});
+
 
 			// Fetch movie show cast
 			const castUrl = `${BASE_URL}/movie/${movieId}/credits?${API_KEY}`;

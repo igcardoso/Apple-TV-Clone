@@ -1660,6 +1660,7 @@ nav  .icon {
   }
   img {
     width: 20px;
+    filter: invert(1);
   }
 }
 

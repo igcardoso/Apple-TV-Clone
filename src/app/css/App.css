@@ -967,7 +967,7 @@ nav  .icon {
 	left: 0;
 	display: flex;
 	flex-direction: column;
-	gap: 1em;
+	gap: 15px;
 	width: 100%;
 	padding: 0 10% 0 10%;
 	box-sizing: border-box;
@@ -976,7 +976,7 @@ nav  .icon {
 #home .popular .text {
   display: flex;
 	flex-direction: column;
-	gap: 1em;
+	gap: 100x;
 }
 
 #home .popular .text .tag span:nth-child(2) {

@@ -802,6 +802,7 @@ async function mediaIsMovie(movieId, save) {
 			let runtime = document.querySelector(`${whereDisplay} .runtime`);
 			let release_date = document.querySelector(`${whereDisplay} .release_date`);
 			let category = document.querySelector(`${whereDisplay} .category`);
+			let typeMedia = document.querySelector(`${whereDisplay} .typeMedia`);
 			let synopsi = document.querySelector(`${whereDisplay} .synopsi`);
 			let contentActorsActresses = document.querySelector(`${FilmPageDisplay} .actors-actresses`);
 			let saveMovie = document.querySelectorAll(`${FilmPageDisplay} .firebase.save`);

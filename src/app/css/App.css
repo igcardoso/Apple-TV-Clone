@@ -1675,6 +1675,8 @@ nav  .icon {
     .sdh,
     .ad {
       border: 1px solid #ffffff;
+      color: #ffffff;
+      background: 0;
     }
   }
 }

@@ -402,11 +402,13 @@ async function getMovieDetails(filmeId, container) {
 					}
 				} catch (error) {
 					console.error('Erro ao obter dados:', error);
+					highlights('.popular-2');
 					highlights('.popular-1');
 				}
 			}
 
 		} else {
+			highlights('.popular-2');
 			highlights('.popular-1');
 		}
 

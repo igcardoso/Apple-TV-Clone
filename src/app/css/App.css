@@ -843,7 +843,8 @@ nav  .icon {
 		z-index: 1;
 		opacity: 1;
 	}
-	.image-background {
+	.image-background,
+	.image-background-2 {
 		position: relative;
 		width: 100%;
 		height: 100%;

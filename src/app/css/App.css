@@ -1552,6 +1552,14 @@ nav  .icon {
 	margin: 0 .5em 0 .5em;
 }
 
+#film-page .container .imdb .logo,
+#episode-details .container .imdb .logo {
+	width: 20px;
+	height: 20px;
+	border-radius: 8em;
+	border: 1px solid #ffffffad;
+}
+
 #film-page .container .imdb,
 #episode-details .container .imdb {
 	position: relative;

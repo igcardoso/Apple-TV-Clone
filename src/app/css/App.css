@@ -2298,7 +2298,7 @@ nav .option-bar .click-effect .profile {
 }
 
 nav .option-bar .click-effect label {
-  margin: .3em auto;
+  margin: .3em auto 0;
   color: #e3e3e3;
   opacity: .6;
   font-weight: 600;

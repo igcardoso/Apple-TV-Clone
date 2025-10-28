@@ -1630,6 +1630,7 @@ nav  .icon {
 
 #film-page .container .runtime {
   font-size: .7em;
+  z-index: 100;
 }
 
 #episode-details .container .imdb .runtime {

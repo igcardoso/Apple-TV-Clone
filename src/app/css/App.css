@@ -51,23 +51,6 @@
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,"Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-#loading-app .version {
-  position: absolute;
-  bottom: 1em;
-  left: auto;
-  right: auto;
-  margin: auto;
-  font-weight: 800;
-  font-size: .8em;
-  text-align: center;
-}
-
-#loading-app .version span:nth-child(1) {
-  opacity: .4;
-}
-#loading-app .version span:nth-child(2) {
-  opacity: 1;
-}
 
 /* ICONS */
 

@@ -994,6 +994,11 @@ nav  .icon {
 	font-size: 2.2em;
 }
 
+#home,
+#discover .popular .text .logotipo {
+	width: 100px;
+}
+
 #home .popular .text .logo {
 	width: 20px;
 	height: 20px;

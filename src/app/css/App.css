@@ -1663,7 +1663,7 @@ nav  .icon {
     filter: invert(1);
   }
   .tgs {
-    padding: 1px 2px 1px 2px;
+    padding: .5px 2.2px .5px 2.2px;
     font-weight: 700;
     font-size: .7em;
     opacity: .7;

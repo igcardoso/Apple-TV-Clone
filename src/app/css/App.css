@@ -996,7 +996,8 @@ nav  .icon {
 	display: none;
 }
 
-#home .popular .text .logotipo {
+#home,
+#discover.popular .text .logotipo {
 	width: 300px;
 	margin: 10px auto 10px;
 }

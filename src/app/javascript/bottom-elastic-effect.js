@@ -1,4 +1,4 @@
-
+/*
 let touchStartYRefresh;
 let isRefreshingCustom = false;
 let startOfSpinCustom;
@@ -56,3 +56,4 @@ function handleTouchEndCustom() {
     pagesAndHeaderElementCustom.style.transform = `translateY(0)`;
 }
 
+*/

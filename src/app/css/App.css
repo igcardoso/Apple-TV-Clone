@@ -992,6 +992,7 @@ nav  .icon {
 	max-width: 100%;
 	font-weight: 600;
 	font-size: 2.2em;
+	display: none;
 }
 
 #home .popular .text .logotipo {

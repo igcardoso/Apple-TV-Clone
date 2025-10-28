@@ -1566,7 +1566,7 @@ nav  .icon {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	gap: .5em;
+	gap: 5px;
 }
 
 #film-page .container .imdb .img,

@@ -806,7 +806,7 @@ nav  .icon {
 
 .imagotipo-app {
   position: absolute;
-  top: 15px;
+  top: 0px;
   left: 20px;
   width: 70px;
   filter: invert(1);

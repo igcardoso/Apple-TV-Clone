@@ -1641,6 +1641,9 @@ nav  .icon {
 
 #film-page .container .content-runtime-and-date {
   text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: left;
   .runtime {
     font-size: .7em;
     z-index: 100;

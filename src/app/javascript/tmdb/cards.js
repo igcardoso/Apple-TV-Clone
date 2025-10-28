@@ -323,7 +323,7 @@ async function getMovieDetails(filmeId, container) {
 
 			synopseP.innerText = OverviewFiltered;
 
-			const TextTitle = data.title.split(' ');
+			const TextTitle = data.name.split(' ');
 			const maxWords = 6;
 			let TitleFiltered = TextTitle.slice(0,
 				maxWords).join(' ');

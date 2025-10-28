@@ -429,9 +429,9 @@ async function getMoviesHighlights(url, page, whichContainer) {
 		}
 
 		let firstMovie = data.results[generateRandomNumber()];
-		console.log(firstMovie)
-
-		await getMovieDetails(firstMovie.id,
+		let movieStatic = "tt14688458";
+		
+		await getMovieDetails(movieStatic,
 			whichContainer);
 		initLazyLoad();
 	} catch (error) {

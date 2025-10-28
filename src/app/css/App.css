@@ -994,6 +994,12 @@ nav  .icon {
 	font-size: 2.2em;
 }
 
+#home .popular .text .logo {
+	width: 20px;
+	border-radius: 8em;
+	border: 1px solid #ffffffad;
+}
+
 #home .popular .imdb {
 	position: relative;
 	padding: 0 0 0 0;
@@ -1192,6 +1198,12 @@ nav  .icon {
 	max-width: 100%;
 	font-weight: 600;
 	font-size: 2.2em;
+}
+
+#discover .popular .text .logo {
+	width: 20px;
+	border-radius: 8em;
+	border: 1px solid #ffffffad;
 }
 
 #discover .popular .imdb {

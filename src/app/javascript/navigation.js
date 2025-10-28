@@ -122,21 +122,27 @@ function showTab(tabId) {
 			
 			var ultimaPosicaoScroll = 0;
 			pageAreaWithScroll.addEventListener("scroll", function() {
-        const posicaoAtualScroll = pageAreaWithScroll.scrollTop;
-            header.classList.toggle("sticky", pageAreaWithScroll.scrollTop > 0);
-            if (posicaoAtualScroll > ultimaPosicaoScroll & posicaoAtualScroll > 20) {
-                navBar.classList.add("sticky");
-            } else {
-                navBar.classList.remove("sticky");
-            }
-        
-            if (posicaoAtualScroll <= 0) {
-                navBar.classList.remove("sticky");
-            }
-        
-            ultimaPosicaoScroll = posicaoAtualScroll;
-    
-			});
+          const posicaoAtualScroll = pageAreaWithScroll.scrollTop;
+          
+          // Calcula a opacidade baseada no scroll (0 a 100px de scroll = 0 a 1 de opacity)
+          const opacity = Math.min(posicaoAtualScroll / 100, 1); // Ajuste 100 para mudar a sensibilidade
+          
+          // Aplica a opacidade ao after do header
+          header.style.setProperty('--after-opacity', opacity);
+          
+          // Mantém a lógica original para a navBar
+          if (posicaoAtualScroll > ultimaPosicaoScroll & posicaoAtualScroll > 20) {
+              navBar.classList.add("sticky");
+          } else {
+              navBar.classList.remove("sticky");
+          }
+          
+          if (posicaoAtualScroll <= 0) {
+              navBar.classList.remove("sticky");
+          }
+          
+          ultimaPosicaoScroll = posicaoAtualScroll;
+      });
 
 
 			let FilmPageHeader = document.querySelector('#film-page .header');

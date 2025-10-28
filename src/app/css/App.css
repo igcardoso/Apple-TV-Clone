@@ -1590,8 +1590,6 @@ nav  .icon {
 	align-items: center;
 	gap: .5em;
 	justify-content: center;
-	position: absolute;
-	bottom: 0;
 	z-index: 10;
 	width: 100%;
 }

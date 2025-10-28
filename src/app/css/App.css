@@ -1541,11 +1541,12 @@ nav  .icon {
 }
 
 #film-page .container .info .title {
+  font-size: 2em;
 	margin: 0 .5em 0 .5em;
 }
 
 #episode-details .container .info .title {
-	font-size: 2.4em;
+	font-size: 2em;
 	margin: 0 .5em 0 .5em;
 }
 

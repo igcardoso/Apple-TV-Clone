@@ -563,6 +563,8 @@ function contentDiscover(API) {
 	getMoviesSlimSlide(API_URL, generateRandomPage(), '.s-slide-9');
 	getMoviesSlimSlide(API_URL, generateRandomPage(), '.s-slide-10');
 	
+	highlights('.popular-2');
+	
 }
 
 window.highlights = function highlights(atributeTab) {

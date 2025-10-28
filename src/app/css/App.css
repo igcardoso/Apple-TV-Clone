@@ -1681,9 +1681,7 @@ nav  .icon {
       color: #000000;
       
     }
-    &.tg-cc,
-    &.tg-sdh,
-    &.tg-ad {
+    &.tg-cc {
       border: 1px solid #ffffff;
       color: #ffffff;
       background: 0;

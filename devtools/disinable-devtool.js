@@ -11,4 +11,4 @@ function continuousConsoleClear() {
     clearConsole();
 }
 
-continuousConsoleClear();
+//continuousConsoleClear();

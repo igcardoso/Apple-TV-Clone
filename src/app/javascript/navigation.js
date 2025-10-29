@@ -117,36 +117,21 @@ function showTab(tabId) {
 
 		if (tabId != 'profile' && !selectedTab.classList.contains('stack-tab-content') && !selectedTab.classList.contains('floating-element')) {
 			let pageAreaWithScroll = document.querySelector(`#${tabId} .scroll`);
-			let header = document.querySelector('header');
+			let header = document.querySelectorAll('.header-opacity');
 
 			
 			var ultimaPosicaoScroll = 0;
 			pageAreaWithScroll.addEventListener("scroll", function() {
-          const posicaoAtualScroll = pageAreaWithScroll.scrollTop;
-          
-          const opacity = Math.min(posicaoAtualScroll / 100, 1);
-          
-          header.style.setProperty('--after-opacity', opacity);
-          document.querySelector('#name-page').style.setProperty('--img-opacity', opacity);
-          
-          ultimaPosicaoScroll = posicaoAtualScroll;
-      });
-
-
-			let FilmPageHeader = document.querySelector('#film-page .header');
-
-			FilmPageHeader.classList.toggle("sticky", pageAreaWithScroll.scrollTop > 0);
-			pageAreaWithScroll.addEventListener("scroll", function() {
-				FilmPageHeader.classList.toggle("sticky", pageAreaWithScroll.scrollTop > 0);
-
-			});
-
-			let episodePageHeader = document.querySelector('#episode-details .header');
-
-			episodePageHeader.classList.toggle("sticky", pageAreaWithScroll.scrollTop > 0);
-			pageAreaWithScroll.addEventListener("scroll", function() {
-				episodePageHeader.classList.toggle("sticky", pageAreaWithScroll.scrollTop > 0);
-
+				const posicaoAtualScroll = pageAreaWithScroll.scrollTop;
+				
+				const opacity = Math.min(posicaoAtualScroll / 100, 1);
+				
+				header.forEach(op => {
+					op.style.setProperty('--after-opacity', opacity);
+				})
+				document.querySelector('#name-page').style.setProperty('--img-opacity', opacity);
+				
+				ultimaPosicaoScroll = posicaoAtualScroll;
 			});
 
 
@@ -195,7 +180,6 @@ function handleNavClick(event) {
 		}
 	}
 
-	// Evento de popstate para lidar com o botão "voltar" do navegador
 window.addEventListener('popstate', function (event) {
 		const page = event.state ? event.state.page: 'home';
 		showTab(page);

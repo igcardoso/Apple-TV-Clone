@@ -1395,7 +1395,59 @@ nav  .icon {
 
 /* FILM PAGE */
 
-#film-page .header,
+#film-page .header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 20;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 14px;
+	padding-bottom: .5em;
+	width: 100%;
+	box-sizing: border-box;
+	&::after {
+    	content: '';
+		inset: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: #000;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		opacity: var(--after-opacity, 0);
+		border-bottom-color: #f6f6f612;
+  }
+  .share-and-save .icon {
+		position: relative;
+		padding: .3em;
+		border-radius: 8em;
+		width: 1.3em;
+		height: 1.3em;
+		background: color-mix(in srgb, #35322b75 calc(100% - (var(--after-opacity, 0) * 100%)), 
+							transparent calc(var(--after-opacity, 0) * 100%));
+		
+		fill: color-mix(in srgb, #fff calc(100% - (var(--after-opacity, 0) * 100%)), 
+					#0091ff calc(var(--after-opacity, 0) * 100%));
+    }
+  .back .icon {
+		position: relative;
+		padding: .3em;
+		border-radius: 8em;
+		width: 1.3em;
+		height: 1.3em;
+		background: color-mix(in srgb, #35322b75 calc(100% - (var(--after-opacity, 0) * 100%)), 
+							transparent calc(var(--after-opacity, 0) * 100%));
+		
+		fill: color-mix(in srgb, #fff calc(100% - (var(--after-opacity, 0) * 100%)), 
+					#0091ff calc(var(--after-opacity, 0) * 100%));
+    }
+
+
+}
+
 #episode-details .header {
 	position: fixed;
 	top: 0;
@@ -1407,15 +1459,30 @@ nav  .icon {
 	padding: 14px;
 	padding-bottom: .5em;
 	width: 100%;
-	border: 1px solid transparent;
-	opacity: 1;
 	box-sizing: border-box;
-}
-
-#film-page .header.sticky,
-#episode-details .header.sticky {
-	background: #000000;
-	border-bottom-color: #f6f6f612;
+    background: #000;
+	.share-and-save .icon {
+		position: relative;
+		padding: .3em;
+		border-radius: 8em;
+		width: 1.3em;
+		height: 1.3em;
+		background: color-mix(in srgb, #35322b75 calc(100% - (var(--after-opacity, 0) * 100%)), 
+							transparent calc(var(--after-opacity, 0) * 100%));
+		
+		fill: color-mix(in srgb, #fff calc(100% - (var(--after-opacity, 0) * 100%)), 
+					#0091ff calc(var(--after-opacity, 0) * 100%));
+    }
+  	.back .icon {
+		position: relative;
+		padding: .3em;
+		border-radius: 8em;
+		width: 1.3em;
+		height: 1.3em;
+		background: transparent;
+		fill:#0091ff;
+    }
+		
 }
 
 #film-page .header .share-and-save,
@@ -1430,35 +1497,6 @@ nav  .icon {
   fill: #000000;
 }
 
-#film-page .header .share-and-save .icon,
-#episode-details .header .share-and-save .icon {
-	background: #35322b75;
-	padding: .3em;
-	border-radius: 8em;
-	width: 1.3em;
-	height: 1.3em;
-}
-
-#episode-details .header .back .icon,
-#film-page .header .back .icon {
-  background: #35322b75;
-	padding: .3em;
-	border-radius: 8em;
-	width: 1.3em;
-	height: 1.3em;
-}
-
-#film-page .header.sticky .share-and-save .icon,
-#episode-details .header.sticky .share-and-save .icon {
-	background: transparent;
-	fill: #0C84FF;
-}
-
-#episode-details .header.sticky .back .icon,
-#film-page .header.sticky .back .icon {
-	background: transparent;
-	fill: #0C84FF;
-}
 
 #film-page .float-btn-play,
 #episode-details .float-btn-play {

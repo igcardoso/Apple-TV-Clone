@@ -232,7 +232,7 @@ async function mediaIsSeries(serieId, save) {
 
 		if (data.name != "" && data.backdrop_path != null /*&& data.vote_count >= 100*/) {
 		 
-		  let header_add_library = document.querySelector(`${FilmPageDisplay} .header .save`);
+		  let header_add_library = document.querySelector(`${FilmPageDisplay} .save`);
 		 
 		  header_add_library.addEventListener('click', ()=> {
 		    saveIsTrue();
@@ -256,6 +256,7 @@ async function mediaIsSeries(serieId, save) {
 		  }
 		  
 			// Elements
+			let titleHeader = document.querySelector(`.title-header`);
 			let title = document.querySelector(`${whereDisplay} .title`);
 			let EP_title = document.querySelector(`${episodeDetails} .title`);
 			let background = document.querySelector(`${whereDisplay} .image-destaque`);
@@ -295,9 +296,20 @@ async function mediaIsSeries(serieId, save) {
 			info.classList.add('info');
 
 			title.innerText = TitleFiltered;
-			// titleButtonplay.forEach(title => {
-			//	title.innerText = TitleFiltered;
-			// })
+
+			//----
+			
+			let TextTitleHeader = data.name.split(' ');
+			let maxWordsHeader = 3;
+			let TitleFilteredHeader = TextTitleHeader.slice(0,
+				maxWordsHeader).join(' ');
+
+			if (TextTitleHeader.length > maxWordsHeader) {
+				TitleFilteredHeader += '...';
+			}
+
+			titleHeader.innerText = TitleFilteredHeader;
+			
 			background.setAttribute('src', IMG_URL_PROMINENCE + data.backdrop_path);
 			vote_count.innerText = data.vote_average;
 
@@ -768,7 +780,7 @@ async function mediaIsMovie(movieId, save) {
 
 		if (data.title != "" && data.backdrop_path != null /*&& data.vote_count >= 100*/) {
 		  
-		  let header_add_library = document.querySelector(`${FilmPageDisplay} .header .save`);
+		  let header_add_library = document.querySelector(`.save`);
 		  
 		  header_add_library.addEventListener('click', ()=> {
 		    saveIsTrue();
@@ -793,6 +805,7 @@ async function mediaIsMovie(movieId, save) {
 		  
 			// Elements
 			let title = document.querySelector(`${whereDisplay} .title`);
+			let titleHeader = document.querySelector(`.title-header`);
 			let background = document.querySelector(`${whereDisplay} .image-destaque`);
 			let vote_count = document.querySelector(`${whereDisplay} .vote_count`);
 			let runtime = document.querySelector(`${whereDisplay} .runtime`);
@@ -836,9 +849,20 @@ async function mediaIsMovie(movieId, save) {
 			info.classList.add('info');
 
 			title.innerText = TitleFiltered;
-			// titleButtonPlay.forEach(title => {
-			//	title.innerText = TitleFiltered;
-			// })
+
+			// ----
+
+			let TextTitleHeader = data.title.split(' ');
+			let maxWordsHeader = 3;
+			let TitleFilteredHeader = TextTitleHeader.slice(0,
+				maxWordsHeader).join(' ');
+
+			if (TextTitleHeader.length > maxWordsHeader) {
+				TitleFilteredHeader += '...';
+			}
+
+			titleHeader.innerText = TitleFilteredHeader;
+			
 			background.setAttribute('src',
 				IMG_URL_PROMINENCE + data.backdrop_path);
 			vote_count.innerText = data.vote_average;

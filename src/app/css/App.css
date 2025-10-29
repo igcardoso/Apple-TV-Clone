@@ -2005,7 +2005,7 @@ nav  .icon {
 	  justify-content: space-between;
 	  .current {
   	  color: var(--blue-color);
-  	  font-size: .7em;
+  	  font-size: .9em;
   	}
   	svg {
   	  width: 20px;

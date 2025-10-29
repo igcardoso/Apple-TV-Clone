@@ -413,6 +413,41 @@ async function mediaIsSeries(serieId, save) {
 				const content_episode = document.createElement('div');
 				content_episode.classList.add('content-episode');
 
+				let recordEpisode = document.querySelector('.recordEp');
+
+				recordEpisode.addEventListener('click', async function() {
+					console.log("data.id:", data.id, "Tipo:", typeof data.id);
+					const seriesId = String(data.id); 
+					const seriesData = await getSeriesData(seriesId);
+					
+					if (seriesData) {
+						contentIframe.innerHTML = '';
+						const iframe = document.createElement('iframe');
+						iframe.src = `https://playerflixapi.com/serie/${seriesData.id}/${seriesData.seasonNumber}/${seriesData.number}`;
+						iframe.setAttribute('allowfullscreen', '');
+						contentIframe.appendChild(iframe);
+					} else {
+						contentIframe.innerHTML = '';
+						const iframe = document.createElement('iframe');
+						iframe.src = `https://playerflixapi.com/serie/${data.id}/1/1`;
+						iframe.setAttribute('allowfullscreen', '');
+						contentIframe.appendChild(iframe);
+					}
+				});
+
+				async function textButtonRecord() {
+					const seriesid = String(data.id);
+					const seriesdata =  await getSeriesData(seriesid);
+
+					if (seriesdata) {
+						recordEpisode.innerHTML = `<strong>Retomar T${seriesdata.seasonNumber} - EP:${seriesdata.number}</strong>`;
+					} else {
+						recordEpisode.innerHTML = "<strong>Reproduzir T1 - EP:1</strong>";
+					}
+				}
+				textButtonRecord();
+
+
 
 				getEpisodeData(data.id,
 					season.season_number)
@@ -421,6 +456,10 @@ async function mediaIsSeries(serieId, save) {
 						const element_episode = document.createElement('div');
 						element_episode.classList.add('episode')
 						element_episode.addEventListener('click', () => {
+							let epNumberSave = index + 1
+							let tpNumberSave = season.season_number;
+							seriesSaveInDataBase(data.id, tpNumberSave, epNumberSave);
+							textButtonRecord();
 
 							let selectedplay = 'episode-details';
 

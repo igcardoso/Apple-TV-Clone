@@ -188,7 +188,54 @@ onAuthStateChanged(auth, user => {
           }
         }
 
+
+        //==== RECORD SERIES/EPISODES ====
+        window.seriesSaveInDataBase = function seriesSaveInDataBase(serieId, season_number, numberEp) {
+            let userDocRef = doc(db, "users", auth.currentUser.uid);
+            let movieSaveCollectionRef = collection(userDocRef, "recordEpisodeSeriesList"); 
+            
+            setDoc(doc(movieSaveCollectionRef, `${serieId}`), {
+                id: serieId,
+                seasonNumber: season_number,
+                number: numberEp
+            }) .catch(error => {
+                    console.error(
+                        "Erro ao adicionar novo documento à coleção 'movieSave':",
+                        error
+                    );
+                });
+        };
+
+        //==== GET SERIES DATA ====
         
+        //==== GET SERIES DATA ====
+window.getSeriesData = async function getSeriesData(seriesId) {
+    try {
+        // Converte para string para garantir que é válido
+        const seriesIdString = String(seriesId);
+        
+        console.log("Buscando série ID:", seriesIdString);
+        
+        const seriesDocRef = doc(db, "users", auth.currentUser.uid, "recordEpisodeSeriesList", seriesIdString);
+        const docSnap = await getDoc(seriesDocRef);
+        
+        if (docSnap.exists()) {
+            const data = docSnap.data();
+            return {
+                id: data.id,
+                number: data.number,
+                seasonNumber: data.seasonNumber || 1
+            };
+        } else {
+            console.log("Série não encontrada na lista");
+            return null;
+        }
+    } catch (error) {
+        console.error("Erro ao buscar dados da série:", error);
+        return null;
+    }
+};
+
         function clearDisplay() {
           document.querySelector("#library .library-slides").innerHTML = "";
         }

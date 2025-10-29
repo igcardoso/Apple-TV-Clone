@@ -1720,7 +1720,7 @@ nav  .icon {
 #film-page .session-title,
 #episode-details .session-title {
 	margin: 20px 0 0 20px;
-	font-weight: 500;
+	font-weight: 600;
 	font-size: 1.2em;
 	opacity: 1;
 }
@@ -1976,29 +1976,75 @@ nav  .icon {
 	background: #ffffff1c;
 }
 
-#film-page .SelectSeasons {
-	margin-top: 2em;
+#film-page .content-selectorSeasons-and-seasons  {
+  padding-top: 80px;
+  position: relative;
+} 
+
+#film-page .activeSectorSeasons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 2em 20px 20px 20px;
+	background: #7c7c7c46;
+	backdrop-filter: blur(15px);
+	-webkit-backdrop-filter: blur(15px);
 	display: flex;
-	align-items: center;
-	justify-content: left;
-	overflow: hidden;
-	overflow-x: auto;
+	align-items: left;
+	flex-direction: column;
+	border-radius: .8em;
+	width: 120px;
+	height: 30px;
+	z-index: 100;
+	padding-top: 12px;
+	padding-left: 12px;
+	font-weight: 600;
+	.contentOp {
+	  display: flex;
+	  align-items: center;
+	  justify-content: space-between;
+	  .current {
+  	  color: var(--blue-color);
+  	}
+  	svg {
+  	  width: 20px;
+  	  margin-right: 10px;
+  	  fill: var(--blue-color);
+  	  transform: rotate(-90deg);
+  	}
+	}
+	&.active {
+	  height: auto;
+	}
+	.SelectSeasons {
+  	display: flex;
+  	align-items: center;
+  	text-align: center;
+  	flex-direction: column;
+  	width: 100%;
+  	overflow: hidden;
+  	border-radius: .8em;
+  	box-sizing: border-box;
+  	height: 0;
+  	gap: 20px;
+  }
+	&.active .SelectSeasons {
+  	  padding-top: 20px;
+  	  padding-bottom: 20px;
+  	  height: auto;
+  	}
+  }
 }
 
+
 #film-page .SelectSeasons div {
-	padding: 1em;
-	min-width: 7em;
+	min-width: 100%;
 	font-weight: 900;
 	opacity: .7;
 }
 
-#film-page  .SelectSeasons .Content-Season:nth-child(1) {
-	border-bottom: 4px solid var(--blue-color);
-	opacity: 1;
-}
-
 #film-page  .SelectSeasons .Content-Season.marked {
-	border-bottom: 3px solid var(--blue-color);
+	color: var(--blue-color);
 	opacity: 1;
 }
 
@@ -2011,15 +2057,20 @@ nav  .icon {
 	display: flex;
 	align-items: center;
   overflow: hidden;
-  overflow-x scroll;
-  scroll-behavior: smooth;
+  height: 15em;
 }
 
 #film-page .seasons .content-episode {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	flex-shrink: 0;
+	width: calc(100% - 1em);
+  overflow-x: auto;
+  padding: 0 0 0 .9em;
+  scroll-behavior: smooth;
+  flex-shrink: 0;
+  gap: 20px;
+}
+
+#film-page .seasons .content-episode:first-child {
+	display: flex;
 }
 
 #film-page .seasons .content-episode.hidden {
@@ -2027,54 +2078,105 @@ nav  .icon {
 }
 
 #film-page .seasons .content-episode.visible {
-	display: block;
+	display: flex;
 }
 
 #film-page .seasons .episode {
-	width: calc(100% - 2em);
-	height: 5em;
+	min-width: 13em;
+  height: 11em;
 	display: flex;
 	align-items: center;
 	justify-content: left;
 	gap: 1em;
 	overflow: hidden;
 	padding: 1em;
+	border: .02px solid #7c7c7c;
+	border-radius: 1em;
+	position: relative;
+}
+
+#film-page .seasons .episode .blur {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(15px);
+  z-index: 2;
+  
+  mask-image: linear-gradient(
+    to top,
+    rgba(0,0,0,1) 0%,
+    rgba(0,0,0,0.7) 30%,
+    rgba(0,0,0,0.4) 60%,
+    rgba(0,0,0,0) 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to top,
+    rgba(0,0,0,1) 0%,
+    rgba(0,0,0,0.7) 30%,
+    rgba(0,0,0,0.4) 60%,
+    rgba(0,0,0,0) 100%
+  );
+  
+  background: linear-gradient(
+    to top,
+    rgba(255,255,255,0.124) 0%,
+    rgba(255,255,255,0.063) 30%,
+    rgba(255,255,255,0.05) 60%,
+    rgba(255,255,255,0) 100%
+  );
+}
+
+@supports not (backdrop-filter: blur(10px)) {
+  #film-page .seasons .episode .blur {
+    background: linear-gradient(
+      to top,
+      rgba(255,255,255,0.237) 0%,
+      rgba(255,255,255,0.119) 30%,
+      rgba(255,255,255,0.098) 60%,
+      rgba(255,255,255,0) 100%
+    );
+  }
 }
 
 #film-page .seasons .episode .info {
+  position: absolute;
+  left: 10px;
+  bottom: 20px;
+  z-index: 3;
 	width: 100%;
+	
 }
 
 #film-page .seasons .episode .info .episode-synopsis {
-  font-size: .7em;
+  font-size: .8em;
   font-weight: 500;
   opacity: .6;
+  margin-right: 20px;
 }
 
 #film-page .seasons .episode .info .title {
   font-size: 1em;
-  font-weight: 800;
+  font-weight: 500;
 }
 
 #film-page .seasons .episode .content-img {
-	position: relative;
-	width: 13em;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	width: 100%;
 	height: 100%;
 	overflow: hidden;
-	border-radius: .8em;
 }
 
-#film-page .seasons .episode .content-img .EP-number {
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	padding: .2em;
+#film-page .seasons .episode .info .EP-number {
 	z-index: 10;
-	background: #000000;
 	color: #f6f6f6;
-	border-top-left-radius: .4em;
-	font-size: .6em;
-	font-weight: 800;
+	font-size: .8em;
+	font-weight: 500;
+	opacity: .7;
 	
 }
 

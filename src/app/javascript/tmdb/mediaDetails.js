@@ -406,6 +406,7 @@ async function mediaIsSeries(serieId, save) {
 				Content_Season.addEventListener('click', ()=> {
 					if (season.season_number != 0) {
 						setActiveSeason(season.season_number);
+						document.querySelector('.activeSectorSeasons .current').innerText = `Temporada ${season.season_number}`;
 					}
 				});
 
@@ -569,14 +570,14 @@ async function mediaIsSeries(serieId, save) {
 
 						const Ep_number = document.createElement('p');
 						Ep_number.classList.add('EP-number');
-						Ep_number.innerText = `Ep ${index + 1}`;
+						Ep_number.innerText = `EPISÓDIO ${index + 1}`;
 
 						const image = document.createElement('img');
 						image.classList.add('capa');
 						image.src = episode.imageUrl;
 
 						contentImg.appendChild(image);
-						contentImg.appendChild(Ep_number);
+						
 						element_episode.appendChild(contentImg);
 						content_episode.appendChild(element_episode);
 
@@ -612,7 +613,12 @@ async function mediaIsSeries(serieId, save) {
 						} else {
 							title_namber.innerText = `${episodeTitle_Filtered}`;
 						}
-
+						
+						const blur = document.createElement('div');
+						blur.classList.add('blur');
+						
+						element_episode.appendChild(blur);
+						info.appendChild(Ep_number);
 						info.appendChild(title_namber);
 						info.appendChild(episode_Synopsis);
 						element_episode.appendChild(info);

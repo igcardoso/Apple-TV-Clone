@@ -1525,6 +1525,15 @@ nav  .icon {
 			width: 30px;
 		}
 	}
+	&.save  {
+		padding: 0;
+		height: 50px;
+		width: 50px;
+		background: #343434;
+		border: .01px solid #7c7c7c46;
+		
+	}
+
 }
 
 #film-page .float-btn-play strong,
@@ -1544,6 +1553,7 @@ nav  .icon {
 	font-weight: 400;
   }
 }
+
 
 #film-page .container, 
 #episode-details .container {

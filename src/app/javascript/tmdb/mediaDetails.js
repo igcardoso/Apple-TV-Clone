@@ -232,7 +232,7 @@ async function mediaIsSeries(serieId, save) {
 
 		if (data.name != "" && data.backdrop_path != null /*&& data.vote_count >= 100*/) {
 		 
-		  let header_add_library = document.querySelector(`.mediaPage.save .save`);
+		  let header_add_library = document.querySelector(`${FilmPageDisplay} .save`);
 		 
 		  header_add_library.addEventListener('click', ()=> {
 		    saveIsTrue();
@@ -240,7 +240,9 @@ async function mediaIsSeries(serieId, save) {
 		  
 		  function saveIsTrue() {
 		    header_add_library.innerHTML = `
+			<svg class="firebase icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
 		       <use xlink:href="src/icons/check-23.svg#path-1"></use>
+			</svg>
 		    `;
 		    header_add_library.classList.add('check');
 		    
@@ -250,7 +252,9 @@ async function mediaIsSeries(serieId, save) {
 		    saveIsTrue();
 		  } else {
 		    header_add_library.innerHTML = `
-		    <use xlink:href="src/icons/ios-plus.svg#path-1"></use>
+			<svg class="firebase icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+		    	<use xlink:href="src/icons/ios-plus.svg#path-1"></use>
+			</svg>
 		    `;
 		    header_add_library.classList.remove('check');
 		  }
@@ -780,7 +784,7 @@ async function mediaIsMovie(movieId, save) {
 
 		if (data.title != "" && data.backdrop_path != null /*&& data.vote_count >= 100*/) {
 		  
-		  let header_add_library = document.querySelector(`.mediaPage.save`);
+		  let header_add_library = document.querySelector(`.save`);
 		  
 		  header_add_library.addEventListener('click', ()=> {
 		    saveIsTrue();
@@ -788,7 +792,9 @@ async function mediaIsMovie(movieId, save) {
 		  
 		  function saveIsTrue() {
 		    header_add_library.innerHTML = `
+			<svg class="firebase icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
 		       <use xlink:href="src/icons/check-23.svg#path-1"></use>
+			</svg>
 		    `;
 		    header_add_library.classList.add('check');
 		    
@@ -798,7 +804,9 @@ async function mediaIsMovie(movieId, save) {
 		    saveIsTrue();
 		  } else {
 		    header_add_library.innerHTML = `
-		    <use xlink:href="src/icons/ios-plus.svg#path-1"></use>
+			<svg class="firebase icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+		    	<use xlink:href="src/icons/ios-plus.svg#path-1"></use>
+			</svg>
 		    `;
 		    header_add_library.classList.remove('check');
 		  }

@@ -423,13 +423,14 @@ async function mediaIsSeries(serieId, save) {
 					if (seriesData) {
 						contentIframe.innerHTML = '';
 						const iframe = document.createElement('iframe');
-						iframe.src = `https://playerflixapi.com/serie/${seriesData.id}/${seriesData.seasonNumber}/${seriesData.number}`;
+						//https://playerflixapi.com/
+						iframe.src = `https://superflixapi.life/serie/${seriesData.id}/${seriesData.seasonNumber}/${seriesData.number}`;
 						iframe.setAttribute('allowfullscreen', '');
 						contentIframe.appendChild(iframe);
 					} else {
 						contentIframe.innerHTML = '';
 						const iframe = document.createElement('iframe');
-						iframe.src = `https://playerflixapi.com/serie/${data.id}/1/1`;
+						iframe.src = `https://superflixapi.life/serie/${data.id}/1/1`;
 						iframe.setAttribute('allowfullscreen', '');
 						contentIframe.appendChild(iframe);
 					}

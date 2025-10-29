@@ -442,8 +442,7 @@ async function mediaIsSeries(serieId, save) {
 						//https://playerflixapi.com/
 						iframe.src = `https://superflixapi.life/serie/${seriesData.id}/${seriesData.seasonNumber}/${seriesData.number}`;
 						iframe.setAttribute('allowfullscreen', '');
-						iframe.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-forms allow-popups');
-						iframe.setAttribute('referrerpolicy', 'no-referrer');
+						
 						iframe.setAttribute('loading', 'lazy');
 						contentIframe.appendChild(iframe);
 					} else {
@@ -451,8 +450,7 @@ async function mediaIsSeries(serieId, save) {
 						const iframe = document.createElement('iframe');
 						iframe.src = `https://superflixapi.life/serie/${data.id}/1/1`;
 						iframe.setAttribute('allowfullscreen', '');
-						iframe.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-forms allow-popups');
-						iframe.setAttribute('referrerpolicy', 'no-referrer');
+						
 						iframe.setAttribute('loading', 'lazy');
 						contentIframe.appendChild(iframe);
 					}

@@ -2012,6 +2012,7 @@ nav  .icon {
 	transition-property: transform;
   box-sizing: content-box;
   overflow: hidden;
+  overflow-x scroll;
   scroll-behavior: smooth;
 }
 

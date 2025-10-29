@@ -1996,51 +1996,50 @@ nav  .icon {
 	width: 120px;
 	height: 30px;
 	z-index: 100;
-	padding-top: 12px;
+	padding-top: 10px;
 	padding-left: 12px;
 	font-weight: 600;
 	.contentOp {
-	  display: flex;
-	  align-items: center;
-	  justify-content: space-between;
-	  .current {
-  	  color: var(--blue-color);
-  	  font-size: .9em;
-  	}
-  	svg {
-  	  width: 20px;
-  	  margin-right: 10px;
-  	  fill: var(--blue-color);
-  	  transform: rotate(-90deg);
-  	}
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		.current {
+			color: var(--blue-color);
+			font-size: .9em;
+			font-weight: 900;
+		}
+		svg {
+			width: 20px;
+			margin-right: 10px;
+			fill: var(--blue-color);
+			transform: rotate(-90deg);
+		}
 	}
 	&.active {
-	  height: auto;
+	  	height: auto;
 	}
 	.SelectSeasons {
-  	display: flex;
-  	align-items: center;
-  	text-align: center;
-  	flex-direction: column;
-  	width: 100%;
-  	overflow: hidden;
-  	border-radius: .8em;
-  	box-sizing: border-box;
-  	height: 0;
-  	gap: 20px;
-  }
+		display: flex;
+		text-align: left;
+		flex-direction: column;
+		width: 100%;
+		overflow: hidden;
+		border-radius: .8em;
+		box-sizing: border-box;
+		height: 0;
+		gap: 20px;
+	}
 	&.active .SelectSeasons {
   	  padding-top: 20px;
   	  padding-bottom: 20px;
   	  height: auto;
   	}
-  }
 }
 
 
 #film-page .SelectSeasons div {
 	min-width: 100%;
-	font-weight: 900;
+	font-weight: 500;
 	opacity: .7;
 }
 

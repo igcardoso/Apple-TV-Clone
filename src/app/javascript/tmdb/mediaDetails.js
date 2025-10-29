@@ -426,12 +426,18 @@ async function mediaIsSeries(serieId, save) {
 						//https://playerflixapi.com/
 						iframe.src = `https://superflixapi.life/serie/${seriesData.id}/${seriesData.seasonNumber}/${seriesData.number}`;
 						iframe.setAttribute('allowfullscreen', '');
+						iframe.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-forms allow-popups');
+						iframe.setAttribute('referrerpolicy', 'no-referrer');
+						iframe.setAttribute('loading', 'lazy');
 						contentIframe.appendChild(iframe);
 					} else {
 						contentIframe.innerHTML = '';
 						const iframe = document.createElement('iframe');
 						iframe.src = `https://superflixapi.life/serie/${data.id}/1/1`;
 						iframe.setAttribute('allowfullscreen', '');
+						iframe.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-forms allow-popups');
+						iframe.setAttribute('referrerpolicy', 'no-referrer');
+						iframe.setAttribute('loading', 'lazy');
 						contentIframe.appendChild(iframe);
 					}
 				});
@@ -457,10 +463,7 @@ async function mediaIsSeries(serieId, save) {
 						const element_episode = document.createElement('div');
 						element_episode.classList.add('episode')
 						element_episode.addEventListener('click', () => {
-							let epNumberSave = index + 1
-							let tpNumberSave = season.season_number;
-							seriesSaveInDataBase(data.id, tpNumberSave, epNumberSave);
-							textButtonRecord();
+							
 
 							let selectedplay = 'episode-details';
 
@@ -484,13 +487,7 @@ async function mediaIsSeries(serieId, save) {
 								}, 200);
 							}
 							const episodeNumber = index + 1;
-							// alert(`oiii ${season.season_number} ${episodeNumber}`);
-							// contentIframe.innerHTML = '';
-							// 							const iframe = document.createElement('iframe');
-							// 							iframe.src = `https://superembeds.com/embed2/${data.id}-${season.season_number}-${episodeNumber}`;
-							//
-							// 							contentIframe.appendChild(iframe);
-							//
+							
 
 							Ep_episode_name.innerText = `Episódio ${episodeNumber}`;
 							EP_title.innerText = `${episode.episodeName}`;
@@ -591,9 +588,13 @@ async function mediaIsSeries(serieId, save) {
 								contentIframe.innerHTML = '';
 								const iframe = document.createElement('iframe');
 								// iframe.src = `https://superembeds.com/embed2/${data.id}-${season.season_number}-${episodeNumber}`;
-								iframe.src = `https://playerflixapi.com/serie/${data.id}/${season.season_number}/${episodeNumber}`;
+								iframe.src = `https://superflixapi.life/serie/${data.id}/${season.season_number}/${episodeNumber}`;
 								iframe.setAttribute('allowfullscreen', '');
 								contentIframe.appendChild(iframe);
+								let epNumberSave = index + 1
+								let tpNumberSave = season.season_number;
+								seriesSaveInDataBase(data.id, tpNumberSave, epNumberSave);
+								textButtonRecord();
 
 							});
 

@@ -215,3 +215,11 @@ function underMaintenance() {
             document.querySelector("#alert").classList.remove("active");
         });
 }
+
+
+
+
+
+document.querySelector('.activeSectorSeasons').addEventListener('click', ()=> {
+  document.querySelector('.activeSectorSeasons').classList.toggle('active');
+});

@@ -232,7 +232,7 @@ async function mediaIsSeries(serieId, save) {
 
 		if (data.name != "" && data.backdrop_path != null /*&& data.vote_count >= 100*/) {
 		 
-		  let header_add_library = document.querySelector(`${FilmPageDisplay} .save`);
+		  let header_add_library = document.querySelector(`.mediaPage.save .save`);
 		 
 		  header_add_library.addEventListener('click', ()=> {
 		    saveIsTrue();
@@ -780,7 +780,7 @@ async function mediaIsMovie(movieId, save) {
 
 		if (data.title != "" && data.backdrop_path != null /*&& data.vote_count >= 100*/) {
 		  
-		  let header_add_library = document.querySelector(`.save`);
+		  let header_add_library = document.querySelector(`.mediaPage.save`);
 		  
 		  header_add_library.addEventListener('click', ()=> {
 		    saveIsTrue();

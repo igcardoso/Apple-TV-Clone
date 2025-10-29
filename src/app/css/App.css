@@ -1421,7 +1421,6 @@ nav  .icon {
 		border-bottom-color: #f6f6f612;
   }
   .title-header {
-	transform: translateX(20px);
 	opacity: var(--after-opacity, 0);
   }
   .share-and-save .icon {

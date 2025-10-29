@@ -2009,8 +2009,7 @@ nav  .icon {
 
 #film-page .seasons {
 	display: flex;
-	transition-property: transform;
-  box-sizing: content-box;
+	align-items: center;
   overflow: hidden;
   overflow-x scroll;
   scroll-behavior: smooth;

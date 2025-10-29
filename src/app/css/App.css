@@ -1719,9 +1719,9 @@ nav  .icon {
 
 #film-page .session-title,
 #episode-details .session-title {
-	margin: 5em 0 0 1em;
-	font-weight: 700;
-	opacity: .5;
+	margin: 10px 0 0 20px;
+	font-weight: 500;
+	opacity: 1;
 }
 
 #film-page .actors-actresses {

@@ -62,26 +62,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  // Interceptar botão voltar
-  window.addEventListener('popstate', function(e) {
-    // Impede a navegação para trás do browser
-    history.pushState(null, null, window.location.href);
-    
-    // SUA LÓGICA DE VOLTAR AQUI
-    console.log('Botão voltar - executar navegação interna');
-    
-    // Exemplo: se você tem um router:
-    // router.back()
-    
-    e.preventDefault();
-    return false;
-  });
-
-  // Configurar history state
-  history.replaceState({pwa: true}, '');
-  history.pushState({pwa: true}, '');
-
-  // Iniciar fullscreen
   enterFullscreen();
   document.addEventListener('click', enterFullscreen);
 });

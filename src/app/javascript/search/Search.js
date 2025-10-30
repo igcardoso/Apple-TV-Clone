@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		var searchTerm = searchBox.value.trim();
 
 		resultsContainer.innerHTML = '';
-		recommendations.classList.add('hidden');
+
 		if (searchTerm !== '') {
 			searchMedia(searchTerm);
 		}
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			if (data.results) {
 				data.results.forEach((media, index) => {
 					let card = document.createElement('div');
-					card.classList.add('card');
+					card.classList.add('card-result');
 					card.setAttribute('data-page', 'film-page');
 					card.addEventListener('click', (event)=> {
 						handleNavClick(event);
@@ -38,14 +38,51 @@ document.addEventListener('DOMContentLoaded', function () {
 					clickEffect.classList.add('click-effect');
 
 					let posterImg = document.createElement('img');
-					posterImg.setAttribute('data-src', 'https://image.tmdb.org/t/p/w500' + media.poster_path);
+					posterImg.setAttribute('data-src', `https://image.tmdb.org/t/p/w500${media.poster_path}`);
 					posterImg.classList.add('img');
 					posterImg.alt = media.title || media.name + ' Poster';
 
+					let contentLeft = document.createElement('div');
+					contentLeft.classList.add('content-left');
+
+					let titleResult = document.createElement('p');
+					titleResult.classList.add('title');
+
+					if (media.title) {
+						var TitleFiltered = media.title.split(' ');
+					} else if (media.name) {
+						var TitleFiltered = media.name.split(' ');
+					}
+					
+					let Filtered = TitleFiltered.slice(0,
+						8).join(' ');
+
+					if (TitleFiltered.length > 8) {
+						Filtered += '...';
+					}
+					titleResult.innerText = Filtered;
+
+					let categoryResult = document.createElement('p');
+					categoryResult.classList.add('category-result');
+
+					let TextOverview = media.overview.split(' ');
+					let OverviewFiltered = TextOverview.slice(0,
+						10).join(' ');
+
+					if (TextOverview.length > 10) {
+						OverviewFiltered += '...';
+					}
+
+					categoryResult.innerText = OverviewFiltered;
+
+
 					clickEffect.appendChild(posterImg);
+					clickEffect.appendChild(contentLeft);
+					contentLeft.appendChild(titleResult);
+					contentLeft.appendChild(categoryResult);
 					
 					card.appendChild(clickEffect);
-					if (media.poster_path != null || media.vote_count >= 90) {
+					if (media.poster_path != null && media.vote_count >= 90) {
 						resultsContainer.appendChild(card);
 					}
 				});

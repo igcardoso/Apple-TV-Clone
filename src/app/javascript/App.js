@@ -30,22 +30,37 @@ document.addEventListener("click", function (event) {
 const searchBox = document.getElementById("search-box");
 let navBar = document.querySelector("nav");
 let suggest = document.querySelector(".suggest");
-let seeing = document.querySelector("#search .categories .what-am-I-seeing");
+let searchHeader = document.querySelector("#search .header");
 const btnSuggest = document.getElementById("btn-suggest-movie");
 const clearInput = document.querySelector(".clear-input");
+const iconSearch = document.querySelector("#search .iconBox");
 
 searchBox.addEventListener("focus", () => {
+    searchHeader.classList.add("full");
     navBar.classList.add("keyboard-visible");
     suggest.classList.add("keyboard-visible");
+    document.querySelector("header").style.transform = "translateY(-100%)";
+    document.querySelector("#search .title-session ").style.transform = "translateY(-100%)";
+    iconSearch.innerHTML = '<use xlink:href="src/icons/ios-arrow-back.svg#ios-arrow-back"></use>';
 });
 
 searchBox.addEventListener("blur", () => {
+    if (searchBox.value != "") {
+        searchHeader.classList.add("full");
+        document.querySelector("header").style.transform = "translateY(-100%)"
+        document.querySelector("#search .title-session ").style.transform = "translateY(-100%)";
+        iconSearch.innerHTML = '<use xlink:href="src/icons/ios-arrow-back.svg#ios-arrow-back"></use>';
+    } else {
+       searchHeader.classList.remove("full");
+       document.querySelector("header").style.transform = "translateY(0)"
+       document.querySelector("#search .title-session ").style.transform = "translateY(0)"
+       iconSearch.innerHTML = '<path id="ios-search" d="M887 840.4L673.4 624.8c41.8-52.4 67-118.8 67-191 0-169-137-306-306.2-306S128 265 128 434s137 306 306.2 306c73.2 0 140.2-25.6 193-68.4l212.2 214.2c6.4 6.8 15.2 10.2 23.8 10.2 8.2 0 16.4-3 22.6-9 13.2-12.6 13.6-33.4 1.2-46.6z m-452.8-166.2c-64.2 0-124.6-25-170-70.4-45.4-45.4-70.4-105.8-70.4-169.8 0-64.2 25-124.6 70.4-169.8 45.4-45.4 105.8-70.4 170-70.4s124.6 25 170 70.4c45.4 45.4 70.4 105.8 70.4 169.8 0 64.2-25 124.6-70.4 169.8-45.4 45.4-105.8 70.4-170 70.4z"  />';
+    }
+    if (document.querySelector('#search .results').classList.contains('hidden')) {
+        searchHeader.classList.remove("full");
+    }
     navBar.classList.remove("keyboard-visible");
     suggest.classList.remove("keyboard-visible");
-});
-
-btnSuggest.addEventListener("click", () => {
-    searchBox.value = "Resgate 2";
 });
 
 clearInput.addEventListener("click", () => {
@@ -56,21 +71,21 @@ clearInput.addEventListener("click", () => {
     resultsContainer.innerHTML = "";
     recommendations.classList.remove("hidden");
     clearInputDisplayOff();
-    seeing.innerText = "Recomendações";
+    searchHeader.classList.remove("full");
 });
 
 searchBox.addEventListener("input", () => {
     if (searchBox.value != "") {
         clearInput.style.display = "flex";
-        seeing.innerText = "Principais resutados";
+        iconSearch.innerHTML = '<use xlink:href="src/icons/ios-arrow-back.svg#ios-arrow-back"></use>';
     } else {
         clearInputDisplayOff();
-        seeing.innerText = "Digite algo...";
     }
 });
 
 function clearInputDisplayOff() {
     clearInput.style.display = "none";
+    iconSearch.innerHTML = '<use xlink:href="src/icons/ios-arrow-back.svg#ios-arrow-back"></use>';
 }
 
 // DETECTAR TEMA

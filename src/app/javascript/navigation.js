@@ -29,7 +29,7 @@ function updateHeaderVisibility() {
         navBar.style.display = "flex";
     } else if (searchElement.classList.contains("active")) {
         // header.classList.add('hidden');
-        header.classList.add("hidden-display");
+        header.classList.remove("hidden-display");
         navBar.style.display = "flex";
     } else if (filmPageElement.classList.contains("active")) {
         // header.classList.remove('hidden');

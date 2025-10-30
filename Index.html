@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', function() {
           						
           						
           					</div>
-                    <p class="synopse-p"></p>
+                    
           				</div>
 
           				<div class="FlexAlign content-buttons">
@@ -205,6 +205,7 @@ document.addEventListener('DOMContentLoaded', function() {
           					</div>
           					
           				</div>
+                  <p class="synopse-p"></p>
           			</div>
           		</div>
               <div class="content-mark">
@@ -337,7 +338,6 @@ document.addEventListener('DOMContentLoaded', function() {
           						
           						
           					</div>
-                    <p class="synopse-p"></p>
           				</div>
 
           				<div class="FlexAlign content-buttons">
@@ -348,6 +348,7 @@ document.addEventListener('DOMContentLoaded', function() {
           					</div>
           					
           				</div>
+                  <p class="synopse-p"></p>
           			</div>
           		</div>
               <div class="content-mark">
@@ -778,49 +779,27 @@ document.addEventListener('DOMContentLoaded', function() {
         <!-- START SEARCH PAGE -->
         <div id="search" class="tab-content">
           <div class="scroll">
+            <div class="title-session">
+              Buscar
+            </div>
             <div class="header">
             	<div class="container">
-            	<svg class="icon back" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-              	<use xlink:href="src/icons/ios-arrow-back.svg#ios-arrow-back"></use>
-							</svg>
             	<div class="search-box-containment">
-           	  <input placeholder="Busque por filme, séries" type="text" name="search-box" id="search-box" autocomplete="off" />
-        	    <div class="clear-input">
-      	        <svg class="icon ios-close" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-									<use xlink:href="src/icons/ios-close-6.svg#ios-close"></use>
-    					  </svg>
-    	        </div>
-  	        </div>
+                <svg class="icon iconBox" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                  <path id="ios-search" d="M887 840.4L673.4 624.8c41.8-52.4 67-118.8 67-191 0-169-137-306-306.2-306S128 265 128 434s137 306 306.2 306c73.2 0 140.2-25.6 193-68.4l212.2 214.2c6.4 6.8 15.2 10.2 23.8 10.2 8.2 0 16.4-3 22.6-9 13.2-12.6 13.6-33.4 1.2-46.6z m-452.8-166.2c-64.2 0-124.6-25-170-70.4-45.4-45.4-70.4-105.8-70.4-169.8 0-64.2 25-124.6 70.4-169.8 45.4-45.4 105.8-70.4 170-70.4s124.6 25 170 70.4c45.4 45.4 70.4 105.8 70.4 169.8 0 64.2-25 124.6-70.4 169.8-45.4 45.4-105.8 70.4-170 70.4z"  />
+                </svg>
+                <input placeholder="Programas, Filmes e Mais" type="text" name="search-box" id="search-box" autocomplete="off" />
+                <div class="clear-input">
+                  <svg class="icon ios-close" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                    <use xlink:href="src/icons/ios-close-6.svg#ios-close"></use>
+                  </svg>
+                </div>
+              </div>
           
             	</div>
-          <div class="categories">
-            <div class="card active btn-popular-movies-category">
-              <div>
-                <p class="what-am-I-seeing">Recomendações</p>
-              </div>
-              <div class="highlighter"></div>
+          
             </div>
-            <!--<div class="card btn-category-of-popular-series">
-              <div>
-                <p>Mais recentes</p>
-              </div>
-              <div class="highlighter"></div>
-            </div>
-            <div class="card btn-popular-animations-category">
-              <div>
-                <p>Filmes</p>
-              </div>
-              <div class="highlighter"></div>
-            </div>
-            <div class="card btn-popular-animations-category">
-              <div>
-                <p>Séries</p>
-              </div>
-              <div class="highlighter"></div>
-            </div>-->
-          </div>
-            </div>
-           <div class="slide results">
+           <div class="results">
            	
            </div>
           <div class="recommendations">
@@ -1065,7 +1044,7 @@ document.addEventListener('DOMContentLoaded', function() {
         			</div>
         			<div class="share-and-save">
         				
-        				<svg class="click-effect icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        				<svg class="click-effect icon" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
     							<path d="M12,10c-.6012,0-1.13403,.27069-1.50067,.69055l-4.54468-2.27234c.02881-.13507,.04535-.2746,.04535-.41821,0-.14368-.01654-.28314-.04535-.41821l4.54468-2.2724c.36664,.4198,.89954,.69061,1.50067,.69061,1.10455,0,2-.89545,2-2,0-1.10461-.89545-2-2-2s-2,.89539-2,2c0,.14362,.01654,.28314,.04535,.41821l-4.54468,2.27234c-.36664-.41986-.89948-.69055-1.50067-.69055-1.10455,0-2,.89539-2,2,0,1.10455,.89545,2,2,2,.60114,0,1.13403-.27081,1.50067-.69061l4.54468,2.2724c-.02881,.13507-.04535,.27454-.04535,.41821,0,1.10455,.89545,2,2,2s2-.89545,2-2c0-1.10461-.89545-2-2-2Z"/>
      						 </svg>
         			</div>

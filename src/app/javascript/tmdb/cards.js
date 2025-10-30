@@ -539,7 +539,7 @@ function contentHome(API) {
 
 function contentSearch(API) {
 	// SIMPLE SLIDE CARD
-	getMoviesBigSlide(API_URL, generateRandomPage(), '.slide-5');
+	getMoviesSlide(API_URL, generateRandomPage(), '.slide-5');
 
 }
 

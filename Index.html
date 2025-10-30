@@ -40,50 +40,26 @@
   <title>Apple TV+</title>
   
   <script>
-  // Forçar fullscreen assim que carregar
+  <script>
+// Forçar fullscreen assim que carregar
 document.addEventListener('DOMContentLoaded', function() {
-  // Variável para controlar se está em fullscreen
-  let isFullscreen = false;
-  
   // Tentar entrar em fullscreen
   function enterFullscreen() {
-    if (isFullscreen) return;
-    
     const docElement = document.documentElement;
     
     if (docElement.requestFullscreen) {
-      docElement.requestFullscreen().then(() => {
-        isFullscreen = true;
-      }).catch(err => {
+      docElement.requestFullscreen().catch(err => {
         console.log('Fullscreen error:', err);
       });
     } else if (docElement.webkitRequestFullscreen) {
       docElement.webkitRequestFullscreen();
-      isFullscreen = true;
     } else if (docElement.msRequestFullscreen) {
       docElement.msRequestFullscreen();
-      isFullscreen = true;
     }
     
     // Aplicar classes CSS
     document.body.classList.add('force-fullscreen');
     document.documentElement.classList.add('pwa-fullscreen');
-    isFullscreen = true;
-  }
-  
-  // Detectar quando sai do fullscreen
-  document.addEventListener('fullscreenchange', handleFullscreenChange);
-  document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
-  document.addEventListener('msfullscreenchange', handleFullscreenChange);
-  
-  function handleFullscreenChange() {
-    if (!document.fullscreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
-      isFullscreen = false;
-      // Tentar reentrar automaticamente
-      setTimeout(enterFullscreen, 100);
-    } else {
-      isFullscreen = true;
-    }
   }
   
   // Tentar fullscreen imediatamente
@@ -107,47 +83,7 @@ window.addEventListener('scroll', function(e) {
 window.addEventListener('resize', function() {
   window.scrollTo(0, 0);
 });
-
-// ⭐⭐ NOVO: Interceptar o botão voltar do Android ⭐⭐
-window.addEventListener('beforeunload', function(e) {
-  // Não faz nada, previne a saída
-});
-
-// Interceptar evento de voltar
-window.addEventListener('popstate', function(e) {
-  // Impedir a ação padrão de voltar
-  history.pushState(null, null, window.location.href);
-  e.preventDefault();
-  return false;
-});
-
-// Empurrar estado inicial para a pilha de histórico
-history.pushState(null, null, window.location.href);
-
-// CSS adicional para garantir fullscreen
-const style = document.createElement('style');
-style.textContent = `
-  .force-fullscreen {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    overflow: hidden !important;
-  }
-  
-  .pwa-fullscreen {
-    overflow: hidden !important;
-    height: 100% !important;
-  }
-  
-  body {
-    margin: 0 !important;
-    padding: 0 !important;
-    overflow: hidden !important;
-  }
-`;
-document.head.appendChild(style);
+</script>
 </script>
 </head>
 <body>

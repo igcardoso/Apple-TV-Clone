@@ -40,50 +40,51 @@
   <title>Apple TV+</title>
   
   <script>
-  <script>
-// Forçar fullscreen assim que carregar
+  
 document.addEventListener('DOMContentLoaded', function() {
-  // Tentar entrar em fullscreen
+  let fullscreenActive = false;
+
   function enterFullscreen() {
-    const docElement = document.documentElement;
+    const elem = document.documentElement;
     
-    if (docElement.requestFullscreen) {
-      docElement.requestFullscreen().catch(err => {
-        console.log('Fullscreen error:', err);
-      });
-    } else if (docElement.webkitRequestFullscreen) {
-      docElement.webkitRequestFullscreen();
-    } else if (docElement.msRequestFullscreen) {
-      docElement.msRequestFullscreen();
+    if (elem.requestFullscreen && !fullscreenActive) {
+      elem.requestFullscreen().then(() => {
+        fullscreenActive = true;
+      }).catch(console.log);
     }
-    
-    // Aplicar classes CSS
-    document.body.classList.add('force-fullscreen');
-    document.documentElement.classList.add('pwa-fullscreen');
   }
-  
-  // Tentar fullscreen imediatamente
+
+  // Re-entrar automaticamente se sair do fullscreen
+  document.addEventListener('fullscreenchange', () => {
+    if (!document.fullscreenElement) {
+      fullscreenActive = false;
+      setTimeout(enterFullscreen, 50);
+    }
+  });
+
+  // Interceptar botão voltar
+  window.addEventListener('popstate', function(e) {
+    // Impede a navegação para trás do browser
+    history.pushState(null, null, window.location.href);
+    
+    // SUA LÓGICA DE VOLTAR AQUI
+    console.log('Botão voltar - executar navegação interna');
+    
+    // Exemplo: se você tem um router:
+    // router.back()
+    
+    e.preventDefault();
+    return false;
+  });
+
+  // Configurar history state
+  history.replaceState({pwa: true}, '');
+  history.pushState({pwa: true}, '');
+
+  // Iniciar fullscreen
   enterFullscreen();
-  
-  // Tentar novamente após 1 segundo
-  setTimeout(enterFullscreen, 1000);
-  
-  // Tentar em cada interação do usuário
   document.addEventListener('click', enterFullscreen);
-  document.addEventListener('touchstart', enterFullscreen);
 });
-
-// Prevenir comportamento padrão do navegador
-window.addEventListener('scroll', function(e) {
-  e.preventDefault();
-  window.scrollTo(0, 0);
-});
-
-// Manter no topo sempre
-window.addEventListener('resize', function() {
-  window.scrollTo(0, 0);
-});
-</script>
 </script>
 </head>
 <body>

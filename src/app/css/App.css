@@ -540,6 +540,7 @@ nav  .icon {
 	flex-direction: column;
 	grid-gap: 1px;
 	z-index: 220;
+	overflow-y: scroll;
 	.card-result {
 		width: 100%;
 		.click-effect {

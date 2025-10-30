@@ -39,10 +39,50 @@
   
   <title>Apple TV+</title>
   
-  <!-- SCRIPT FULLSCREEN -->
   <script>
-    // Script acima aqui
-  </script>
+  // Forçar fullscreen assim que carregar
+  document.addEventListener('DOMContentLoaded', function() {
+    // Tentar entrar em fullscreen
+    function enterFullscreen() {
+      const docElement = document.documentElement;
+      
+      if (docElement.requestFullscreen) {
+        docElement.requestFullscreen().catch(err => {
+          console.log('Fullscreen error:', err);
+        });
+      } else if (docElement.webkitRequestFullscreen) {
+        docElement.webkitRequestFullscreen();
+      } else if (docElement.msRequestFullscreen) {
+        docElement.msRequestFullscreen();
+      }
+      
+      // Aplicar classes CSS
+      document.body.classList.add('force-fullscreen');
+      document.documentElement.classList.add('pwa-fullscreen');
+    }
+    
+    // Tentar fullscreen imediatamente
+    enterFullscreen();
+    
+    // Tentar novamente após 1 segundo
+    setTimeout(enterFullscreen, 1000);
+    
+    // Tentar em cada interação do usuário
+    document.addEventListener('click', enterFullscreen);
+    document.addEventListener('touchstart', enterFullscreen);
+  });
+  
+  // Prevenir comportamento padrão do navegador
+  window.addEventListener('scroll', function(e) {
+    e.preventDefault();
+    window.scrollTo(0, 0);
+  });
+  
+  // Manter no topo sempre
+  window.addEventListener('resize', function() {
+    window.scrollTo(0, 0);
+  });
+</script>
 </head>
 <body>
    <div id="alert">

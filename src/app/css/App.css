@@ -786,6 +786,7 @@ nav  .icon {
 	  position: absolute;
 	  top: 0;
 	  left: 0;
+	  width: 100%;
 	  height: 37em;
 	  object-fit: cover;
 	  display: none;

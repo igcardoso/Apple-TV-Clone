@@ -91,7 +91,7 @@ var genres = [{
 
 async function getMoviesBigSlide(url, page, whichContainer) {
 	try {
-		const response = await fetch(url + `with_original_language=en&vote_count.gte=100&primary_release_date.gte=2000-01-01&page=${page}`);
+		const response = await fetch(url + `&with_original_language=en&vote_count.gte=100&primary_release_date.gte=2000-01-01&page=${page}`);
 		const data = await response.json();
 
 		let moviesContainer = document.querySelector(`${whichContainer}`);
@@ -159,7 +159,7 @@ async function getMoviesBigSlide(url, page, whichContainer) {
 
 			if (movie.title && movie.vote_count >= 900) {
 				moviesContainer.appendChild(card);
-			}
+		    }
 		});
 
 
@@ -172,9 +172,8 @@ async function getMoviesBigSlide(url, page, whichContainer) {
 
 async function getMoviesSlide(url, page, whichContainer) {
 	try {
-		const response = await fetch(url + `with_original_language=en&vote_count.gte=100&primary_release_date.gte=2000-01-01&page=${page}`);
+		const response = await fetch(url + `&with_original_language=en&vote_count.gte=100&primary_release_date.gte=2000-01-01&page=${page}`);
 		const data = await response.json();
-		//console.log(`pagina:${page} | card: ${whichContainer} -`, url + `&page=${page}`)
 
 		let moviesContainer = document.querySelector(`${whichContainer}`);
 
@@ -182,7 +181,7 @@ async function getMoviesSlide(url, page, whichContainer) {
 		moviesContainer.innerHTML = '';
     
 		// Iterar sobre os resultados e criar cards
-		data.results.forEach((movie) => {
+		data.results.forEach((movie, index) => {
 			let card = document.createElement('div');
 			card.classList.add('card');
 			card.setAttribute('data-page', 'film-page');
@@ -203,9 +202,9 @@ async function getMoviesSlide(url, page, whichContainer) {
 			// Adicionar card ao contêiner
 			clickEffect.appendChild(posterImg);
 			card.appendChild(clickEffect);
-			if (movie.title && movie.vote_count >= 900) {
+		  if (movie.title && movie.vote_count >= 900) {
 				moviesContainer.appendChild(card);
-			}
+		  }
 		});
 
 
@@ -218,7 +217,7 @@ async function getMoviesSlide(url, page, whichContainer) {
 
 async function getMoviesSlimSlide(url, page, whichContainer) {
 	try {
-		const response = await fetch(url + `with_original_language=en&vote_count.gte=100&primary_release_date.gte=2000-01-01&page=${page}`);
+		const response = await fetch(url + `&with_original_language=en&vote_count.gte=100&primary_release_date.gte=2000-01-01&page=${page}`);
 		const data = await response.json();
 
 		let moviesContainer = document.querySelector(`${whichContainer}`);
@@ -257,7 +256,7 @@ async function getMoviesSlimSlide(url, page, whichContainer) {
 			card.appendChild(clickEffect);
 			if (movie.title && movie.vote_count >= 900) {
 				moviesContainer.appendChild(card);
-			}
+		    }
 		});
 
 		initLazyLoad();
@@ -355,9 +354,10 @@ async function getMovieDetails(filmeId, container) {
 				runtime.innerText = `${minutes}min`;
 			}
 
-			await checkMediaType(data.imdb_id);
+			await checkMediaType(data.imdb_id,
+				container);
 
-			async function checkMediaType(imdbId) {
+			async function checkMediaType(imdbId, container) {
 				const tmdbApiUrl = `${BASE_URL}/find/${imdbId}?${API_KEY}&external_source=imdb_id`;
 
 				try {

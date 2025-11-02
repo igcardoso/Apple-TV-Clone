@@ -408,61 +408,62 @@ async function getMoviesHighlights(url, page, whichContainer) {
 			error);
 	}
 } 
+// MANTENHA SUA ESTRUTURA, SÓ CORRIGI A LÓGICA
 
 window.initLazyLoad = function initLazyLoad() {
-	const lazyImages = document.querySelectorAll('.img');
-	// const lazyLoader = document.querySelectorAll('.all-slides .card');
+    const lazyImages = document.querySelectorAll('.img');
+    
+    // Só reseta imagens que não estão visíveis
+    lazyImages.forEach(img => {
+        const rect = img.getBoundingClientRect();
+        if (rect.bottom < 0 || rect.top > window.innerHeight) {
+            img.classList.remove('loaded');
+        }
+    });
 
-	lazyImages.forEach(imagens => imagens.classList.remove('loaded'));
-	// lazyLoader.forEach(imagens => imagens.classList.remove('loaded'));
+    const lazyLoad = target => {
+        const io = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    // Só carrega se não tem src OU se foi descarregada
+                    if (!img.src || img.src === "" || !img.classList.contains('loaded')) {
+                        img.src = img.dataset.src;
+                        observer.unobserve(img);
+                        img.classList.add('loaded');
+                    }
+                }
+            });
+        });
 
-	const lazyLoad = target => {
-		const io = new IntersectionObserver((entries,
-			observer) => {
-			entries.forEach(entry => {
-				if (entry.isIntersecting) {
-					const img = entry.target;
-					img.src = img.dataset.src;
-					observer.unobserve(img);
-				  img.classList.add('loaded');
-				}
-			});
-		});
+        io.observe(target);
+    };
 
-		io.observe(target);
-	};
-	/*
-	const lazyLoad2 = target => {
-		const io = new IntersectionObserver((entries,
-			observer) => {
-			entries.forEach(entry => {
-				if (entry.isIntersecting) {
-					const img = entry.target;
-					setTimeout(function() {
-					  img.classList.add('loaded');
-					}, 2000);
-				}
-			});
-		});
-
-		io.observe(target);
-	};
-*/
-	lazyImages.forEach(lazyLoad);
-	// lazyLoader.forEach(lazyLoad2);
+    lazyImages.forEach(lazyLoad);
 }
 
+function unloadImages() {
+    const loadedImages = document.querySelectorAll('.img.loaded[src^="https://image.tmdb.org/t/p/w500"]');
 
-let timeoutId;
+    loadedImages.forEach(img => {
+        const rect = img.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+        
+        if (rect.bottom < -50 || rect.top > viewportHeight + 50) {
+            img.removeAttribute('src');
+            img.classList.remove('loaded');
+        }
+    });
+}
 
 function scheduleImageUnload() {
-	clearTimeout(timeoutId);
-	timeoutId = setTimeout(() => {
-			unloadImages();
-		}, 200);
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+        unloadImages();
+    }, 200);
 }
-//
-// Descarregar imagens não visualizadas
+
+
 function unloadImages() {
 	const loadedImages = document.querySelectorAll('.img[src^="https://image.tmdb.org/t/p/w500"]');
 

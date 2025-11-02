@@ -1,101 +1,72 @@
 {
     "name": "Apple TV+",
     "short_name": "Apple TV",
-    "start_url": "index.html",
+    "start_url": "/",
     "display": "standalone",
     "background_color": "#313131",
     "theme_color": "#000000",
     "orientation": "portrait-primary",
-    "scope": "https://stream-os.netlify.app/",
+    "scope": "/",
     "prefer_related_applications": false,
-    "id": "1e42bc7a-768d-461a-86d7-7dd3d2da9032",
-    "supports_edge_panel": false,
-    "widgets": {
-        "my_widget": {
-            "name": "Meu Widget",
-            "description": "Um widget útil para minha PWA",
-            "icon": "icons/widget-icon.png",
-            "url": "/widget.html"
-        }
-    },
-    "scope_extensions": ["notifications", "offline_storage"],
-    "launch_handler": {
-        "ios": {
-            "url": "https://stream-os.netlify.app/index.html"
-        },
-        "android": {
-            "url": "https://stream-os.netlify.app/index.html"
-        },
-        "windows": {
-            "url": "https://stream-os.netlify.app/desktop.html"
-        }
-    },
-    "protocol_handlers": [
-        {
-            "url": "/filme?id=%s",
-            "protocol": "tmdb"
-        },
-        {
-            "url": "/trailer?id=%s",
-            "protocol": "youtube"
-        }
-    ],
-
+    
     "icons": [
         {
             "src": "/accets/app-icons/Apple-icon-app.webp",
-            "type": "image/png",
             "sizes": "72x72",
+            "type": "image/webp",
             "purpose": "any"
         },
         {
             "src": "/accets/app-icons/Apple-icon-app.webp",
-            "type": "image/png",
             "sizes": "96x96",
+            "type": "image/webp",
             "purpose": "any"
         },
         {
             "src": "/accets/app-icons/Apple-icon-app.webp",
-            "type": "image/png",
             "sizes": "128x128",
+            "type": "image/webp",
             "purpose": "any"
         },
         {
             "src": "/accets/app-icons/Apple-icon-app.webp",
-            "type": "image/png",
             "sizes": "144x144",
+            "type": "image/webp",
             "purpose": "any"
         },
         {
             "src": "/accets/app-icons/Apple-icon-app.webp",
-            "type": "image/png",
             "sizes": "152x152",
+            "type": "image/webp",
             "purpose": "any"
         },
         {
             "src": "/accets/app-icons/Apple-icon-app.webp",
-            "type": "image/png",
             "sizes": "192x192",
+            "type": "image/webp",
             "purpose": "any"
         },
         {
             "src": "/accets/app-icons/Apple-icon-app.webp",
-            "type": "image/png",
             "sizes": "384x384",
+            "type": "image/webp",
             "purpose": "any"
         },
         {
             "src": "/accets/app-icons/Apple-icon-app.webp",
-            "type": "image/png",
             "sizes": "512x512",
+            "type": "image/webp",
             "purpose": "any"
         }
     ],
+    
     "description": "Desfrute de uma infinita variedade de filmes, séries e canais de TV gratuitos em um único aplicativo! Com um design intuitivo e de fácil navegação, nossa plataforma oferece entretenimento ilimitado na ponta dos seus dedos. Transmita seus conteúdos favoritos em alta qualidade, sem sobrecarregar seu dispositivo, graças ao baixo tamanho em megabits. Transforme seu tempo livre em uma experiência cinematográfica sem complicações, onde quer que você esteja!",
+    
     "lang": "pt-br",
     "dir": "ltr",
     "display_override": ["standalone", "window-controls-overlay"],
-    "categories": ["education", "lifestyle"],
+    "categories": ["entertainment"],
+    
     "screenshots": [
         {
             "src": "https://raw.githubusercontent.com/igcardoso/primetv-/main/accets/screenshots/IMG-20240326-WA0051.jpg",
@@ -128,6 +99,7 @@
             "type": "image/jpg"
         }
     ],
+    
     "related_applications": [
         {
             "platform": "play",

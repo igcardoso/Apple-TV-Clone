@@ -28,7 +28,6 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-console.log("Instância do Firestore:", db);
 const auth = getAuth(app);
 
 document.querySelector(".logout-button").addEventListener("click", () => {
@@ -48,7 +47,6 @@ onAuthStateChanged(auth, user => {
         onSnapshot(doc(db, "users", user.uid), doc => {
             if (doc.exists()) {
                 let userData = doc.data();
-                console.log(userData);
 
                 const userFirebaseData = [
                     {
@@ -93,7 +91,6 @@ onAuthStateChanged(auth, user => {
                     
                     onSnapshot(movieSaveCollectionRef, snapshot => {
                         clearDisplay();
-                        console.log(snapshot.empty)
                         if (snapshot.empty) {
                           no_movies(false);
                         } else {

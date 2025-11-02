@@ -1,3 +1,6 @@
+var API_KEY = 'api_key=1cf50e6248dc270629e802686245c2c8';
+var BASE_URL = 'https://api.themoviedb.org/3';
+var API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&' + API_KEY + '&language=pt-BR';
 var tabs = document.querySelectorAll('.tab-content');
 var tabContent = document.querySelectorAll('.tab-content');
 var stackTabs = document.querySelectorAll('.stack-tab-content');
@@ -103,7 +106,7 @@ function showTab(tabId) {
 		const selectedTab = document.getElementById(tabId);
 
 		selectedTab.classList.add('active');
-		contentFilmPage();
+		showMoviesSlides(API_URL)
 
 		const markerNavBottom = document.querySelectorAll('.option-nav-bottom');
 

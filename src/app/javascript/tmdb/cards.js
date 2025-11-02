@@ -91,7 +91,7 @@ var genres = [{
 
 async function getMoviesBigSlide(url, page, whichContainer) {
 	try {
-		const response = await fetch(url + `&page=${page}`);
+		const response = await fetch(url + `with_original_language=en&vote_count.gte=100&primary_release_date.gte=2000-01-01&page=${page}`);
 		const data = await response.json();
 
 		let moviesContainer = document.querySelector(`${whichContainer}`);
@@ -157,19 +157,9 @@ async function getMoviesBigSlide(url, page, whichContainer) {
 
 			card.appendChild(opc7);
 
-			// Adicionar card ao contêiner
-
-			if (movie.title != null) {
-		    if (movie.vote_count > 900) {
-		      indexMovie++
-					moviesContainer.appendChild(card);
-				}
-		  } else {
-		    if (movie.vote_count > 200) {
-		      indexMovie++
-					moviesContainer.appendChild(card);
-				}
-		  }
+			if (movie.title && movie.vote_count >= 900) {
+				moviesContainer.appendChild(card);
+			}
 		});
 
 
@@ -182,8 +172,9 @@ async function getMoviesBigSlide(url, page, whichContainer) {
 
 async function getMoviesSlide(url, page, whichContainer) {
 	try {
-		const response = await fetch(url + `&page=${page}`);
+		const response = await fetch(url + `with_original_language=en&vote_count.gte=100&primary_release_date.gte=2000-01-01&page=${page}`);
 		const data = await response.json();
+		//console.log(`pagina:${page} | card: ${whichContainer} -`, url + `&page=${page}`)
 
 		let moviesContainer = document.querySelector(`${whichContainer}`);
 
@@ -191,7 +182,7 @@ async function getMoviesSlide(url, page, whichContainer) {
 		moviesContainer.innerHTML = '';
     
 		// Iterar sobre os resultados e criar cards
-		data.results.forEach((movie, index) => {
+		data.results.forEach((movie) => {
 			let card = document.createElement('div');
 			card.classList.add('card');
 			card.setAttribute('data-page', 'film-page');
@@ -212,15 +203,9 @@ async function getMoviesSlide(url, page, whichContainer) {
 			// Adicionar card ao contêiner
 			clickEffect.appendChild(posterImg);
 			card.appendChild(clickEffect);
-		  if (movie.title != null) {
-		    if (movie.vote_count > 900) {
-					moviesContainer.appendChild(card);
-				}
-		  } else {
-		    if (movie.vote_count > 200) {
-					moviesContainer.appendChild(card);
-				}
-		  }
+			if (movie.title && movie.vote_count >= 900) {
+				moviesContainer.appendChild(card);
+			}
 		});
 
 
@@ -233,7 +218,7 @@ async function getMoviesSlide(url, page, whichContainer) {
 
 async function getMoviesSlimSlide(url, page, whichContainer) {
 	try {
-		const response = await fetch(url + `&page=${page}`);
+		const response = await fetch(url + `with_original_language=en&vote_count.gte=100&primary_release_date.gte=2000-01-01&page=${page}`);
 		const data = await response.json();
 
 		let moviesContainer = document.querySelector(`${whichContainer}`);
@@ -270,15 +255,9 @@ async function getMoviesSlimSlide(url, page, whichContainer) {
 			clickEffect.appendChild(posterImg);
 			clickEffect.appendChild(title);
 			card.appendChild(clickEffect);
-			if (movie.title != null) {
-		    if (movie.vote_count > 900) {
-					moviesContainer.appendChild(card);
-				}
-		  } else {
-		    if (movie.vote_count > 200) {
-					moviesContainer.appendChild(card);
-				}
-		  }
+			if (movie.title && movie.vote_count >= 900) {
+				moviesContainer.appendChild(card);
+			}
 		});
 
 		initLazyLoad();
@@ -376,12 +355,9 @@ async function getMovieDetails(filmeId, container) {
 				runtime.innerText = `${minutes}min`;
 			}
 
-			console.log(data)
+			await checkMediaType(data.imdb_id);
 
-			await checkMediaType(data.imdb_id,
-				container);
-
-			async function checkMediaType(imdbId, container) {
+			async function checkMediaType(imdbId) {
 				const tmdbApiUrl = `${BASE_URL}/find/${imdbId}?${API_KEY}&external_source=imdb_id`;
 
 				try {
@@ -392,8 +368,6 @@ async function getMovieDetails(filmeId, container) {
 						mediaType.innerText = "Filme ";
 					} else if (data.tv_results.length > 0) {
 						mediaType.innerText = "Série ";
-					} else {
-						console.log('Nenhum resultado encontrado para o ID ', imdbId);
 					}
 				} catch (error) {
 					console.error('Erro ao obter dados:', error);
@@ -510,7 +484,12 @@ window.showMoviesSlides = function showMoviesSlides(API) {
 }
 
 window.generateRandomPage = function generateRandomPage() {
-		return Math.floor(Math.random() * 100);
+	let nbr = Math.floor(Math.random() * 100);
+	if (nbr > 0) {
+		return nbr;
+	} else if (nbr === 0) {
+		return nbr + 1;
+	}
 }
 
 function contentHome(API) {
@@ -556,7 +535,7 @@ function contentDiscover(API) {
 	getMoviesSlide(API, generateRandomPage(), '.slide-16');
 	getMoviesSlide(API, generateRandomPage(), '.slide-17');
 	getMoviesSlide(API, generateRandomPage(), '.slide-18');
-  getMoviesSlimSlide(API_URL, generateRandomPage(), '.s-slide-8');
+    getMoviesSlimSlide(API_URL, generateRandomPage(), '.s-slide-8');
 	getMoviesSlimSlide(API_URL, generateRandomPage(), '.s-slide-9');
 	getMoviesSlimSlide(API_URL, generateRandomPage(), '.s-slide-10');
 	

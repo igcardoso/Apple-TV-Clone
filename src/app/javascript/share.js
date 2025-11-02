@@ -56,8 +56,6 @@ function checkParameterShare() {
 
 	if (parametroShare !== null) {
 		sharedPage();
-	} else {
-		console.log('A URL não contém o parâmetro ?share=');
 	}
 }
 

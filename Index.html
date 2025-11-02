@@ -5,9 +5,7 @@
   <meta name="keywords" content="Apple TV, Filmes online, Séries online, Filme online, Séries online, Filmes DUBLADO, Filmes LEGENDADO , Séries DUBLADO, Séries LEGENDADO , Filmes online DUBLADO, Filmes grátis, Assistir filmes, Assistir filmes online, Assistir filmes grátis, Assistir filmes DUBLADO, Assistir filmes LEGENDADO , Assistir séries grátis, Assistir séries DUBLADO, Assistir séries LEGENDADO , Apple TV, Apple TV filmes, Apple TV séries, Assistir Apple TV, Assistir filmes 1080p, Assistir filmes 720p, Assistir filmes no celular, Assistir filmes mobile, Assistir séries no celular, Apple TV grátis" />
   <meta name="format-detection" content="telephone=no">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <!-- meta tags para Roku -->
-  <meta name="robots" content="noindex">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <!-- CSS -->
   <link rel="stylesheet" href="src/app/css/global/Index.css" title="Style App" type="text/css" />
   <link rel="stylesheet" href="src/app/css/App.css" title="Style App" type="text/css" />
@@ -41,33 +39,6 @@
   
   <title>Apple TV+</title>
   
-  <script>
-  
-document.addEventListener('DOMContentLoaded', function() {
-  let fullscreenActive = false;
-
-  function enterFullscreen() {
-    const elem = document.documentElement;
-    
-    if (elem.requestFullscreen && !fullscreenActive) {
-      elem.requestFullscreen().then(() => {
-        fullscreenActive = true;
-      }).catch(console.log);
-    }
-  }
-
-  // Re-entrar automaticamente se sair do fullscreen
-  document.addEventListener('fullscreenchange', () => {
-    if (!document.fullscreenElement) {
-      fullscreenActive = false;
-      setTimeout(enterFullscreen, 1);
-    }
-  });
-
-  enterFullscreen();
-  window.addEventListener('load', enterFullscreen);
-});
-</script>
 </head>
 <body>
    <div id="alert">
@@ -178,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function() {
           			<div class="bottom">
           				<div class="text">
           					<button class="tag">
-          					  <span class="media-type"></span>
+          					  
           					  <span class="plataform">Novos episodios toda quarta</span>
           					</button>
           					<br />
@@ -187,6 +158,7 @@ document.addEventListener('DOMContentLoaded', function() {
           					<h1 class="title"></h1>
           					<div class="imdb">
           					  <img class="logo" src="accets/app-icons/Apple-icon-app.webp">
+                      <div class="media-type"></div>
                       <div class="category">
           						</div>
           						<div class="vote_count"></div>
@@ -707,46 +679,6 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
             <div class="list-downloads">
              
-              <div class=" card">
-                <div class="click-effect">
-                  <div class="image">
-                  <img src="accets/Teste-4.jpg">
-                </div>
-                <div class="content">
-                  <div class="text">
-                    <h3>La casa de papel</h3>
-                    <div class="size">
-                      <div class="file-size"><span>0.98</span>GB</div><div class="season">T<span>3</span> - </div><div class="episode">Episódio <span class="ep-number">4</span></div></div>
-                  </div>
-                  <div class="content-icon">
-                    <svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-                      <use xlink:href="src/icons/ios-cloud-download.svg#ios-cloud-download"></use>
-                    </svg>
-                  </div>
-                </div>
-                </div>
-              </div>
-              <div class=" card">
-                <div class="click-effect">
-                  <div class="image">
-                  <img src="accets/Teste-3.jpg">
-                </div>
-                <div class="content">
-                  <div class="text">
-                    <h3>Aquaman 2: O Reino Perdido (2023)</h3>
-                    <div class="size">
-                      <div class="file-size"><span>2</span>GB</div>
-                      </div>
-                  </div>
-                  <div class="content-icon">
-                    <svg class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-                      <use xlink:href="src/icons/ios-cloud-done.svg#ios-cloud-done"></use>
-                    </svg>
-                  </div>
-                </div>
-                </div>
-              </div>
-              
             </div>
           </div>
         </div>

@@ -770,6 +770,7 @@ nav  .icon {
   top: -10px;
   left: 20px;
   width: 70px;
+  filter: invert(1);
 }
 
 .scroll .image-background-content {
@@ -2502,7 +2503,8 @@ nav .option-bar {
   background-color: transparent;
   border: none;
   img {
-  	width: 18px;
+  	width: 16px;
+  	filter: invert(1);
   }
 }
 
@@ -2597,6 +2599,7 @@ header #name-page {
 	opacity: var(--img-opacity, 0);
 	img {
 		width: 38px;
+		filter: invert(1);
 		
 	}
 }

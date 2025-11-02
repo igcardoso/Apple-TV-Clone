@@ -457,20 +457,20 @@ let timeoutId;
 
 function scheduleImageUnload() {
 	clearTimeout(timeoutId);
-	// timeoutId = setTimeout(() => {
-	// 		unloadImages();
-	// 	}, 200);
+	timeoutId = setTimeout(() => {
+			unloadImages();
+		}, 200);
 }
 //
 // Descarregar imagens não visualizadas
-// function unloadImages() {
-// 	const loadedImages = document.querySelectorAll('.img[src^="https://image.tmdb.org/t/p/w500"]');
-//
-// 	loadedImages.forEach(img => {
-// 		img.removeAttribute('src');
-// 		img.classList.remove('loaded')
-// 	});
-// }
+function unloadImages() {
+	const loadedImages = document.querySelectorAll('.img[src^="https://image.tmdb.org/t/p/w500"]');
+
+	loadedImages.forEach(img => {
+		img.removeAttribute('src');
+		img.classList.remove('loaded')
+	});
+}
 
 // Adicionar listeners para monitorar a visibilidade dos cards
 document.addEventListener('visibilitychange', scheduleImageUnload);

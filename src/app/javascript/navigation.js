@@ -106,7 +106,7 @@ function showTab(tabId) {
 		const selectedTab = document.getElementById(tabId);
 
 		selectedTab.classList.add('active');
-		showMoviesSlides(API_URL)
+		contentFilmPage(API_URL)
 
 		const markerNavBottom = document.querySelectorAll('.option-nav-bottom');
 

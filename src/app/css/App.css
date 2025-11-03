@@ -778,7 +778,7 @@ nav  .icon {
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 37em;
+	height: 45em;
 	z-index: -1;
 	transition: all 0s linear;
 	overflow: hidden;
@@ -787,7 +787,7 @@ nav  .icon {
 	  top: 0;
 	  left: 0;
 	  width: 100%;
-	  height: 37em;
+	  height: 45em;
 	  object-fit: cover;
 	  display: none;
 	  z-index: 1;
@@ -870,7 +870,7 @@ nav  .icon {
 
 #home .popular {
 	width: 100%;
-	height: 37em;
+	height: 45em;
 	margin: 1.5em auto 2em;
 	position: relative;
 	display: flex;
@@ -893,7 +893,7 @@ nav  .icon {
 	left: 0;
 	background: rgb(0, 0, 0);
 	width: 100%;
-	height: 37em;
+	height: 45em;
 	z-index: -1;
 }
 

@@ -4,5 +4,5 @@ document.addEventListener('DOMContentLoaded', function() {
 	}, 3000);
   setTimeout(() => {
     document.querySelector('#loading-app').style.display = 'none';
-  }, 4000);
+  }, 2000);
 });

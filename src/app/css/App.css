@@ -1542,8 +1542,8 @@ nav  .icon {
   background: #ffffff;
   border: .01px solid #7c7c7c46;
   strong {
-	color: #000000;
-	font-weight: 600;
+	  color: #000000;
+	  font-weight: 600;
   }
 /*
 #film-page .float-btn-play.recordEp  {

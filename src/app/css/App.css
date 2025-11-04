@@ -136,7 +136,7 @@ nav  .icon {
 }
 
 .all-slides {
-  width: 100%;
+  width: calc(100% - 1em);
   overflow-x: auto;
   display: flex;
   padding: 0 0 0 .9em;

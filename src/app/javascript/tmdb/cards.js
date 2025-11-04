@@ -458,7 +458,7 @@ function unloadImages() {
 
 function scheduleImageUnload() {
 	//let timeoutId
-    clearTimeout(timeoutId);
+    //clearTimeout(timeoutId);
     //timeoutId = setTimeout(() => {
     //    unloadImages();
     //}, 200);

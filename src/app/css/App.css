@@ -140,8 +140,9 @@ nav  .icon {
   overflow-x: auto;
   display: flex;
   padding: 0 0 0 .9em;
+  scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  /*scroll-snap-type: x mandatory;*/
+  -webkit-overflow-scrolling: touch;
 }
 
 .all-slides .img {

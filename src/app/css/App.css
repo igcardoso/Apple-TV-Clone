@@ -136,10 +136,11 @@ nav  .icon {
 }
 
 .all-slides {
-  width: calc(100% - 1em);
+  width: 100%;
   overflow-x: auto;
   display: flex;
   padding: 0 0 0 .9em;
+  box-sizing: border-box;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;

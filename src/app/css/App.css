@@ -767,7 +767,7 @@ nav  .icon {
 
 .imagotipo-app {
   position: absolute;
-  top: -10px;
+  top: 10px;
   left: 20px;
   width: 70px;
   filter: invert(1);
@@ -2558,7 +2558,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2em 1vh .2em 1vh;
+  padding: 3em 1vh .2em 1vh;
   background: 0;
   border-bottom: 1px solid;
   border-bottom-color: transparent;

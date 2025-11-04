@@ -117,7 +117,7 @@ function headerSearch() {
     let top = PgSearch.scrollTop;
     if (top == 0) {
         ElementHeaderSearch.classList.remove("active");
-    } else if (top > 120) {
+    } else if (top > 10) {
         ElementHeaderSearch.classList.add("active");
     }
 }

@@ -1455,6 +1455,7 @@ nav  .icon {
 	align-items: center;
 	justify-content: space-between;
 	padding: 14px;
+	padding-top: 3em;
 	padding-bottom: .5em;
 	width: 100%;
 	box-sizing: border-box;

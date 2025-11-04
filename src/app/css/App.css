@@ -1539,6 +1539,14 @@ nav  .icon {
 }
 
 #film-page .float-btn-play.recordEp  {
+  background: #ffffff;
+  border: .01px solid #7c7c7c46;
+  strong {
+	color: #000000;
+	font-weight: 400;
+  }
+/*
+#film-page .float-btn-play.recordEp  {
   background: #3434347a;
   webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
@@ -1546,7 +1554,7 @@ nav  .icon {
   strong {
 	color: #ffffff;
 	font-weight: 400;
-  }
+  }*/
 }
 
 

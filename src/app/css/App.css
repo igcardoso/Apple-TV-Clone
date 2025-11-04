@@ -1113,6 +1113,10 @@ nav  .icon {
   scroll-behavior: smooth;
 }
 
+#home .session-title.init {
+  margin-top: -1em;
+}
+
 #home .session-title {
   font-weight: 700;
   font-size: 1.3em;

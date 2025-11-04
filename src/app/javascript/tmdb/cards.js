@@ -465,14 +465,6 @@ function scheduleImageUnload() {
 }
 
 
-function unloadImages() {
-	const loadedImages = document.querySelectorAll('.img[src^="https://image.tmdb.org/t/p/w500"]');
-
-	loadedImages.forEach(img => {
-		img.removeAttribute('src');
-		img.classList.remove('loaded')
-	});
-}
 
 // Adicionar listeners para monitorar a visibilidade dos cards
 document.addEventListener('visibilitychange', scheduleImageUnload);

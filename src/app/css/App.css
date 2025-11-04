@@ -141,6 +141,7 @@ nav  .icon {
   display: flex;
   padding: 0 0 0 .9em;
   box-sizing: border-box;
+  margin-left: .9em;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;

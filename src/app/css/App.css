@@ -1265,6 +1265,7 @@ nav  .icon {
 #discover .popular .text .logotipo {
 	width: 300px;
 	margin: 10px auto 10px;
+	filter: invert(1);
 }
 
 #discover .popular .text .logo {

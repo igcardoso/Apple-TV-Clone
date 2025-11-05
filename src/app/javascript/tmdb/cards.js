@@ -313,7 +313,7 @@ async function getMovieDetails(filmeId, container) {
 			
 			if (container == '.popular-1') {
 			  document.querySelector('#home .scroll .image-background').setAttribute('src', `${IMG_URL_PROMINENCE + data.backdrop_path}`);
-			  document.querySelector('#home .scroll .video-background').setAttribute('preload', `${IMG_URL_PROMINENCE + data.backdrop_path}`);
+			  document.querySelector('#home .scroll .video-background').setAttribute('poster', `${IMG_URL_PROMINENCE + data.backdrop_path}`);
 			}
 			if (container == '.popular-2') {
 			  document.querySelector('#discover .scroll .image-background-2').setAttribute('src', `${IMG_URL_PROMINENCE + data.backdrop_path}`);

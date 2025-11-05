@@ -7,7 +7,7 @@
 }
 
 
-*:not(:empty) {/* inclui todos o elemento, excluindo apenas os que não tem texto, ou seja peda todos os que tem texto*/
+*:not(:empty) {
   user-select: none; 
   
 }
@@ -183,7 +183,6 @@
   }
 }
 
-/* REMOVER COMPLETAMENTE A STATUS BAR */
 html, body {
   margin: 0 !important;
   padding: 0 !important;
@@ -196,13 +195,11 @@ html, body {
   left: 0 !important;
 }
 
-/* Ocultar qualquer barra de status/UI do navegador */
 body::before,
 body::after {
   display: none !important;
 }
 
-/* Container principal - ocupar TUDO */
 .app-container, 
 body > div:first-child,
 body > main:first-child {
@@ -220,14 +217,12 @@ body > main:first-child {
   background: #000000 !important;
 }
 
-/* iOS - técnicas específicas */
 @supports (-webkit-touch-callout: none) {
   body {
     height: -webkit-fill-available !important;
     min-height: -webkit-fill-available !important;
   }
   
-  /* Forçar hide da status bar no iOS */
   .app-container {
     height: 100% !important;
     position: absolute !important;
@@ -236,7 +231,6 @@ body > main:first-child {
   }
 }
 
-/* Android Chrome */
 @media all and (display-mode: standalone) {
   body {
     -webkit-overflow-scrolling: touch !important;
@@ -244,7 +238,6 @@ body > main:first-child {
   }
 }
 
-/* Remover qualquer espaço reservado para status bar */
 meta[name="apple-mobile-web-app-status-bar-style"] {
   display: none !important;
 }

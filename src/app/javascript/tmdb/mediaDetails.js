@@ -121,7 +121,6 @@ async function mediaLibraryIsSeries(serieId) {
 		cardSave.appendChild(movie_cancel_delete);
 		cardSave.appendChild(destiny);
 		
-		// Adiciona evento de pressionar e segurar ao card
 		let pressTimer;
 		cardSave.addEventListener('touchstart', function(event) {
 		cardSave.style.transform = "scale(0.9)";
@@ -130,17 +129,14 @@ async function mediaLibraryIsSeries(serieId) {
 				cardSave.style.transform = "scale(1)";
 			}, 1000);
 		});
-		
-		// Cancela o temporizador se o usuário soltar o card antes do tempo limite
+		 
 		cardSave.addEventListener('touchend', function() {
 			cardSave.style.transform = "scale(1)";
 			clearTimeout(pressTimer);
 		});
-		
-		// Adiciona o card à lista de slides da biblioteca
+		 
 		document.querySelector('#library .library-slides').appendChild(cardSave);
-		
-		// Adiciona evento de clique ao card
+		 
 		destiny.addEventListener('click', function(event) {
 			handleNavClick(event);
 			getAllMoviesDetails(data.id, data.name, data.backgrop_path, 'save');
@@ -185,8 +181,7 @@ async function mediaLibraryIsMovie(movieId) {
       cardSave.appendChild(movie_delete);
       cardSave.appendChild(movie_cancel_delete);
       cardSave.appendChild(destiny);
-      
-      // Adiciona evento de pressionar e segurar ao card
+       
       let pressTimer;
       
       cardSave.addEventListener('touchstart', function(event) {
@@ -196,17 +191,14 @@ async function mediaLibraryIsMovie(movieId) {
             cardSave.style.transform = "scale(1)";
         }, 1000);
       });
-      
-      // Cancela o temporizador se o usuário soltar o card antes do tempo limite
+       
       cardSave.addEventListener('touchend', function() {
         cardSave.style.transform = "scale(1)";
         clearTimeout(pressTimer);
       });
-      
-      // Adiciona o card à lista de slides da biblioteca
+       
       document.querySelector('#library .library-slides').appendChild(cardSave);
-      
-      // Adiciona evento de clique ao card
+       
       destiny.addEventListener('click', function(event) {
         handleNavClick(event);
         getAllMoviesDetails(data.id, data.title, data.backgrop_path, 'save');
@@ -228,8 +220,7 @@ async function mediaIsSeries(serieId, save) {
 
 	try {
 		const response = await fetch(detalhesUrl);
-		const data = await response.json();
-		// const plataformas = data.production_companies.map(company => company.name);
+		const data = await response.json(); 
 
 		if (data.name != "" && data.backdrop_path != null /*&& data.vote_count >= 100*/) {
 		 
@@ -385,13 +376,11 @@ async function mediaIsSeries(serieId, save) {
     	  }); 
     	}); 
 			
-			async function getEpisodeData(seriesId, seasonNumber) {
-				// Get information for the specified season
+			async function getEpisodeData(seriesId, seasonNumber) { 
 				const episodesUrl = `${BASE_URL}/tv/${seriesId}/season/${seasonNumber}?${API_KEY}&language=pt-BR`;
 				const episodesResponse = await fetch(episodesUrl);
 				const episodesData = await episodesResponse.json();
-
-				// Extract episode covers and names
+ 
 				const episodes = episodesData.episodes.map((episode) => {
 					const imageUrl = `${IMG_URL}${episode.still_path}`;
 					const backgroundUrl = `${IMG_URL_PROMINENCE}${episode.still_path}`;
@@ -483,8 +472,7 @@ async function mediaIsSeries(serieId, save) {
 							let selectedplay = 'episode-details';
 
 							if (selectedplay === 'profile') {
-								setTimeout(function() {
-									// Stack tab
+								setTimeout(function() { 
 									showTab(selectedplay);
 									updateHeaderVisibility();
 									window.history.pushState({
@@ -492,8 +480,7 @@ async function mediaIsSeries(serieId, save) {
 									}, null, `#${selectedplay}`);
 								}, 200);
 							} else {
-								setTimeout(function() {
-									// Bottom tab
+								setTimeout(function() { 
 									showTab(selectedplay);
 									updateHeaderVisibility();
 									window.history.pushState({
@@ -695,8 +682,7 @@ async function mediaIsSeries(serieId, save) {
 			});
 
 			console.log(data)
-
-			// Fetch movie show cast
+ 
 			const castUrl = `${BASE_URL}/tv/${serieId}/credits?${API_KEY}`;
 			fetch(castUrl)
 			.then(res => res.json())
@@ -993,7 +979,6 @@ async function mediaIsMovie(movieId, save) {
 			});
 
 
-			// Fetch movie show cast
 			const castUrl = `${BASE_URL}/movie/${movieId}/credits?${API_KEY}`;
 			fetch(castUrl)
 			.then(res => res.json())

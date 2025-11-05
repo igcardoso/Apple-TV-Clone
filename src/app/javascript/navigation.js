@@ -142,8 +142,7 @@ function showTab(tabId) {
 		// displayPageName();
 		updateHeaderVisibility();
 	}
-
-	// Função para lidar com cliques nos botões de navegação
+ 
 function handleNavClick(event) {
 		const selectedPage = event.currentTarget.getAttribute('data-page');
 		
@@ -166,19 +165,16 @@ function handleNavClick(event) {
 				}, 500);
 			}
 
-
-		// Verifica se é uma tab ou stack tab
+ 
 		if (selectedPage === 'profile') {
-			setTimeout(function() {
-				// Stack tab
+			setTimeout(function() { 
 				showTab(selectedPage);
 				window.history.pushState({
 					page: selectedPage
 				}, null, `#${selectedPage}`);
 			}, 200);
 		} else {
-			setTimeout(function() {
-				// Bottom tab
+			setTimeout(function() { 
 				showTab(selectedPage);
 				window.history.pushState({
 					page: selectedPage

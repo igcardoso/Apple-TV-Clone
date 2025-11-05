@@ -93,11 +93,9 @@ function clearInputDisplayOff() {
 const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
 function handleThemeChange(event) {
-    if (event.matches) {
-        // Tema escuro ativado
+    if (event.matches) { 
         console.log("Tema escuro ativado");
-    } else {
-        // Tema claro ativado
+    } else { 
         console.log("Tema claro ativado");
     }
 }

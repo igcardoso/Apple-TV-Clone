@@ -454,7 +454,6 @@ form input.error {
     header .next-page img {
         width: 13px;
         filter: drop-shadow(0 100px 0 rgb(0, 145, 255));
-        /* Move o ícone original para cima, deixando visível apenas a sombra */
         transform: translateY(-100px);
     }
     

@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
 					contentLeft.appendChild(categoryResult);
 					
 					card.appendChild(clickEffect);
-					if (media.poster_path != null) {
+					if (media.poster_path != null && media.vote_count >= 90) {
 						resultsContainer.appendChild(card);
 					}
 				});

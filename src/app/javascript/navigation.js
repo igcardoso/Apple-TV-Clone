@@ -151,15 +151,19 @@ function handleNavClick(event) {
 			let away = document.querySelector('#click-away');
 			if (!away.classList.contains('active')) {
 				document.querySelector('#loading').style.display = 'flex';
+				document.querySelector('#loading').style.opacity = '1';
+
+
 				setTimeout(function() {
 					loadingHidden();
-				}, 800);
-			} else {
-				document.querySelector('#loading').style.display = 'none';
+				}, 600);
 			}
 
 			function loadingHidden() {
-				document.querySelector('#loading').style.display = 'none';
+				document.querySelector('#loading').style.opacity = '0';
+				setTimeout(() => {
+					document.querySelector('#loading').style.display = 'none';
+				}, 500);
 			}
 
 

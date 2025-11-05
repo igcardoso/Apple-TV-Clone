@@ -5,6 +5,7 @@ var FilmPageDisplay = '#film-page';
 var episodeDetails = '#episode-details';
 var trailerDisplay = '#trailer';
 
+
 async function getAllMoviesDetails(filmeId, title, background, save) {
 	console.log(filmeId)
 	const detalhesUrl = `${BASE_URL}/movie/${filmeId}?${API_KEY}&language=pt-BR`;

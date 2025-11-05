@@ -205,7 +205,7 @@ async function getMoviesSlide(url, page, whichContainer) {
 				moviesContainer.appendChild(card);
 		  }
 		});
-
+		initLazyLoad();
 
 	} catch (error) {
 		console.error('Erro ao obter dados:',
@@ -459,31 +459,6 @@ window.initLazyLoad = function initLazyLoad() {
     lazyImages.forEach(lazyLoad);
 }
 
-function unloadImages() {
-    const loadedImages = document.querySelectorAll('.img.loaded[src^="https://image.tmdb.org/t/p/w500"]');
-
-    loadedImages.forEach(img => {
-        const rect = img.getBoundingClientRect();
-        const viewportHeight = window.innerHeight;
-        
-        if (rect.bottom < -50 || rect.top > viewportHeight + 50) {
-            img.removeAttribute('src');
-            img.classList.remove('loaded');
-        }
-    });
-}
-
-function scheduleImageUnload() {
-	//let timeoutId
-    //clearTimeout(timeoutId);
-    //timeoutId = setTimeout(() => {
-    //    unloadImages();
-    //}, 200);
-}
-
-
-document.addEventListener('visibilitychange', scheduleImageUnload);
-document.addEventListener('scroll', scheduleImageUnload);
 
 window.showMoviesSlides = function showMoviesSlides(API) {
 	contentHome(API);

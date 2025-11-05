@@ -119,7 +119,7 @@ async function getMoviesBigSlide(url, page, whichContainer) {
 			// Adicionar a imagem do poster dentro da div click-effect
 
 			let posterImg = document.createElement('img');
-			posterImg.setAttribute('data-src', IMG_URL + movie.backdrop_path);
+			posterImg.setAttribute('src', IMG_URL + movie.backdrop_path);
 			posterImg.classList.add('img');
 			
 
@@ -163,7 +163,7 @@ async function getMoviesBigSlide(url, page, whichContainer) {
 		});
 
 
-		initLazyLoad();
+		//initLazyLoad();
 	} catch (error) {
 		console.error('Erro ao obter dados:',
 			error);
@@ -196,7 +196,7 @@ async function getMoviesSlide(url, page, whichContainer) {
 
 			// Adicionar a imagem do poster dentro da div click-effect
 			let posterImg = document.createElement('img');
-			posterImg.setAttribute('data-src', IMG_URL + movie.poster_path);
+			posterImg.setAttribute('src', IMG_URL + movie.poster_path);
 			posterImg.classList.add('img');
 
 			// Adicionar card ao contêiner
@@ -208,7 +208,7 @@ async function getMoviesSlide(url, page, whichContainer) {
 		});
 
 
-		initLazyLoad();
+		//initLazyLoad();
 	} catch (error) {
 		console.error('Erro ao obter dados:',
 			error);
@@ -240,7 +240,7 @@ async function getMoviesSlimSlide(url, page, whichContainer) {
 
 			// Adicionar a imagem do poster dentro da div click-effect
 			let posterImg = document.createElement('img');
-			posterImg.setAttribute('data-src',
+			posterImg.setAttribute('src',
 				IMG_URL + movie.backdrop_path);
 			posterImg.classList.add('img');
 			posterImg.alt = movie.title + ' Poster';
@@ -259,7 +259,7 @@ async function getMoviesSlimSlide(url, page, whichContainer) {
 		    }
 		});
 
-		initLazyLoad();
+		//initLazyLoad();
 	} catch (error) {
 		console.error('Erro ao obter dados:',
 			error);
@@ -403,7 +403,7 @@ async function getMoviesHighlights(url, page, whichContainer) {
 		
 		await getMovieDetails(movieStatic,
 			whichContainer);
-		initLazyLoad();
+		//initLazyLoad();
 	} catch (error) {
 		console.error('Erro ao obter dados:',
 			error);

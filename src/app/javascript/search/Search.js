@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
 					clickEffect.classList.add('click-effect');
 
 					let posterImg = document.createElement('img');
-					posterImg.setAttribute('data-src', `https://image.tmdb.org/t/p/w500${media.poster_path}`);
+					posterImg.setAttribute('src', `https://image.tmdb.org/t/p/w500${media.poster_path}`);
 					posterImg.classList.add('img');
 					posterImg.alt = media.title || media.name + ' Poster';
 
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
 					}
 				});
 			}
-			initLazyLoad();
+			//initLazyLoad();
 		} catch (error) {
 			console.error('Erro ao obter dados da pesquisa:',
 				error);
@@ -118,24 +118,6 @@ document.addEventListener('DOMContentLoaded', function () {
 		lazyImages.forEach(lazyLoad);
 	}
 
-	// Agendar a descarga das imagens após 5 minutos de inatividade
-	let timeoutId;
-
-	function scheduleImageUnload() {
-		clearTimeout(timeoutId);
-		// timeoutId = setTimeout(() => {
-		// 		unloadImages();
-		// 	}, 200);
-	}
-	//
-	// Descarregar imagens não visualizadas
-	// function unloadImages() {
-	// 	const loadedImages = document.querySelectorAll('.img[src^="https://image.tmdb.org/t/p/w500"]');
-	//
-	// 	loadedImages.forEach(img => {
-	// 		img.removeAttribute('src');
-	// 		img.classList.remove('loaded')
-	// 	});
-	// }
+	
 
 });

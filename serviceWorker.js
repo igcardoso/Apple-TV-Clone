@@ -3,14 +3,14 @@ importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox
 const staticOnuSite = "onu-site-v1";
 const assets =  [
   //"/",
-  //"/index.html",
-  //"/src/app/css/App.css",
+  "/index.html",
+  "/src/app/css/App.css",
   //"/src/app/css/refresh.css",
-  //"/src/app/javascript/App.js",
+  "/src/app/javascript/App.js",
   //"/src/app/javascript/refresh.js",
   //"/accets/default_profile_photo/fp_13.jpg"
 ];
-/*
+
 self.addEventListener("install", installEvent => {
   installEvent.waitUntil(
     caches.open(staticOnuSite).then(cache => {
@@ -48,4 +48,3 @@ self.addEventListener("fetch", fetchEvent => {
     );
   }
 });
-*/

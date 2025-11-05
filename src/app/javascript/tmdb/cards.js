@@ -163,7 +163,6 @@ async function getMoviesBigSlide(url, page, whichContainer) {
 		});
 
 
-		initLazyLoad();
 	} catch (error) {
 		console.error('Erro ao obter dados:',
 			error);
@@ -208,7 +207,6 @@ async function getMoviesSlide(url, page, whichContainer) {
 		});
 
 
-		initLazyLoad();
 	} catch (error) {
 		console.error('Erro ao obter dados:',
 			error);
@@ -259,7 +257,6 @@ async function getMoviesSlimSlide(url, page, whichContainer) {
 		    }
 		});
 
-		initLazyLoad();
 	} catch (error) {
 		console.error('Erro ao obter dados:',
 			error);
@@ -403,25 +400,33 @@ async function getMoviesHighlights(url, page, whichContainer) {
 		
 		await getMovieDetails(movieStatic,
 			whichContainer);
-		initLazyLoad();
+		
 	} catch (error) {
 		console.error('Erro ao obter dados:',
 			error);
 	}
 } 
 
+document.querySelectorAll(".scroll").forEach(scrollClient => {
+	scrollClient.addEventListener('scroll', ()=> {
+		initLazyLoad();
+	});
+});
+
 window.initLazyLoad = function initLazyLoad() {
     const lazyImages = document.querySelectorAll('.img');
     
-    // Só reseta imagens que não estão visíveis
     lazyImages.forEach(img => {
         const rect = img.getBoundingClientRect();
-        if (rect.bottom < 0 || rect.top > window.innerHeight) {
-            img.classList.remove('loaded');
+        const isOutsideVertically = rect.bottom < 0 || rect.top > window.innerHeight;
+		const isOutsideHorizontally = rect.right < 0 || rect.left > window.innerWidth;
+
+		if (isOutsideVertically || isOutsideHorizontally) {
 			if (img.src) {
 				img.src = "";
+				img.classList.remove('loaded');
 			}
-        }
+		}
     });
 
     const lazyLoad = target => {
@@ -429,7 +434,17 @@ window.initLazyLoad = function initLazyLoad() {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const img = entry.target;
+
+					const rect = img.getBoundingClientRect();
+					const isOutsideVertically = rect.bottom < 0 || rect.top > window.innerHeight;
+					const isOutsideHorizontally = rect.right < 0 || rect.left > window.innerWidth;
+
                     if (!img.src || img.src === "" || !img.classList.contains('loaded')) {
+						if (!isOutsideVertically || !isOutsideHorizontally) {
+							img.src = img.dataset.src;
+							observer.unobserve(img);
+							img.classList.add('loaded');
+						}
                         img.src = img.dataset.src;
                         observer.unobserve(img);
                         img.classList.add('loaded');

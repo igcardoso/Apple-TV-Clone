@@ -119,7 +119,7 @@ async function getMoviesBigSlide(url, page, whichContainer) {
 			// Adicionar a imagem do poster dentro da div click-effect
 
 			let posterImg = document.createElement('img');
-			posterImg.setAttribute('src', IMG_URL + movie.backdrop_path);
+			posterImg.setAttribute('data-src', IMG_URL + movie.backdrop_path);
 			posterImg.classList.add('img');
 			
 
@@ -163,7 +163,7 @@ async function getMoviesBigSlide(url, page, whichContainer) {
 		});
 
 
-		//initLazyLoad();
+		initLazyLoad();
 	} catch (error) {
 		console.error('Erro ao obter dados:',
 			error);
@@ -196,7 +196,7 @@ async function getMoviesSlide(url, page, whichContainer) {
 
 			// Adicionar a imagem do poster dentro da div click-effect
 			let posterImg = document.createElement('img');
-			posterImg.setAttribute('src', IMG_URL + movie.poster_path);
+			posterImg.setAttribute('data-src', IMG_URL + movie.poster_path);
 			posterImg.classList.add('img');
 
 			// Adicionar card ao contêiner
@@ -208,7 +208,7 @@ async function getMoviesSlide(url, page, whichContainer) {
 		});
 
 
-		//initLazyLoad();
+		initLazyLoad();
 	} catch (error) {
 		console.error('Erro ao obter dados:',
 			error);
@@ -240,7 +240,7 @@ async function getMoviesSlimSlide(url, page, whichContainer) {
 
 			// Adicionar a imagem do poster dentro da div click-effect
 			let posterImg = document.createElement('img');
-			posterImg.setAttribute('src',
+			posterImg.setAttribute('data-src',
 				IMG_URL + movie.backdrop_path);
 			posterImg.classList.add('img');
 			posterImg.alt = movie.title + ' Poster';
@@ -259,7 +259,7 @@ async function getMoviesSlimSlide(url, page, whichContainer) {
 		    }
 		});
 
-		//initLazyLoad();
+		initLazyLoad();
 	} catch (error) {
 		console.error('Erro ao obter dados:',
 			error);
@@ -403,13 +403,12 @@ async function getMoviesHighlights(url, page, whichContainer) {
 		
 		await getMovieDetails(movieStatic,
 			whichContainer);
-		//initLazyLoad();
+		initLazyLoad();
 	} catch (error) {
 		console.error('Erro ao obter dados:',
 			error);
 	}
 } 
-// MANTENHA SUA ESTRUTURA, SÓ CORRIGI A LÓGICA
 
 window.initLazyLoad = function initLazyLoad() {
     const lazyImages = document.querySelectorAll('.img');
@@ -419,6 +418,9 @@ window.initLazyLoad = function initLazyLoad() {
         const rect = img.getBoundingClientRect();
         if (rect.bottom < 0 || rect.top > window.innerHeight) {
             img.classList.remove('loaded');
+			if (img.src) {
+				img.src = "";
+			}
         }
     });
 
@@ -427,7 +429,6 @@ window.initLazyLoad = function initLazyLoad() {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const img = entry.target;
-                    // Só carrega se não tem src OU se foi descarregada
                     if (!img.src || img.src === "" || !img.classList.contains('loaded')) {
                         img.src = img.dataset.src;
                         observer.unobserve(img);
@@ -466,8 +467,6 @@ function scheduleImageUnload() {
 }
 
 
-
-// Adicionar listeners para monitorar a visibilidade dos cards
 document.addEventListener('visibilitychange', scheduleImageUnload);
 document.addEventListener('scroll', scheduleImageUnload);
 

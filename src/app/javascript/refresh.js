@@ -36,7 +36,7 @@ function handleTouchMove(event) {
 	let handle_currentContent = document.querySelector(`#${currentContentPage} .scroll`)
 
 	if (handle_currentContent.scrollTop === 0 && event.touches[0].clientY > startY) {
-		const offset = (event.touches[0].clientY - startY) / 5;
+		const offset = (event.touches[0].clientY - startY) / 20;
 		refreshIndicator.style.transform = `translateY(${offset}px)`;
 		pagesAndHeader.style.transform = `translateY(${offset}px)`;
 		isRefreshing = offset > 100;

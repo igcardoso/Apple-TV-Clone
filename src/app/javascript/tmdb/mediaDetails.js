@@ -430,7 +430,7 @@ async function mediaIsSeries(serieId, save) {
 						contentIframe.innerHTML = '';
 						const iframe = document.createElement('iframe');
 						//https://playerflixapi.com/
-						iframe.src = `https://playerflixapi.com/serie/${seriesData.id}/${seriesData.seasonNumber}/${seriesData.number}`;
+						iframe.src = `https://superflixapi.life/serie/${seriesData.id}/${seriesData.seasonNumber}/${seriesData.number}`;
 						iframe.setAttribute('allowfullscreen', '');
 						
 						iframe.setAttribute('loading', 'lazy');
@@ -438,7 +438,7 @@ async function mediaIsSeries(serieId, save) {
 					} else {
 						contentIframe.innerHTML = '';
 						const iframe = document.createElement('iframe');
-						iframe.src = `https://playerflixapi.com/serie/${data.id}/1/1`;
+						iframe.src = `https://superflixapi.life/serie/${data.id}/1/1`;
 						iframe.setAttribute('allowfullscreen', '');
 						
 						iframe.setAttribute('loading', 'lazy');
@@ -590,7 +590,7 @@ async function mediaIsSeries(serieId, save) {
 								contentIframe.innerHTML = '';
 								const iframe = document.createElement('iframe');
 								// iframe.src = `https://superembeds.com/embed2/${data.id}-${season.season_number}-${episodeNumber}`;
-								iframe.src = `https://playerflixapi.com/serie/${data.id}/${season.season_number}/${episodeNumber}`;
+								iframe.src = `https://superflixapi.life/serie/${data.id}/${season.season_number}/${episodeNumber}`;
 								iframe.setAttribute('allowfullscreen', '');
 								contentIframe.appendChild(iframe);
 								let epNumberSave = index + 1

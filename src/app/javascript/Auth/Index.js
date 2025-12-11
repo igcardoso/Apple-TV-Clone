@@ -38,7 +38,7 @@ document.getElementById("loginForm").addEventListener("submit", async event => {
         document.getElementById("email").value = "";
         document.getElementById("password").value = "";
         window.location.href = "../../../../index.html";
-        alert("Login bem-sucedido!");
+        pageAlerts("alert", "Login bem-sucedido!", text, "login");
     } catch (error) {
         console.error("Erro ao fazer login:", error);
         let text = "Erro ao fazer login. Verifique suas credenciais.";

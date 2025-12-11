@@ -412,7 +412,6 @@ window.initLazyLoad = function initLazyLoad() {
 
 		if (isOutsideVertically || isOutsideHorizontally) {
 			if (img.src) {
-				img.src = "";
 				img.classList.remove('loaded');
 			}
 		}

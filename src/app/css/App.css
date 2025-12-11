@@ -2288,6 +2288,16 @@ nav  .icon {
 	height: 100vh;
 }
 
+#play .media .next-episode {
+	position: absolute;
+	bottom: 50px;
+	right: 50px;
+	border: none;
+	border-radius: 8em;
+	padding: 10px 20px 10px 20px;
+	color: #000;
+}
+
 #play .media iframe,
 #channels .media iframe {
 	width: 100%;

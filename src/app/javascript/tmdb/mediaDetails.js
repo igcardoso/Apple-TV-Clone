@@ -597,6 +597,21 @@ async function mediaIsSeries(serieId, save) {
 								let tpNumberSave = season.season_number;
 								seriesSaveInDataBase(data.id, tpNumberSave, epNumberSave);
 								textButtonRecord();
+							    
+
+								const nextEpisode = document.createElement('button');
+								nextEpisode.innerHTML = 'Próximo Episódio';
+								nextEpisode.classList.add('next-episode');
+								nextEpisode.addEventListener('click', ()=> {
+									if (index + 1 < episodes.length) {
+										index++;
+										iframe.src = `https://superflixapi.life/serie/${data.id}/${season.season_number}/${index + 1}`;
+										seriesSaveInDataBase(data.id, tpNumberSave, index + 1);
+										textButtonRecord();
+									}
+								});
+
+								contentIframe.appendChild(nextEpisode);
 
 							});
 

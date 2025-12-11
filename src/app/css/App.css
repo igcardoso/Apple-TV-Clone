@@ -1443,7 +1443,7 @@ nav  .icon {
 							transparent calc(var(--after-opacity, 0) * 100%));
 		
 		fill: color-mix(in srgb, #fff calc(100% - (var(--after-opacity, 0) * 100%)), 
-					#0091ff calc(var(--after-opacity, 0) * 100%));
+					#EE4444 calc(var(--after-opacity, 0) * 100%));
     }
   .back .icon {
 		position: relative;
@@ -1455,7 +1455,7 @@ nav  .icon {
 							transparent calc(var(--after-opacity, 0) * 100%));
 		
 		fill: color-mix(in srgb, #fff calc(100% - (var(--after-opacity, 0) * 100%)), 
-					#0091ff calc(var(--after-opacity, 0) * 100%));
+					#EE4444 calc(var(--after-opacity, 0) * 100%));
     }
 
 
@@ -1485,7 +1485,7 @@ nav  .icon {
 							transparent calc(var(--after-opacity, 0) * 100%));
 		
 		fill: color-mix(in srgb, #fff calc(100% - (var(--after-opacity, 0) * 100%)), 
-					#0091ff calc(var(--after-opacity, 0) * 100%));
+					#EE4444 calc(var(--after-opacity, 0) * 100%));
     }
   	.back .icon {
 		position: relative;
@@ -1494,7 +1494,7 @@ nav  .icon {
 		width: 1.3em;
 		height: 1.3em;
 		background: transparent;
-		fill:#0091ff;
+		fill:#EE4444;
     }
 		
 }

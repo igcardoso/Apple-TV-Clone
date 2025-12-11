@@ -441,7 +441,7 @@ form input.error {
     header .next-page {
         padding: 0.5em 10px 0.5em 10px;
         border-radius: 0.5em;
-        color: rgb(0, 145, 255);
+        color: #EE4444;
         background: none;
         border: none;
         font-weight: 600;
@@ -454,7 +454,7 @@ form input.error {
     
     header .next-page img {
         width: 13px;
-        filter: drop-shadow(0 100px 0 rgb(0, 145, 255));
+        filter: drop-shadow(0 100px 0 #EE4444);
         transform: translateY(-100px);
     }
     

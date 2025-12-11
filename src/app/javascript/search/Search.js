@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
 					clickEffect.classList.add('click-effect');
 
 					let posterImg = document.createElement('img');
-					posterImg.setAttribute('src', `https://image.tmdb.org/t/p/w500${media.poster_path}`);
+					posterImg.setAttribute('data-src', `https://image.tmdb.org/t/p/w500${media.poster_path}`);
 					posterImg.classList.add('img');
 					posterImg.alt = media.title || media.name + ' Poster';
 
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
 					}
 				});
 			}
-			//initLazyLoad();
+			initLazyLoad();
 		} catch (error) {
 			console.error('Erro ao obter dados da pesquisa:',
 				error);
